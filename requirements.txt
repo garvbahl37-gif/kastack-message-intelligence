@@ -1,0 +1,5 @@
+# Runtime dependencies for the deployed service.
+# Inference is pure-Python (see mint/model.py), so scikit-learn, numpy and
+# scipy are deliberately absent here -- they are training-time only.
+fastapi==0.141.1
+python-multipart==0.0.32

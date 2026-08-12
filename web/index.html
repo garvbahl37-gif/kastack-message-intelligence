@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local Message Intelligence</title>
+<style>
+/* ==========================================================================
+   Palette. The six category hues are the design system: the chrome is
+   deliberately neutral so that colour only ever means "category" or "risk".
+   --ink is darker than the page background, so a redaction reads as a hole
+   punched through the surface rather than a highlight laid on top of it.
+   ========================================================================== */
+:root{
+  --carbon:#0F1216; --slate:#171B22; --raise:#1D222B; --rule:#262C36;
+  --paper:#E8EAEF; --graphite:#8A93A3; --dim:#5D6675; --ink:#05070A;
+
+  --c-action:#E8A33D; --c-meeting:#9B8CFA; --c-personal:#4FB6E8;
+  --c-general:#7C8798; --c-promo:#46C08A; --c-sensitive:#F2616F;
+
+  --r-high:#F2616F; --r-medium:#E8A33D; --r-low:#7C8798;
+
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Cascadia Mono",monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --pad:clamp(16px,3vw,32px);
+}
+@media (prefers-color-scheme:light){
+  :root{
+    --carbon:#EEF0F4; --slate:#FFFFFF; --raise:#F6F7FA; --rule:#D6DAE2;
+    --paper:#12151B; --graphite:#5A6373; --dim:#8A93A3; --ink:#12151B;
+  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--carbon); color:var(--paper);
+  font:400 14px/1.55 var(--mono); letter-spacing:-0.01em;
+}
+:focus-visible{outline:2px solid var(--c-personal); outline-offset:2px}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
+input,textarea,select{font:inherit; color:inherit}
+h1,h2,h3{margin:0; font-weight:600; letter-spacing:-0.02em}
+p{margin:0}
+
+.wrap{max-width:1320px; margin:0 auto; padding:0 var(--pad)}
+.prose{font-family:var(--sans); letter-spacing:0}
+
+/* ---- header -------------------------------------------------------- */
+.top{
+  position:sticky; top:0; z-index:20; background:color-mix(in srgb,var(--carbon) 92%,transparent);
+  backdrop-filter:blur(12px); border-bottom:1px solid var(--rule);
+}
+.top-in{display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding:14px 0}
+.brand{display:flex; align-items:center; gap:10px; margin-right:auto; min-width:0}
+.glyph{
+  width:22px; height:22px; flex:none; border-radius:3px; background:var(--ink);
+  border:1px solid var(--rule); position:relative;
+}
+.glyph::after{
+  content:""; position:absolute; inset:6px 4px; background:var(--c-sensitive); border-radius:1px;
+}
+.brand h1{font-size:14px; text-transform:uppercase; letter-spacing:0.1em; white-space:nowrap}
+.brand span{color:var(--dim); font-size:11px; letter-spacing:0.06em}
+
+.srcbar{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.btn{
+  border:1px solid var(--rule); background:var(--slate); border-radius:6px;
+  padding:7px 13px; font-size:12px; letter-spacing:0.03em; transition:.15s border-color,.15s background;
+}
+.btn:hover{border-color:var(--graphite); background:var(--raise)}
+.btn[aria-pressed="true"]{border-color:var(--c-personal); color:var(--c-personal)}
+.btn-primary{background:var(--paper); color:var(--carbon); border-color:var(--paper); font-weight:600}
+.btn-primary:hover{opacity:.88; background:var(--paper)}
+
+.local{
+  display:flex; align-items:center; gap:7px; font-size:11px; color:var(--graphite);
+  letter-spacing:0.05em; border:1px solid var(--rule); border-radius:999px; padding:5px 11px;
+}
+.dot{width:6px; height:6px; border-radius:50%; background:var(--c-promo); flex:none}
+
+/* ---- stat rail ------------------------------------------------------ */
+.rail{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(132px,1fr));
+  border-bottom:1px solid var(--rule);
+}
+.stat{padding:20px 0 22px; border-right:1px solid var(--rule)}
+.stat:last-child{border-right:none}
+.stat .n{font-size:30px; font-weight:600; letter-spacing:-0.04em; line-height:1; font-variant-numeric:tabular-nums}
+.stat .k{margin-top:7px; font-size:10px; letter-spacing:0.13em; text-transform:uppercase; color:var(--dim)}
+.stat--alert .n{color:var(--c-sensitive)}
+.stat--warn .n{color:var(--c-action)}
+
+/* ---- tabs ----------------------------------------------------------- */
+.tabs{display:flex; gap:2px; overflow-x:auto; border-bottom:1px solid var(--rule); scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  padding:13px 15px; font-size:12px; letter-spacing:0.05em; color:var(--graphite);
+  white-space:nowrap; border-bottom:2px solid transparent; margin-bottom:-1px; transition:.15s color;
+}
+.tab:hover{color:var(--paper)}
+.tab[aria-selected="true"]{color:var(--paper); border-bottom-color:var(--c-sensitive)}
+.tab .c{color:var(--dim); margin-left:6px; font-size:11px}
+
+main{padding:26px 0 80px}
+.panel[hidden]{display:none}
+.head{margin-bottom:18px}
+.head h2{font-size:12px; text-transform:uppercase; letter-spacing:0.13em; color:var(--graphite)}
+.head p{margin-top:6px; color:var(--dim); font-size:13px; max-width:70ch}
+
+/* ---- cards / grid --------------------------------------------------- */
+.card{background:var(--slate); border:1px solid var(--rule); border-radius:10px; padding:18px}
+.grid{display:grid; gap:14px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+/* Overview uses an explicit 12-column split so the wide charts and the
+   narrow ones pair off instead of leaving a ragged third column. */
+.grid-ov{grid-template-columns:repeat(12,1fr)}
+.grid-ov > .card{grid-column:span 12}
+@media (min-width:900px){
+  .grid-ov > .card:nth-child(1){grid-column:span 7}
+  .grid-ov > .card:nth-child(2){grid-column:span 5}
+  .grid-ov > .card:nth-child(3){grid-column:span 5}
+  .grid-ov > .card:nth-child(4){grid-column:span 7}
+}
+
+/* ---- the distribution bars ------------------------------------------ */
+.dist{display:grid; gap:11px}
+.row{display:grid; grid-template-columns:1fr; gap:6px}
+.row-top{display:flex; align-items:baseline; gap:10px; font-size:12px}
+.row-top .lbl{color:var(--paper)}
+.row-top .val{margin-left:auto; color:var(--graphite); font-variant-numeric:tabular-nums}
+.track{height:7px; border-radius:2px; background:var(--raise); overflow:hidden}
+.fill{
+  height:100%; border-radius:2px; transform-origin:left; transform:scaleX(var(--p,0));
+  animation:wipe .7s cubic-bezier(.2,.7,.3,1) both; animation-delay:var(--d,0s);
+}
+@keyframes wipe{from{transform:scaleX(0)}}
+
+.swatch{width:9px; height:9px; border-radius:2px; flex:none}
+.cat-action_required{background:var(--c-action)} .cat-meeting_or_event{background:var(--c-meeting)}
+.cat-personal_information{background:var(--c-personal)} .cat-general_information{background:var(--c-general)}
+.cat-promotional{background:var(--c-promo)} .cat-sensitive_information{background:var(--c-sensitive)}
+
+/* ---- chips / badges -------------------------------------------------- */
+.chip{
+  display:inline-flex; align-items:center; gap:6px; font-size:11px; letter-spacing:0.02em;
+  border:1px solid var(--rule); border-radius:999px; padding:3px 9px; white-space:nowrap;
+}
+.badge{
+  display:inline-block; font-size:10px; letter-spacing:0.08em; text-transform:uppercase;
+  padding:2px 7px; border-radius:3px; border:1px solid currentColor; white-space:nowrap;
+}
+.risk-high{color:var(--r-high)} .risk-medium{color:var(--r-medium)} .risk-low{color:var(--r-low)}
+.flag{color:var(--c-action)}
+
+/* ---- SIGNATURE: the redaction bar ------------------------------------
+   Rendered darker than the page and with no text node underneath, so there
+   is nothing for a selection, a screenshot or a devtools inspection to
+   recover. The tooltip names the type; it never reveals the value.        */
+.redact{
+  display:inline-block; min-width:62px; height:1.05em; vertical-align:-0.18em;
+  background:var(--ink); border-radius:2px; position:relative; cursor:help;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.6), 0 0 0 1px var(--rule);
+}
+@media (prefers-color-scheme:light){ .redact{box-shadow:inset 0 1px 2px rgba(0,0,0,.35)} }
+.redact::after{
+  content:attr(data-t); position:absolute; left:50%; bottom:calc(100% + 7px); transform:translateX(-50%);
+  background:var(--raise); color:var(--paper); border:1px solid var(--rule); border-radius:5px;
+  padding:4px 8px; font-size:10px; letter-spacing:0.06em; text-transform:uppercase;
+  white-space:nowrap; opacity:0; pointer-events:none; transition:.15s opacity;
+}
+.redact:hover::after,.redact:focus-visible::after{opacity:1}
+
+/* ---- tables ---------------------------------------------------------- */
+.scroll{overflow-x:auto; border:1px solid var(--rule); border-radius:10px; background:var(--slate)}
+table{border-collapse:collapse; width:100%; min-width:760px}
+th{
+  text-align:left; font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--dim);
+  font-weight:500; padding:11px 14px; border-bottom:1px solid var(--rule); white-space:nowrap;
+  position:sticky; top:0; background:var(--slate); z-index:1;
+}
+td{padding:11px 14px; border-bottom:1px solid var(--rule); vertical-align:top; font-size:12.5px}
+tbody tr:last-child td{border-bottom:none}
+tbody tr{transition:.12s background}
+tbody tr:hover{background:var(--raise)}
+tr.clickable{cursor:pointer}
+.id{color:var(--graphite); white-space:nowrap; font-size:11.5px}
+.num{font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap}
+.txt{min-width:280px; max-width:520px}
+
+/* ---- filters --------------------------------------------------------- */
+.filters{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:14px}
+.field{
+  background:var(--slate); border:1px solid var(--rule); border-radius:6px;
+  padding:7px 11px; font-size:12.5px; min-width:0;
+}
+.field:focus{outline:none; border-color:var(--c-personal)}
+input.field{width:min(300px,100%)}
+.count{margin-left:auto; color:var(--dim); font-size:11.5px; letter-spacing:0.04em}
+
+/* ---- detail drawer ---------------------------------------------------- */
+.drawer{
+  position:fixed; inset:0 0 0 auto; width:min(560px,100%); background:var(--slate);
+  border-left:1px solid var(--rule); z-index:40; overflow-y:auto; padding:20px var(--pad) 40px;
+  transform:translateX(100%); transition:transform .25s cubic-bezier(.2,.7,.3,1);
+  box-shadow:-24px 0 60px rgba(0,0,0,.4);
+}
+.drawer.open{transform:none}
+.drawer-top{display:flex; align-items:center; gap:12px; margin-bottom:18px}
+.drawer-top h3{font-size:13px; letter-spacing:0.06em; margin-right:auto}
+.scrim{position:fixed; inset:0; background:rgba(5,7,10,.55); z-index:39; opacity:0; pointer-events:none; transition:.25s opacity}
+.scrim.open{opacity:1; pointer-events:auto}
+.kv{display:grid; grid-template-columns:112px 1fr; gap:7px 14px; font-size:12.5px; margin:14px 0}
+.kv dt{color:var(--dim); font-size:11px; letter-spacing:0.06em; text-transform:uppercase}
+.kv dd{margin:0; word-break:break-word}
+.sect{margin-top:20px; padding-top:16px; border-top:1px solid var(--rule)}
+.sect h4{font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--dim); margin:0 0 9px}
+
+.feat{display:flex; align-items:center; gap:9px; font-size:11.5px; padding:3px 0}
+.feat .bar{height:4px; border-radius:2px; background:var(--c-personal); flex:none}
+.feat .g{color:var(--graphite); margin-left:auto; font-variant-numeric:tabular-nums}
+
+.quote{
+  font-family:var(--sans); letter-spacing:0; font-size:13px; line-height:1.6; color:var(--paper);
+  background:var(--raise); border-left:2px solid var(--c-personal); border-radius:0 6px 6px 0; padding:11px 14px;
+}
+
+/* ---- try it ---------------------------------------------------------- */
+textarea.field{width:100%; min-height:110px; resize:vertical; line-height:1.55}
+.examples{display:flex; gap:7px; flex-wrap:wrap; margin-top:10px}
+.ex{border:1px dashed var(--rule); border-radius:5px; padding:5px 10px; font-size:11.5px; color:var(--graphite)}
+.ex:hover{border-color:var(--c-personal); color:var(--paper); border-style:solid}
+
+.note{font-size:11.5px; color:var(--dim); line-height:1.6}
+.empty{padding:44px 20px; text-align:center; color:var(--dim); font-size:13px}
+.err{border-color:var(--c-sensitive); color:var(--c-sensitive)}
+
+.bars-legend{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:11px; color:var(--graphite)}
+.bars-legend span{display:flex; align-items:center; gap:6px}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001s !important; transition-duration:.001s !important}
+}
+@media (max-width:640px){
+  .kv{grid-template-columns:1fr; gap:2px 0}
+  .kv dd{margin-bottom:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand">
+      <div class="glyph" aria-hidden="true"></div>
+      <div>
+        <h1>Local Message Intelligence</h1>
+        <span id="srcLabel">loading…</span>
+      </div>
+    </div>
+    <div class="srcbar">
+      <button class="btn" id="btnSample" aria-pressed="true">Sample data</button>
+      <button class="btn btn-primary" id="btnUpload">Upload CSV</button>
+      <input type="file" id="file" accept=".csv,text/csv" hidden>
+      <span class="local"><span class="dot"></span>runs locally · nothing sent out</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="rail" id="rail"></div>
+  <nav class="tabs" role="tablist" id="tabs"></nav>
+</div>
+
+<main class="wrap">
+  <!-- OVERVIEW -->
+  <section class="panel" id="p-overview" role="tabpanel">
+    <div class="grid grid-ov">
+      <div class="card">
+        <div class="head"><h2>Category distribution</h2></div>
+        <div class="dist" id="dist"></div>
+        <div class="bars-legend" id="distLegend"></div>
+      </div>
+      <div class="card">
+        <div class="head"><h2>Confidence &amp; review</h2>
+          <p class="prose">Confidence rises when the rule layer and the trained model agree independently, and falls when they disagree. Anything below the review line is surfaced rather than trusted.</p>
+        </div>
+        <div class="dist" id="confDist"></div>
+      </div>
+      <div class="card">
+        <div class="head"><h2>Sensitive information by type</h2>
+          <p class="prose">Counts of messages per detected type.</p>
+        </div>
+        <div class="dist" id="sensDist"></div>
+      </div>
+      <div class="card">
+        <div class="head"><h2>How this was built</h2></div>
+        <div id="modelCard" class="note"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGES -->
+  <section class="panel" id="p-messages" role="tabpanel" hidden>
+    <div class="head">
+      <h2>Classified messages</h2>
+      <p class="prose">Every row carries a category, a calibrated confidence and the reason it was decided. Select a row to see the full evidence trail.</p>
+    </div>
+    <div class="filters">
+      <input class="field" id="q" type="search" placeholder="Search text, sender or ID…">
+      <select class="field" id="fCat"></select>
+      <button class="btn" id="fReview" aria-pressed="false">Needs review only</button>
+      <span class="count" id="msgCount"></span>
+    </div>
+    <div class="scroll"><table>
+      <thead><tr>
+        <th>ID</th><th>Time</th><th>Sender</th><th>Message (masked)</th>
+        <th>Category</th><th class="num">Conf.</th><th></th>
+      </tr></thead>
+      <tbody id="msgBody"></tbody>
+    </table></div>
+  </section>
+
+  <!-- ITEMS -->
+  <section class="panel" id="p-items" role="tabpanel" hidden>
+    <div class="head">
+      <h2>Extracted tasks &amp; events</h2>
+      <p class="prose">Fields are filled only when the message actually states them. A relative phrase like “tomorrow” leaves the date null and is kept verbatim instead — the system reports what it read, not what it assumed.</p>
+    </div>
+    <div class="filters">
+      <input class="field" id="qItem" type="search" placeholder="Search title or source ID…">
+      <select class="field" id="fType">
+        <option value="">All types</option><option value="task">Tasks</option><option value="event">Events</option>
+      </select>
+      <button class="btn" id="fUnres" aria-pressed="false">Unresolved fields only</button>
+      <span class="count" id="itemCount"></span>
+    </div>
+    <div class="scroll"><table>
+      <thead><tr>
+        <th>Item</th><th>Type</th><th>Title</th><th>Date</th><th>Time</th>
+        <th>Person</th><th>Priority</th><th>Source</th>
+      </tr></thead>
+      <tbody id="itemBody"></tbody>
+    </table></div>
+  </section>
+
+  <!-- SENSITIVE -->
+  <section class="panel" id="p-sensitive" role="tabpanel" hidden>
+    <div class="head">
+      <h2>Sensitive information</h2>
+      <p class="prose">Values are masked before any other stage runs, so nothing downstream — this table included — ever holds the original. Hover a redaction bar to see what type it was; the value itself is not present in the page.</p>
+    </div>
+    <div class="filters">
+      <select class="field" id="fRisk">
+        <option value="">All risk levels</option><option value="high">High</option>
+        <option value="medium">Medium</option><option value="low">Low</option>
+      </select>
+      <span class="count" id="sensCount"></span>
+    </div>
+    <div class="scroll"><table>
+      <thead><tr>
+        <th>ID</th><th>Type</th><th>Risk</th><th>Masked message</th>
+        <th>Recommended action</th><th>Why</th>
+      </tr></thead>
+      <tbody id="sensBody"></tbody>
+    </table></div>
+  </section>
+
+  <!-- MANDATORY -->
+  <section class="panel" id="p-required" role="tabpanel" hidden>
+    <div class="head">
+      <h2>Required message IDs</h2>
+      <p class="prose">Paste the IDs to inspect. Each is shown end to end: classification, reason, evidence, anything extracted, and any sensitive finding.</p>
+    </div>
+    <div class="filters">
+      <input class="field" id="idInput" style="width:min(560px,100%)" placeholder="MSG_0001, MSG_0002, …">
+      <button class="btn btn-primary" id="btnIds">Show these</button>
+      <span class="count" id="idCount"></span>
+    </div>
+    <div class="grid" id="idOut"></div>
+  </section>
+
+  <!-- TRY IT -->
+  <section class="panel" id="p-try" role="tabpanel" hidden>
+    <div class="head">
+      <h2>Classify a single message</h2>
+      <p class="prose">Type anything. It is masked, classified and parsed by the same code the batch run uses — and it never leaves this server.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <textarea class="field" id="liveText" placeholder="e.g. Can you review the onboarding deck before 2026-11-04?"></textarea>
+        <div class="filters" style="margin:12px 0 0">
+          <input class="field" id="liveSender" placeholder="Sender (optional)" style="width:180px">
+          <button class="btn btn-primary" id="btnLive">Classify</button>
+        </div>
+        <div class="examples" id="examples"></div>
+      </div>
+      <div class="card" id="liveOut"><div class="empty">Results appear here.</div></div>
+    </div>
+  </section>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true"></aside>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const CATS = ["action_required","meeting_or_event","personal_information","general_information","promotional","sensitive_information"];
+const TABS = [
+  ["overview","Overview"],["messages","Messages"],["items","Tasks & events"],
+  ["sensitive","Sensitive"],["required","Required IDs"],["try","Try it"]
+];
+const pretty = s => (s||"").replace(/_/g," ").replace(/^./,c=>c.toUpperCase());
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* Replace every mask token with a real redaction bar. Because the text node is
+   removed rather than merely styled, there is nothing under the bar to select,
+   copy, screenshot or read out of the DOM. */
+function redact(text, type){
+  const label = pretty(type || "redacted");
+  return esc(text).replace(/\*{4,}/g,
+    `<span class="redact" tabindex="0" role="img" aria-label="Redacted ${esc(label)}" data-t="${esc(label)}"></span>`);
+}
+const catChip = c => `<span class="chip"><span class="swatch cat-${c}"></span>${pretty(c)}</span>`;
+const riskBadge = r => r ? `<span class="badge risk-${r}">${r}</span>` : "";
+
+let DATA = null, ACTIVE = "overview";
+const state = {q:"", cat:"", review:false, qItem:"", type:"", unres:false, risk:""};
+
+/* ---- tabs ------------------------------------------------------------- */
+function buildTabs(){
+  $("#tabs").innerHTML = TABS.map(([id,label],i)=>
+    `<button class="tab" role="tab" data-tab="${id}" aria-selected="${i===0}" id="t-${id}">
+       ${label}<span class="c" id="tc-${id}"></span></button>`).join("");
+  $("#tabs").addEventListener("click", e=>{
+    const b = e.target.closest(".tab"); if(b) show(b.dataset.tab);
+  });
+}
+function show(id){
+  ACTIVE = id;
+  TABS.forEach(([t])=>{
+    $("#t-"+t).setAttribute("aria-selected", String(t===id));
+    $("#p-"+t).hidden = t!==id;
+  });
+}
+
+/* ---- header + rail ---------------------------------------------------- */
+function renderRail(){
+  const s = DATA.summary;
+  const stats = [
+    ["Messages", s.total_messages, ""],
+    ["Tasks", s.tasks_extracted, ""],
+    ["Events", s.events_extracted, ""],
+    ["Sensitive", s.sensitive_messages, "stat--alert"],
+    ["Flagged for review", s.flagged_for_review, "stat--warn"],
+    ["Mean confidence", s.mean_confidence.toFixed(3), ""]
+  ];
+  $("#rail").innerHTML = stats.map(([k,v,cls])=>
+    `<div class="stat ${cls}"><div class="n">${v}</div><div class="k">${k}</div></div>`).join("");
+  $("#tc-messages").textContent = s.total_messages;
+  $("#tc-items").textContent = s.tasks_extracted + s.events_extracted;
+  $("#tc-sensitive").textContent = s.sensitive_messages;
+}
+
+/* ---- overview --------------------------------------------------------- */
+/* Each category owns a hue; anything that is not a category (sensitivity
+   types, confidence bands) borrows the sensitive hue so colour never implies
+   a category that is not there. */
+const HUE = {
+  action_required:"var(--c-action)", meeting_or_event:"var(--c-meeting)",
+  personal_information:"var(--c-personal)", general_information:"var(--c-general)",
+  promotional:"var(--c-promo)", sensitive_information:"var(--c-sensitive)"
+};
+/* `scale` sets the bar length; `share` sets the percentage shown. They differ
+   for the sensitive-type chart, where bars are scaled to the largest type but
+   a percentage of that maximum would be a meaningless number -- so it shows
+   counts alone rather than an impressive-looking but wrong figure. */
+function bars(rows, scale, useCategoryHue, share){
+  return rows.map(([label,n],i)=>{
+    const p = scale ? n/scale : 0;
+    const hue = (useCategoryHue && HUE[label]) || "var(--c-sensitive)";
+    const pct = share ? ` · ${(n/share*100).toFixed(1)}%` : "";
+    return `<div class="row">
+      <div class="row-top">
+        <span class="swatch" style="background:${hue}"></span>
+        <span class="lbl">${pretty(label)}</span>
+        <span class="val">${n}${pct}</span>
+      </div>
+      <div class="track">
+        <div class="fill" style="--p:${p};--d:${i*0.05}s;background:${hue}"></div>
+      </div>
+    </div>`;
+  }).join("");
+}
+function renderOverview(){
+  const s = DATA.summary, total = s.total_messages;
+  $("#dist").innerHTML = bars(CATS.map(c=>[c, s.categories[c]||0]), total, true, total);
+  $("#distLegend").innerHTML =
+    `<span>${total} messages, ${s.date_range.from||"?"} → ${s.date_range.to||"?"}</span>`;
+
+  const st = Object.entries(s.sensitive_by_type).sort((a,b)=>b[1]-a[1]);
+  $("#sensDist").innerHTML = st.length
+    ? bars(st, Math.max(...st.map(x=>x[1])), false, 0)
+    : `<div class="empty">No sensitive information detected.</div>`;
+
+  const bands = [[".90–1.00",0.90,1.01],[".75–.90",0.75,0.90],[".60–.75",0.60,0.75],
+                 ["below .60 (review)",0,0.60]];
+  const counts = bands.map(([l,lo,hi])=>[l, DATA.messages.filter(m=>m.confidence>=lo&&m.confidence<hi).length]);
+  $("#confDist").innerHTML = bars(counts, total, false, total);
+
+  const m = DATA.model || {};
+  const meta = (m.metadata)||{};
+  $("#modelCard").innerHTML = `
+    <p class="prose">Three layers vote. A <strong>deterministic detector</strong> finds credentials and identifiers and masks them — that is a safety decision, so it is a rule, never a probability. High-precision <strong>rule frames</strong> read grammatical shapes like “X is scheduled for Y”. A <strong>TF-IDF + logistic-regression model</strong>, trained on masked text only, generalises to wording the rules have never seen.</p>
+    <dl class="kv" style="margin-top:14px">
+      <dt>Accuracy</dt><dd>${meta.grouped_cv_accuracy!=null?(meta.grouped_cv_accuracy*100).toFixed(1)+"% on held-out templates":"—"}</dd>
+      <dt>Random split</dt><dd>${meta.random_cv_accuracy!=null?(meta.random_cv_accuracy*100).toFixed(1)+"% — inflated by near-duplicates, shown for contrast":"—"}</dd>
+      <dt>Features</dt><dd>${m.vocabulary_size??"—"} n-grams (1–${m.ngram_max??2})</dd>
+      <dt>Trained on</dt><dd>${esc(meta.trained_on||"—")}</dd>
+      <dt>Serving</dt><dd>pure-Python inference — no scikit-learn at request time</dd>
+    </dl>`;
+}
+
+/* ---- messages --------------------------------------------------------- */
+function renderMessages(){
+  const q = state.q.toLowerCase();
+  const rows = DATA.messages.filter(m=>
+    (!state.cat || m.category===state.cat) &&
+    (!state.review || m.needs_review) &&
+    (!q || (m.masked_text+m.sender+m.message_id).toLowerCase().includes(q))
+  );
+  $("#msgCount").textContent = `${rows.length} of ${DATA.messages.length}`;
+  $("#msgBody").innerHTML = rows.length ? rows.map(m=>`
+    <tr class="clickable" data-id="${esc(m.message_id)}">
+      <td class="id">${esc(m.message_id)}</td>
+      <td class="id">${esc((m.timestamp||"").slice(5,16))}</td>
+      <td>${esc(m.sender)}</td>
+      <td class="txt">${redact(m.masked_text, m.sensitivity_type)}</td>
+      <td>${catChip(m.category)}</td>
+      <td class="num">${m.confidence.toFixed(2)}</td>
+      <td>${m.needs_review?'<span class="badge flag">review</span>':""}</td>
+    </tr>`).join("") : `<tr><td colspan="7"><div class="empty">Nothing matches those filters.</div></td></tr>`;
+}
+
+/* ---- items ------------------------------------------------------------ */
+function renderItems(){
+  const q = state.qItem.toLowerCase();
+  const rows = DATA.items.filter(i=>
+    (!state.type || i.type===state.type) &&
+    (!state.unres || i.unresolved_fields.length) &&
+    (!q || (i.title+i.source_message_id).toLowerCase().includes(q))
+  );
+  $("#itemCount").textContent = `${rows.length} of ${DATA.items.length}`;
+  const nul = v => v==null
+    ? `<span style="color:var(--dim)">null</span>` : esc(v);
+  $("#itemBody").innerHTML = rows.length ? rows.map(i=>`
+    <tr>
+      <td class="id">${esc(i.item_id)}</td>
+      <td>${i.type==="task"?"task":"event"}</td>
+      <td class="txt">${redact(i.title)}
+        ${i.location?`<div class="id" style="margin-top:3px">@ ${esc(i.location)}</div>`:""}</td>
+      <td>${nul(i.date)}${i.date_raw?`<div class="id" style="margin-top:3px" title="stated but not resolvable">“${esc(i.date_raw)}”</div>`:""}</td>
+      <td>${nul(i.time)}</td>
+      <td>${nul(i.person)}</td>
+      <td><span class="badge risk-${i.priority==="high"?"high":i.priority==="medium"?"medium":"low"}">${i.priority}</span></td>
+      <td class="id">${esc(i.source_message_id)}</td>
+    </tr>`).join("") : `<tr><td colspan="8"><div class="empty">Nothing matches those filters.</div></td></tr>`;
+}
+
+/* ---- sensitive -------------------------------------------------------- */
+function renderSensitive(){
+  const rows = DATA.sensitive.filter(s=>!state.risk || s.risk===state.risk);
+  $("#sensCount").textContent = `${rows.length} of ${DATA.sensitive.length}`;
+  $("#sensBody").innerHTML = rows.length ? rows.map(s=>`
+    <tr>
+      <td class="id">${esc(s.message_id)}</td>
+      <td>${pretty(s.sensitivity_type)}</td>
+      <td>${riskBadge(s.risk)}</td>
+      <td class="txt">${redact(s.masked_text, s.sensitivity_type)}</td>
+      <td><code style="font-size:11.5px">${esc(s.recommended_action)}</code></td>
+      <td class="txt prose" style="color:var(--graphite);font-size:12px">${esc(s.reason)}</td>
+    </tr>`).join("") : `<tr><td colspan="6"><div class="empty">No findings at that risk level.</div></td></tr>`;
+}
+
+/* ---- required IDs ------------------------------------------------------ */
+function renderIds(){
+  const ids = ($("#idInput").value.match(/[A-Za-z0-9_]+/g)||[]);
+  const byId = Object.fromEntries(DATA.messages.map(m=>[m.message_id,m]));
+  const items = Object.fromEntries(DATA.items.map(i=>[i.source_message_id,i]));
+  const sens = Object.fromEntries(DATA.sensitive.map(s=>[s.message_id,s]));
+  $("#idCount").textContent = `${ids.length} requested`;
+  $("#idOut").innerHTML = ids.length ? ids.map((id,n)=>{
+    const m = byId[id];
+    if(!m) return `<div class="card"><strong>${esc(id)}</strong>
+      <p class="note" style="margin-top:6px">Not present in the loaded file.</p></div>`;
+    const it = items[id], sv = sens[id];
+    return `<div class="card">
+      <div class="drawer-top">
+        <span class="id">${String(n+1).padStart(2,"0")} · ${esc(id)}</span>
+        ${catChip(m.category)}
+        <span class="count">${m.confidence.toFixed(2)}${m.needs_review?" · review":""}</span>
+      </div>
+      <div class="quote">${redact(m.masked_text, m.sensitivity_type)}</div>
+      <dl class="kv">
+        <dt>Sender</dt><dd>${esc(m.sender)} · ${esc(m.timestamp)}</dd>
+        <dt>Reason</dt><dd class="prose">${esc(m.reason)}</dd>
+        ${m.secondary_category?`<dt>Also</dt><dd>${pretty(m.secondary_category)}</dd>`:""}
+      </dl>
+      ${sv?`<div class="sect"><h4>Sensitive finding</h4>
+        <dl class="kv" style="margin:0">
+          <dt>Type</dt><dd>${pretty(sv.sensitivity_type)}</dd>
+          <dt>Risk</dt><dd>${riskBadge(sv.risk)}</dd>
+          <dt>Action</dt><dd><code>${esc(sv.recommended_action)}</code></dd>
+        </dl></div>`:""}
+      ${it?`<div class="sect"><h4>Extracted ${esc(it.type)}</h4>
+        <dl class="kv" style="margin:0">
+          <dt>${it.type==="task"?"Title":"Event"}</dt><dd>${redact(it.title)}</dd>
+          <dt>${it.type==="task"?"Deadline":"Date"}</dt>
+            <dd>${it.date ?? `<span style="color:var(--dim)">null</span>`}${
+              it.date_raw?` · stated as “${esc(it.date_raw)}” (${esc(it.date_status)})`:""}</dd>
+          <dt>Time</dt><dd>${it.time ?? `<span style="color:var(--dim)">null</span>`}</dd>
+          <dt>Person</dt><dd>${it.person ?? `<span style="color:var(--dim)">null</span>`}</dd>
+          <dt>Priority</dt><dd>${esc(it.priority)} — ${esc(it.priority_reason)}</dd>
+          ${it.unresolved_fields.length?`<dt>Unresolved</dt><dd style="color:var(--c-action)">${it.unresolved_fields.join(", ")}</dd>`:""}
+        </dl></div>`:""}
+    </div>`;
+  }).join("") : `<div class="empty">Enter one or more message IDs above.</div>`;
+}
+
+/* ---- drawer ------------------------------------------------------------ */
+function openDrawer(id){
+  const m = DATA.messages.find(x=>x.message_id===id); if(!m) return;
+  const it = DATA.items.find(i=>i.source_message_id===id);
+  const sv = DATA.sensitive.find(s=>s.message_id===id);
+  const ev = m.evidence||{};
+  const feats = ev.model_top_features||[];
+  const max = Math.max(0.001, ...feats.map(f=>Math.abs(f.contribution)));
+  $("#drawer").innerHTML = `
+    <div class="drawer-top">
+      <h3>${esc(id)}</h3>${catChip(m.category)}
+      <button class="btn" id="closeDrawer" aria-label="Close">Close</button>
+    </div>
+    <div class="quote">${redact(m.masked_text, m.sensitivity_type)}</div>
+    <dl class="kv">
+      <dt>Sender</dt><dd>${esc(m.sender)}</dd>
+      <dt>Time</dt><dd>${esc(m.timestamp)}</dd>
+      <dt>Confidence</dt><dd>${m.confidence.toFixed(3)} ${m.needs_review?'<span class="badge flag">review</span>':""}</dd>
+      <dt>Decided by</dt><dd>${pretty(ev.agreement)}</dd>
+    </dl>
+    <div class="sect"><h4>Why</h4><p class="prose" style="font-size:13px">${esc(m.reason)}</p></div>
+    <div class="sect"><h4>Rule layer</h4>
+      <dl class="kv" style="margin:0">
+        <dt>Verdict</dt><dd>${ev.rule_category?pretty(ev.rule_category)+" ("+ev.rule_confidence.toFixed(2)+")":"abstained"}</dd>
+        ${(ev.rule_signals||[]).length?`<dt>Frames</dt><dd>${ev.rule_signals.map(s=>`<code style="font-size:11.5px">${esc(s)}</code>`).join("<br>")}</dd>`:""}
+      </dl></div>
+    <div class="sect"><h4>Trained model</h4>
+      <dl class="kv" style="margin:0 0 10px">
+        <dt>Verdict</dt><dd>${ev.model_category?pretty(ev.model_category)+" (p="+ev.model_confidence.toFixed(2)+")":"—"}</dd>
+        <dt>Margin</dt><dd>${(ev.model_margin??0).toFixed(3)} over the runner-up</dd>
+      </dl>
+      ${feats.map(f=>`<div class="feat">
+        <span class="bar" style="width:${Math.max(3,Math.abs(f.contribution)/max*54)}px"></span>
+        <code>${esc(f.feature)}</code><span class="g">${f.contribution.toFixed(3)}</span></div>`).join("")}
+    </div>
+    ${sv?`<div class="sect"><h4>Sensitive finding</h4>
+      <dl class="kv" style="margin:0">
+        <dt>Type</dt><dd>${pretty(sv.sensitivity_type)}</dd>
+        <dt>Risk</dt><dd>${riskBadge(sv.risk)}</dd>
+        <dt>Action</dt><dd><code>${esc(sv.recommended_action)}</code></dd>
+        <dt>Why</dt><dd class="prose">${esc(sv.reason)}</dd>
+      </dl></div>`:""}
+    ${it?`<div class="sect"><h4>Extracted ${esc(it.type)}</h4>
+      <dl class="kv" style="margin:0">
+        <dt>Title</dt><dd>${redact(it.title)}</dd>
+        <dt>Date</dt><dd>${it.date ?? `<span style="color:var(--dim)">null</span>`}${it.date_raw?` · “${esc(it.date_raw)}” (${esc(it.date_status)})`:""}</dd>
+        <dt>Time</dt><dd>${it.time ?? `<span style="color:var(--dim)">null</span>`}</dd>
+        <dt>Person</dt><dd>${it.person ?? `<span style="color:var(--dim)">null</span>`}</dd>
+        <dt>Location</dt><dd>${it.location ?? `<span style="color:var(--dim)">null</span>`}</dd>
+        <dt>Priority</dt><dd>${esc(it.priority)} — ${esc(it.priority_reason)}</dd>
+        <dt>Frame</dt><dd><code>${esc(it.extraction_frame)}</code></dd>
+      </dl></div>`:""}`;
+  $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden","false");
+  $("#scrim").classList.add("open");
+  $("#closeDrawer").addEventListener("click", closeDrawer);
+}
+function closeDrawer(){
+  $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden","true");
+  $("#scrim").classList.remove("open");
+}
+
+/* ---- live classify ----------------------------------------------------- */
+const EXAMPLES = [
+  "Can you review the onboarding deck before 2026-11-04?",
+  "The design sync is scheduled for 2026-11-09 at 15:30 in Room 2.",
+  "Your OTP is 442199. It expires in 4 minutes.",
+  "Just so you know, I prefer written updates.",
+  "Half price on annual plans this week. Use code PLAN50.",
+  "The report may be needed tomorrow."
+];
+async function classifyLive(){
+  const message = $("#liveText").value.trim();
+  if(!message){ $("#liveOut").innerHTML = `<div class="empty">Type a message first.</div>`; return; }
+  $("#liveOut").innerHTML = `<div class="empty">Classifying…</div>`;
+  try{
+    const r = await fetch("/v1/classify",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({message, sender:$("#liveSender").value})});
+    if(!r.ok) throw new Error(await r.text());
+    const d = await r.json();
+    const c = d.classification, ev = c.evidence, it = d.extracted_item, sn = d.sensitive;
+    $("#liveOut").innerHTML = `
+      <div class="drawer-top">${catChip(c.category)}
+        <span class="count">${c.confidence.toFixed(3)}${c.needs_review?" · review":""}</span></div>
+      <div class="quote">${redact(d.masked_text, sn.types[0])}</div>
+      <div class="sect" style="margin-top:16px"><h4>Why</h4>
+        <p class="prose" style="font-size:13px">${esc(c.reason)}</p></div>
+      ${sn.detected?`<div class="sect"><h4>Sensitive</h4><dl class="kv" style="margin:0">
+        <dt>Types</dt><dd>${sn.types.map(pretty).join(", ")}</dd>
+        <dt>Risk</dt><dd>${riskBadge(sn.risk)}</dd>
+        <dt>Action</dt><dd><code>${esc(sn.recommended_action)}</code></dd></dl></div>`:""}
+      ${it?`<div class="sect"><h4>Extracted ${esc(it.type)}</h4><dl class="kv" style="margin:0">
+        <dt>Title</dt><dd>${redact(it.title)}</dd>
+        <dt>Date</dt><dd>${it.date ?? `<span style="color:var(--dim)">null</span>`}${it.date_raw?` · “${esc(it.date_raw)}”`:""}</dd>
+        <dt>Time</dt><dd>${it.time ?? `<span style="color:var(--dim)">null</span>`}</dd>
+        <dt>Person</dt><dd>${it.person ?? `<span style="color:var(--dim)">null</span>`}</dd>
+        <dt>Priority</dt><dd>${esc(it.priority)} — ${esc(it.priority_reason)}</dd></dl></div>`:""}
+      <div class="sect"><h4>Evidence</h4><dl class="kv" style="margin:0">
+        <dt>Rule</dt><dd>${ev.rule_category?pretty(ev.rule_category)+" ("+ev.rule_confidence.toFixed(2)+")":"abstained"}</dd>
+        <dt>Model</dt><dd>${ev.model_category?pretty(ev.model_category)+" (p="+ev.model_confidence.toFixed(2)+")":"—"}</dd>
+        <dt>Decided by</dt><dd>${pretty(ev.agreement)}</dd></dl></div>`;
+  }catch(err){
+    $("#liveOut").innerHTML = `<div class="empty err">Could not classify: ${esc(err.message)}</div>`;
+  }
+}
+
+/* ---- data loading ------------------------------------------------------ */
+async function loadModel(){
+  try{ DATA.model = await (await fetch("/v1/model")).json(); }catch{ DATA.model = {}; }
+}
+function paint(){
+  renderRail(); renderOverview(); renderMessages(); renderItems(); renderSensitive(); renderIds();
+  const opts = [`<option value="">All categories</option>`]
+    .concat(CATS.map(c=>`<option value="${c}">${pretty(c)} (${DATA.summary.categories[c]||0})</option>`));
+  $("#fCat").innerHTML = opts.join("");
+}
+async function loadSample(){
+  setSource("loading sample…");
+  const r = await fetch("/v1/analyze/sample");
+  DATA = await r.json(); await loadModel(); paint();
+  setSource(`${DATA.source.name} · ${DATA.source.kind}`);
+  $("#btnSample").setAttribute("aria-pressed","true");
+}
+async function loadUpload(file){
+  setSource(`reading ${file.name}…`);
+  const fd = new FormData(); fd.append("file", file);
+  try{
+    const r = await fetch("/v1/analyze",{method:"POST",body:fd});
+    if(!r.ok){ const e = await r.json().catch(()=>({detail:r.statusText}));
+      throw new Error(e.detail||"upload failed"); }
+    DATA = await r.json(); await loadModel(); paint();
+    setSource(`${DATA.source.name} · ${DATA.summary.total_messages} messages · in memory only`);
+    $("#btnSample").setAttribute("aria-pressed","false");
+  }catch(err){ setSource("could not read that file: "+err.message); }
+}
+const setSource = t => { $("#srcLabel").textContent = t; };
+
+/* ---- wiring ------------------------------------------------------------ */
+buildTabs();
+$("#btnSample").addEventListener("click", loadSample);
+$("#btnUpload").addEventListener("click", ()=>$("#file").click());
+$("#file").addEventListener("change", e=>{ if(e.target.files[0]) loadUpload(e.target.files[0]); });
+
+$("#q").addEventListener("input", e=>{ state.q=e.target.value; renderMessages(); });
+$("#fCat").addEventListener("change", e=>{ state.cat=e.target.value; renderMessages(); });
+$("#fReview").addEventListener("click", e=>{
+  state.review=!state.review; e.target.setAttribute("aria-pressed",String(state.review)); renderMessages(); });
+$("#msgBody").addEventListener("click", e=>{
+  const tr=e.target.closest("tr[data-id]"); if(tr) openDrawer(tr.dataset.id); });
+
+$("#qItem").addEventListener("input", e=>{ state.qItem=e.target.value; renderItems(); });
+$("#fType").addEventListener("change", e=>{ state.type=e.target.value; renderItems(); });
+$("#fUnres").addEventListener("click", e=>{
+  state.unres=!state.unres; e.target.setAttribute("aria-pressed",String(state.unres)); renderItems(); });
+$("#fRisk").addEventListener("change", e=>{ state.risk=e.target.value; renderSensitive(); });
+
+$("#btnIds").addEventListener("click", renderIds);
+$("#idInput").addEventListener("keydown", e=>{ if(e.key==="Enter") renderIds(); });
+
+$("#examples").innerHTML = EXAMPLES.map(x=>`<button class="ex">${esc(x)}</button>`).join("");
+$("#examples").addEventListener("click", e=>{
+  if(e.target.classList.contains("ex")){ $("#liveText").value=e.target.textContent; classifyLive(); } });
+$("#btnLive").addEventListener("click", classifyLive);
+$("#liveText").addEventListener("keydown", e=>{
+  if(e.key==="Enter"&&(e.metaKey||e.ctrlKey)) classifyLive(); });
+
+$("#scrim").addEventListener("click", closeDrawer);
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeDrawer(); });
+
+loadSample();
+</script>
+</body>
+</html>

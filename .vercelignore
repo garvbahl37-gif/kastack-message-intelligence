@@ -1,0 +1,15 @@
+# The assessment dataset and everything derived from it must never be
+# uploaded to the hosting platform. The deployed demo ships only the
+# self-authored sample; the real CSV is analysed by uploading it at runtime,
+# where it stays in memory for a single request.
+data/
+outputs/
+eval/
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/
+scripts/
+docs/

@@ -1,0 +1,19 @@
+# --- supplied dataset: must never be committed -----------------------------
+data/
+outputs/
+
+# --- python ----------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# --- tooling ---------------------------------------------------------------
+.vercel/
+.DS_Store
+.env
+.env.local
+.vercel

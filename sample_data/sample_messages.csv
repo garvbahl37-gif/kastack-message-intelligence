@@ -1,0 +1,51 @@
+message_id,timestamp,sender,message
+DEMO_001,2026-10-01 08:12:00,Priya,Kindly sign off on the vendor contract by 2026-10-06.
+DEMO_002,2026-10-01 09:05:00,Arjun,"Calendar update: quarterly retro, 2026-10-14 at 15:30, the east wing."
+DEMO_003,2026-10-01 09:48:00,Offers Desk,Midweek blowout on running shoes. Use code STRIDE40.
+DEMO_004,2026-10-01 10:20:00,Priya,"Just so you know, I usually block Fridays for deep work."
+DEMO_005,2026-10-01 11:02:00,Bank Alerts,Your OTP is 559102. It expires in 8 minutes.
+DEMO_006,2026-10-01 11:44:00,Farhan,The parking barrier is being replaced on the north side.
+DEMO_007,2026-10-01 12:30:00,Arjun,Could you circulate the risk register before 2026-10-03?
+DEMO_008,2026-10-01 13:15:00,Lena,The architecture walkthrough is scheduled for 2026-10-09 at 10:15 in Room 4B.
+DEMO_009,2026-10-01 14:00:00,Farhan,My identification number is ID-2286-QW.
+DEMO_010,2026-10-01 14:52:00,Priya,Don't forget to rotate the staging credentials; deadline is 2026-10-02.
+DEMO_011,2026-10-01 15:33:00,Lena,"Personal note: my emergency contact is my sister."
+DEMO_012,2026-10-01 16:10:00,Offers Desk,Refer a colleague and both of you earn a month free. Use code DUO15.
+DEMO_013,2026-10-01 16:58:00,Arjun,Are you available for the vendor call at 09:45 on 2026-10-07? Location: the annexe.
+DEMO_014,2026-10-01 17:40:00,Farhan,The canteen switches to winter hours from Monday.
+DEMO_015,2026-10-01 18:25:00,Priya,Use password AmberFold#63 to sign in to the staging box.
+DEMO_016,2026-10-02 08:05:00,Lena,I need you to reconcile the October invoices by 2026-10-11.
+DEMO_017,2026-10-02 08:47:00,Arjun,Reminder: dentist appointment happens on 2026-10-20 at 16:00 in the high street practice.
+DEMO_018,2026-10-02 09:30:00,Farhan,"Remember that I read documents faster than I watch videos."
+DEMO_019,2026-10-02 10:14:00,Priya,My card number is 5105 1051 0510 5100.
+DEMO_020,2026-10-02 11:00:00,Offers Desk,Two nights for the price of one at partner hotels. Use code STAY22.
+DEMO_021,2026-10-02 11:46:00,Lena,The onboarding deck has been moved to the shared drive.
+DEMO_022,2026-10-02 12:33:00,Arjun,Please join the security briefing on 2026-10-16, 13:00 at the training annexe.
+DEMO_023,2026-10-02 13:20:00,Farhan,The retro might slip to Wednesday.
+DEMO_024,2026-10-02 14:08:00,Priya,You can contact me on 77415 90236.
+DEMO_025,2026-10-02 14:55:00,Lena,Submit the compliance attestation is due on 2026-10-05.
+DEMO_026,2026-10-02 15:42:00,Arjun,"For my profile, I am allergic to shellfish."
+DEMO_027,2026-10-02 16:30:00,Ops Bot,The temporary access token is tok_stage_R4L82M.
+DEMO_028,2026-10-02 17:18:00,Farhan,Could you take a look at it when you get a chance?
+DEMO_029,2026-10-02 18:05:00,Lena,The lift in block C is out of service until further notice.
+DEMO_030,2026-10-03 08:00:00,Priya,Please note my bank account number 448190277315.
+DEMO_031,2026-10-03 08:50:00,Arjun,Let us meet sometime after the release.
+DEMO_032,2026-10-03 09:35:00,Offers Desk,Flash bundle on standing desks ends at 9 PM. Use code DESK55.
+DEMO_033,2026-10-03 10:22:00,Lena,My recent test result says borderline iron levels.
+DEMO_034,2026-10-03 11:10:00,Farhan,"Just so you know, I prefer written summaries over calls."
+DEMO_035,2026-10-03 11:58:00,Priya,Can you confirm the shipping window before 2026-10-04?
+DEMO_036,2026-10-03 12:45:00,Arjun,My account recovery code is RC-40-TT-63.
+DEMO_037,2026-10-03 13:30:00,Lena,The client sync is scheduled for 2026-10-08 at 14:00 in Zoom.
+DEMO_038,2026-10-03 14:18:00,Farhan,The print queue was cleared overnight.
+DEMO_039,2026-10-03 15:05:00,Priya,Nadia asked whether the migration plan was signed off.
+DEMO_040,2026-10-03 15:52:00,Lena,My home address is 14 Rowan Close, Leeds-09.
+DEMO_041,2026-10-03 16:40:00,Arjun,If possible, skim the appendix before we speak.
+DEMO_042,2026-10-03 17:28:00,Offers Desk,Members get early access to the winter range. Use code EARLY08.
+DEMO_043,2026-10-03 18:15:00,Farhan,"Personal note: I cycle in, so I am offline until 09:00."
+DEMO_044,2026-10-04 08:30:00,Priya,Please chase Nadia about the signed NDA.
+DEMO_045,2026-10-04 09:20:00,Lena,I will share the credentials through the vault instead.
+DEMO_046,2026-10-04 10:08:00,Arjun,"Calendar update: all-hands, 2026-10-22 at 11:00, the main atrium."
+DEMO_047,2026-10-04 10:55:00,Farhan,The badge printer now needs a PIN at collection.
+DEMO_048,2026-10-04 11:42:00,Priya,The summary may be wanted tomorrow.
+DEMO_049,2026-10-04 12:30:00,Lena,Remember to archive the closed tickets; deadline is 2026-10-13.
+DEMO_050,2026-10-04 13:18:00,Ops Bot,Deploy with sk-stage-71bd4ac9ee and then restart the worker.

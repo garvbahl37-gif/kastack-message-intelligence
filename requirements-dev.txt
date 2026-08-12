@@ -1,0 +1,6 @@
+-r requirements.txt
+# Training and evaluation only. Never needed to serve a request.
+scikit-learn==1.9.0
+numpy==2.5.2
+pytest==9.1.1
+uvicorn[standard]==0.52.1
