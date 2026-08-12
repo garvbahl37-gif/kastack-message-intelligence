@@ -1,0 +1,54 @@
+{
+  "total_messages": 900,
+  "date_range": {
+    "from": "2026-09-01 08:00:00",
+    "to": "2026-09-24 10:23:00"
+  },
+  "categories": {
+    "action_required": 250,
+    "meeting_or_event": 170,
+    "personal_information": 110,
+    "general_information": 160,
+    "promotional": 110,
+    "sensitive_information": 100
+  },
+  "tasks_extracted": 250,
+  "events_extracted": 170,
+  "items_with_unresolved_fields": 420,
+  "sensitive_messages": 110,
+  "sensitive_by_risk": {
+    "medium": 20,
+    "low": 10,
+    "high": 80
+  },
+  "sensitive_by_type": {
+    "postal_address": 10,
+    "credential_mention": 10,
+    "payment_card": 10,
+    "health_information": 10,
+    "account_recovery_code": 10,
+    "government_id": 10,
+    "auth_token": 10,
+    "password": 10,
+    "phone_number": 10,
+    "one_time_password": 10,
+    "bank_account": 10
+  },
+  "flagged_for_review": 50,
+  "mean_confidence": 0.9571,
+  "senders": [
+    "Aarav",
+    "Ananya",
+    "HR Team",
+    "Ishaan",
+    "Kabir",
+    "Maya",
+    "Meera",
+    "Neha",
+    "Project Lead",
+    "Promotions",
+    "Rohan",
+    "Tara",
+    "Vikram"
+  ]
+}

@@ -1,6 +1,8 @@
 # --- supplied dataset: must never be committed -----------------------------
+# Only the dataset itself. The generated outputs under outputs/ ARE a required
+# deliverable, and they carry masked text only -- tests/test_no_leakage.py
+# asserts no secret survives into any of them.
 data/
-outputs/
 
 # --- python ----------------------------------------------------------------
 .venv/
