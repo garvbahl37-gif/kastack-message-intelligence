@@ -8,7 +8,16 @@ Everything runs locally. There is not a single outbound network call in the
 `mint` package — no message text is sent to any external service, AI or
 otherwise.
 
-**Live demo:** https://kastack-message-intelligence.vercel.app
+| | |
+|---|---|
+| **Live demo** | https://kastack-message-intelligence.vercel.app |
+| **Repository** | https://github.com/garvbahl37-gif/kastack-message-intelligence |
+| **Walkthrough** | [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md) |
+
+The hosted demo loads a synthetic sample written for this repository. The
+assessment dataset is not committed here and is not deployed; use **Upload CSV**
+to analyse a real file, which is processed in memory for one request and never
+written to disk.
 
 ---
 
