@@ -17,3 +17,6 @@ __pycache__/
 .env
 .env.local
 .vercel
+
+# --- personal recording aid, not part of the submission --------------------
+tools/
