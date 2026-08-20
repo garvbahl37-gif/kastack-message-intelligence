@@ -306,6 +306,10 @@ class SubjectInput:
     verdict: A.ActVerdict
     item_id: Optional[str] = None
     item_title: Optional[str] = None
+    #: The L1 extraction frame that produced the title. "unmatched" means L1
+    #: could not locate a title inside the sentence and fell back to the whole
+    #: sentence, which is not a subject identity.
+    item_frame: str = ""
     item_type: Optional[str] = None
     item_date: Optional[str] = None
     item_time: Optional[str] = None
@@ -320,7 +324,12 @@ def subject_for(inp: SubjectInput) -> Tuple[Optional[SubjectSignature], List[Sub
     the weakest source and is used only as a last resort.
     """
     variants: List[SubjectSignature] = []
-    item_sig = signature(inp.item_title) if inp.item_title else None
+    # A title L1 could not actually locate is the whole sentence wearing a
+    # title's name. "The deadline may be Tuesday, or it may be Thursday" is not
+    # a subject, and letting it become one produces a group nothing can ever
+    # join and a heading nobody can read.
+    usable_title = inp.item_title and inp.item_frame != "unmatched"
+    item_sig = signature(inp.item_title) if usable_title else None
     if item_sig:
         variants.append(item_sig)
 
@@ -335,6 +344,14 @@ def subject_for(inp: SubjectInput) -> Tuple[Optional[SubjectSignature], List[Sub
 
     if v.subject_phrase and v.act == A.OPEN_QUESTION:
         sig = signature(v.subject_phrase)
+        if sig:
+            return sig, [], "open_question"
+
+    # Last resort: a question L1 read as actionable. Weak, and marked as such,
+    # but it keeps an unanswered question findable so the assistant can say
+    # that nothing answers it.
+    if v.fallback_subject:
+        sig = signature(v.fallback_subject)
         if sig:
             return sig, [], "open_question"
 
@@ -375,10 +392,19 @@ class GroupBuilder:
                     best = (g, score, tokens)
         return best
 
-    @staticmethod
-    def _title(sig: SubjectSignature) -> str:
+    #: Longest title kept intact. Beyond this the "subject" is a sentence, and
+    #: a truncated sentence at least reads as one.
+    TITLE_LIMIT = 64
+
+    @classmethod
+    def _title(cls, sig: SubjectSignature) -> str:
         raw = sig.display or " ".join(sorted(sig.tokens))
-        return raw[:1].upper() + raw[1:] if raw else raw
+        if not raw:
+            return raw
+        raw = raw[:1].upper() + raw[1:]
+        if len(raw) > cls.TITLE_LIMIT:
+            raw = raw[:cls.TITLE_LIMIT].rsplit(" ", 1)[0] + "\u2026"
+        return raw
 
     def _new_group(self, sig: SubjectSignature, kind: str) -> MessageGroup:
         self._n += 1

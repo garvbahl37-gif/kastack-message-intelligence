@@ -173,6 +173,12 @@ class ActVerdict:
     #: Mutually exclusive candidates the sender offered without choosing.
     alternatives: List[str] = field(default_factory=list)
 
+    #: Set only by `from_l1_extraction`, when the message it promoted was an
+    #: unmatched question. It is a weak subject -- the whole sentence -- and is
+    #: used only when nothing better exists, so that a question the corpus
+    #: never answers is still findable.
+    fallback_subject: Optional[str] = None
+
     @property
     def is_firm(self) -> bool:
         """A firm act may set status; a hedged one may only annotate it."""
@@ -434,6 +440,8 @@ def from_l1_extraction(verdict: ActVerdict, item_type: Optional[str]) -> ActVerd
         frame="l1_extraction",
         evidence="L1 classified this message as actionable and extracted an item",
         subject_phrase=None,
+        fallback_subject=(verdict.subject_phrase
+                          if verdict.act == OPEN_QUESTION else None),
         hedged=verdict.hedged,
         repetition=verdict.repetition,
         repeat_depth=verdict.repeat_depth,

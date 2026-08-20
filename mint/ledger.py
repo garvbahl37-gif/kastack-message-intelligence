@@ -449,6 +449,7 @@ def run(
                 verdict=verdict,
                 item_id=item.item_id if item else None,
                 item_title=item.title if item else None,
+                item_frame=item.extraction_frame if item else "",
                 item_type=item.type if item else None,
                 item_date=item.date if item else None,
                 item_time=item.time if item else None)
