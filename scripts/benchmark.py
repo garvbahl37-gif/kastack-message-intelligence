@@ -59,6 +59,7 @@ from mint import ledger as L  # noqa: E402
 from mint.embed import load_default as load_semantic  # noqa: E402
 from mint.retrieve import (Document, ExactLexicalIndex,  # noqa: E402
                            HybridIndex, _deep_size)
+from mint.subject import content_tokens  # noqa: E402
 
 #: Paraphrases written by hand for this benchmark. Each maps to the subject it
 #: is about. They deliberately avoid the subject's own wording, which is the
@@ -225,15 +226,20 @@ def main() -> int:
             continue
         labelled_literal.append((group.title, list(group.message_ids)))
 
+    # Split on *content* words, not on every word. Splitting on raw tokens put
+    # "settle the utility payment" in the in-vocabulary bucket because "the"
+    # is in the vocabulary, which is exactly backwards: the question is whether
+    # the model has ever seen the words that carry the meaning.
     labelled_para_in, labelled_para_out = [], []
     vocab = model.vocabulary
     for query, subject in PARAPHRASES:
         group = by_title.get(subject.lower())
         if group is None:
             continue
-        known = sum(1 for w in query.split() if w in vocab)
-        target = labelled_para_in if known >= max(2, len(query.split()) // 3) \
-            else labelled_para_out
+        content = content_tokens(query)
+        known = sum(1 for w in content if w in vocab)
+        in_vocab = content and known / len(content) >= 0.5
+        target = labelled_para_in if in_vocab else labelled_para_out
         target.append((query, list(group.message_ids)))
 
     latency_queries = [q for q, _ in labelled_literal[:20]] \

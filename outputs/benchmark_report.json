@@ -33,7 +33,7 @@
         "to": "2026-10-05 01:24:00"
       }
     ],
-    "ingest_ms": 196.2
+    "ingest_ms": 205.1
   },
   "method": {
     "repeats_per_query": 30,
@@ -43,30 +43,30 @@
     "paraphrases": "written by hand for this benchmark, split by whether their words occur in the semantic model's vocabulary at all"
   },
   "build_ms": {
-    "v1-exact-lexical": 8.92,
-    "v2-hybrid-pruned": 60.91,
-    "v2-lexical-only": 11.08,
-    "v2-semantic-always": 60.43
+    "v1-exact-lexical": 9.51,
+    "v2-hybrid-pruned": 64.41,
+    "v2-lexical-only": 11.42,
+    "v2-semantic-always": 64.21
   },
   "size": {
     "v1-exact-lexical": {
-      "in_memory_bytes": 2335348,
-      "document_vectors_bytes": 2145813
+      "in_memory_bytes": 2330681,
+      "document_vectors_bytes": 2141456
     },
     "v2-hybrid-pruned": {
-      "in_memory_bytes": 3414807,
-      "document_vectors_bytes": 2145813,
-      "postings_bytes": 691839,
+      "in_memory_bytes": 3408750,
+      "document_vectors_bytes": 2141456,
+      "postings_bytes": 690449,
       "int8_embeddings_bytes": 131712,
       "same_embeddings_as_float64_bytes": 1053696,
       "embedding_compression_ratio": 8.0
     },
     "v2-lexical-only": {
-      "in_memory_bytes": 3027243,
-      "postings_bytes": 691839
+      "in_memory_bytes": 3021186,
+      "postings_bytes": 690449
     },
     "v2-semantic-always": {
-      "in_memory_bytes": 3414807
+      "in_memory_bytes": 3408750
     },
     "semantic_model_artifact_bytes": 421790,
     "semantic_model_metadata": {
@@ -86,34 +86,34 @@
     "v1-exact-lexical": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.3755,
-      "p95_ms": 0.5287,
-      "mean_ms": 0.3379,
-      "max_ms": 3.5426
+      "median_ms": 0.3861,
+      "p95_ms": 0.5467,
+      "mean_ms": 0.3487,
+      "max_ms": 3.4838
     },
     "v2-hybrid-pruned": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.0547,
-      "p95_ms": 0.3135,
-      "mean_ms": 0.1529,
-      "max_ms": 2.3451
+      "median_ms": 0.0525,
+      "p95_ms": 0.5211,
+      "mean_ms": 0.1551,
+      "max_ms": 2.6148
     },
     "v2-lexical-only": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.0488,
-      "p95_ms": 0.1412,
-      "mean_ms": 0.0672,
-      "max_ms": 0.3567
+      "median_ms": 0.0456,
+      "p95_ms": 0.1348,
+      "mean_ms": 0.065,
+      "max_ms": 0.3437
     },
     "v2-semantic-always": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.3869,
-      "p95_ms": 1.0937,
-      "mean_ms": 0.5311,
-      "max_ms": 2.273
+      "median_ms": 0.3724,
+      "p95_ms": 1.139,
+      "mean_ms": 0.5369,
+      "max_ms": 2.3571
     }
   },
   "latency_scaled": {
@@ -122,118 +122,118 @@
     "v1-exact-lexical": {
       "queries": 42,
       "samples": 420,
-      "median_ms": 3.8607,
-      "p95_ms": 8.856,
-      "mean_ms": 3.801,
-      "max_ms": 12.5414
+      "median_ms": 4.1274,
+      "p95_ms": 9.3115,
+      "mean_ms": 4.0374,
+      "max_ms": 12.4855
     },
     "v2-hybrid-pruned": {
       "queries": 42,
       "samples": 420,
-      "median_ms": 0.2103,
-      "p95_ms": 0.469,
-      "mean_ms": 0.5009,
-      "max_ms": 11.231
+      "median_ms": 0.2121,
+      "p95_ms": 0.4828,
+      "mean_ms": 0.5101,
+      "max_ms": 10.8597
     }
   },
   "quality": {
     "v1-exact-lexical": {
       "literal_queries": {
-        "queries": 43,
+        "queries": 40,
         "recall_at_10": 1.0,
         "mrr": 1.0,
         "ndcg_at_10": 1.0,
         "queries_with_no_relevant_hit": 0
       },
       "paraphrase_in_vocabulary": {
-        "queries": 13,
-        "recall_at_10": 0.8077,
-        "mrr": 0.7821,
-        "ndcg_at_10": 0.7962,
-        "queries_with_no_relevant_hit": 2
+        "queries": 10,
+        "recall_at_10": 0.85,
+        "mrr": 0.8167,
+        "ndcg_at_10": 0.8351,
+        "queries_with_no_relevant_hit": 1
       },
       "paraphrase_out_of_vocabulary": {
-        "queries": 1,
-        "recall_at_10": 0.0,
-        "mrr": 0.0,
-        "ndcg_at_10": 0.0,
-        "queries_with_no_relevant_hit": 1
+        "queries": 4,
+        "recall_at_10": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.5,
+        "queries_with_no_relevant_hit": 2
       }
     },
     "v2-hybrid-pruned": {
       "literal_queries": {
-        "queries": 43,
+        "queries": 40,
         "recall_at_10": 1.0,
         "mrr": 1.0,
         "ndcg_at_10": 1.0,
         "queries_with_no_relevant_hit": 0
       },
       "paraphrase_in_vocabulary": {
-        "queries": 13,
-        "recall_at_10": 0.8077,
-        "mrr": 0.7821,
-        "ndcg_at_10": 0.7962,
-        "queries_with_no_relevant_hit": 2
+        "queries": 10,
+        "recall_at_10": 0.85,
+        "mrr": 0.8167,
+        "ndcg_at_10": 0.8351,
+        "queries_with_no_relevant_hit": 1
       },
       "paraphrase_out_of_vocabulary": {
-        "queries": 1,
-        "recall_at_10": 0.0,
-        "mrr": 0.0,
-        "ndcg_at_10": 0.0,
-        "queries_with_no_relevant_hit": 1
+        "queries": 4,
+        "recall_at_10": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.5,
+        "queries_with_no_relevant_hit": 2
       }
     },
     "v2-lexical-only": {
       "literal_queries": {
-        "queries": 43,
+        "queries": 40,
         "recall_at_10": 1.0,
         "mrr": 1.0,
         "ndcg_at_10": 1.0,
         "queries_with_no_relevant_hit": 0
       },
       "paraphrase_in_vocabulary": {
-        "queries": 13,
-        "recall_at_10": 0.8077,
-        "mrr": 0.7821,
-        "ndcg_at_10": 0.7962,
-        "queries_with_no_relevant_hit": 2
+        "queries": 10,
+        "recall_at_10": 0.85,
+        "mrr": 0.8167,
+        "ndcg_at_10": 0.8351,
+        "queries_with_no_relevant_hit": 1
       },
       "paraphrase_out_of_vocabulary": {
-        "queries": 1,
-        "recall_at_10": 0.0,
-        "mrr": 0.0,
-        "ndcg_at_10": 0.0,
-        "queries_with_no_relevant_hit": 1
+        "queries": 4,
+        "recall_at_10": 0.5,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.5,
+        "queries_with_no_relevant_hit": 2
       }
     },
     "v2-semantic-always": {
       "literal_queries": {
-        "queries": 43,
+        "queries": 40,
         "recall_at_10": 1.0,
         "mrr": 1.0,
         "ndcg_at_10": 1.0,
         "queries_with_no_relevant_hit": 0
       },
       "paraphrase_in_vocabulary": {
-        "queries": 13,
-        "recall_at_10": 0.7923,
-        "mrr": 0.7821,
-        "ndcg_at_10": 0.7783,
-        "queries_with_no_relevant_hit": 2
+        "queries": 10,
+        "recall_at_10": 0.85,
+        "mrr": 0.8167,
+        "ndcg_at_10": 0.8351,
+        "queries_with_no_relevant_hit": 1
       },
       "paraphrase_out_of_vocabulary": {
-        "queries": 1,
-        "recall_at_10": 0.0,
-        "mrr": 0.0,
-        "ndcg_at_10": 0.0,
-        "queries_with_no_relevant_hit": 1
+        "queries": 4,
+        "recall_at_10": 0.45,
+        "mrr": 0.5,
+        "ndcg_at_10": 0.4416,
+        "queries_with_no_relevant_hit": 2
       }
     }
   },
   "ranking_fidelity_vs_exact": {
     "v2-hybrid-pruned": {
       "recall_at_10_vs_exact": 0.9976,
-      "top1_agreement": 0.9762,
+      "top1_agreement": 1.0,
       "queries": 42
     },
     "v2-lexical-only": {
@@ -242,15 +242,15 @@
       "queries": 42
     },
     "v2-semantic-always": {
-      "recall_at_10_vs_exact": 0.9333,
-      "top1_agreement": 0.8333,
+      "recall_at_10_vs_exact": 0.931,
+      "top1_agreement": 0.8571,
       "queries": 42
     }
   },
   "finding": "The semantic layer does not earn its cost as a scorer on this corpus. Blending it into every query (v2-semantic-always) is slower than lexical scoring, reproduces less of the exact ranking, and does not improve recall on hand-written paraphrases. Every subject here is phrased with a consistent vocabulary, so there is little synonymy for a latent space to bridge and it mostly blurs an already-sharp signal. The shipped index therefore uses it only where lexical scoring returns too few candidates to fill the result set, which costs nothing on the queries lexical scoring can already answer.",
   "headline": {
-    "speedup_v2_vs_v1": 6.86,
-    "speedup_v2_vs_v1_scaled": 18.36,
+    "speedup_v2_vs_v1": 7.35,
+    "speedup_v2_vs_v1_scaled": 19.46,
     "embedding_compression_ratio": 8.0,
     "memory_ratio_v2_over_v1": 1.46
   }
