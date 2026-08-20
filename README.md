@@ -127,7 +127,7 @@ safety decision, and safety decisions should not be made by a softmax.
 | …at what cost to ranking | none measurable — 99.8% of the exact top 10, identical recall |
 | int8 embeddings vs float64 | **8× smaller** |
 | Demonstration queries answered correctly | 8 / 8, including the one that must be refused |
-| Tests | 243 |
+| Tests | 260 |
 
 Everything below is measured, and where a number is unflattering it is reported
 rather than dropped.
@@ -1255,7 +1255,7 @@ web/index.html            the L1 view          ·  web/l2.html   the L2 view
 web/app.css               one stylesheet, shared by both
 scripts/                  make_gold.py, train.py, run_pipeline.py,
                           build_index.py, run_l2.py, benchmark.py
-tests/                    243 tests
+tests/                    260 tests
 eval/gold_labels.csv      hand labels — IDs and categories only, no message text
 models/classifier.json    exported L1 classifier
 models/semantic.json      exported LSA projection — n-gram keys and integers only
