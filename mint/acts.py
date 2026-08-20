@@ -43,6 +43,7 @@ from .normalize import body_of
 # --------------------------------------------------------------------------
 # The act vocabulary
 # --------------------------------------------------------------------------
+PROGRESS_UPDATE = "progress_update"
 NEW_TASK = "new_task"
 NEW_EVENT = "new_event"
 STATUS_QUERY = "status_query"
@@ -57,12 +58,13 @@ INFORMATIONAL = "informational"
 #: Acts that assert a firm, durable fact about a subject's lifecycle. Only
 #: these may overwrite a status; everything else annotates it.
 FIRM_ACTS = frozenset({NEW_TASK, NEW_EVENT, COMPLETION, CANCELLATION,
-                       RESCHEDULE, DEADLINE_CHANGE})
+                       RESCHEDULE, DEADLINE_CHANGE, PROGRESS_UPDATE})
 
 #: Acts that mean "someone is still waiting" -- a response is required.
 RESPONSE_REQUIRED_ACTS = frozenset({STATUS_QUERY, OPEN_QUESTION})
 
 HUMAN_ACT = {
+    PROGRESS_UPDATE: "work started / in progress",
     NEW_TASK: "new task raised",
     NEW_EVENT: "new meeting or event announced",
     STATUS_QUERY: "status chased",
@@ -221,6 +223,19 @@ FRAMES: List[Frame] = [
         r"(?:successfully\s+)?(?:completed|finished|submitted|delivered|"
         r"closed\s+out)\b(?!\s*\?)")),
 
+    # ---- work in progress -------------------------------------------------
+    # No message in the supplied corpus asserts progress -- the corpus only
+    # ever *asks* whether something is in progress, which is a status chase,
+    # not a status. These frames exist so that "in progress" is a status the
+    # system can actually reach when an assertion does arrive, rather than a
+    # value in the schema that nothing can ever produce.
+    (PROGRESS_UPDATE, "progress_assertion", _c(
+        r"\b" + SUBJ + r"\s+is\s+(?:currently\s+)?(?:in\s+progress|underway|"
+        r"being\s+worked\s+on)\b(?!\s*\?)")),
+    (PROGRESS_UPDATE, "started_assertion", _c(
+        r"\b(?:i|we)\s+(?:have\s+|'ve\s+)?(?:started|begun)\s+"
+        r"(?:work\s+on\s+|working\s+on\s+)?" + SUBJ + r"\s*\.?$")),
+
     # ---- cancellation ----------------------------------------------------
     (CANCELLATION, "cancel_permission", _c(
         r"\byou\s+can\s+cancel\s+" + SUBJ +
@@ -376,6 +391,52 @@ def _norm_time(raw: Optional[str]) -> Optional[str]:
             h += 12
         return f"{h:02d}:00"
     return None
+
+
+def from_l1_extraction(verdict: ActVerdict, item_type: Optional[str]) -> ActVerdict:
+    """Promote an L1 request into the act that raised its subject.
+
+    This is the hinge between the two systems. An L1 message such as
+
+        "Can you review the privacy checklist before 2026-09-09?"
+
+    performs no *L2* act -- none of the frames above describe it, because L2's
+    frames are about following up on work that already exists. But L1 already
+    read that message, decided it was action_required, and extracted a task
+    from it. That extraction *is* the assertion "this task now exists", and
+    treating it as one is what lets an L2 follow-up attach to the moment the
+    task was raised rather than to the first follow-up about it.
+
+    Without this the timeline starts in the middle: a subject would appear to
+    begin with somebody chasing it, and its original deadline would have no
+    source message. It also stops L1 requests from being miscounted as chases
+    -- "Can you review X before Friday?" is a request, not a reminder, and only
+    the second one is evidence of pressure.
+
+    Applied only when L1 actually produced an item and no L2 frame claimed the
+    message, so a genuine L2 act is never overwritten.
+    """
+    if item_type not in ("task", "event"):
+        return verdict
+    if verdict.act not in (INFORMATIONAL, OPEN_QUESTION):
+        return verdict
+    return ActVerdict(
+        act=NEW_TASK if item_type == "task" else NEW_EVENT,
+        confidence=0.85,
+        frame="l1_extraction",
+        evidence="L1 classified this message as actionable and extracted an item",
+        subject_phrase=verdict.subject_phrase,
+        hedged=verdict.hedged,
+        repetition=verdict.repetition,
+        repeat_depth=verdict.repeat_depth,
+        conflict_marker=verdict.conflict_marker,
+        urgent=verdict.urgent,
+        de_escalated=verdict.de_escalated,
+        new_date=verdict.new_date,
+        new_date_raw=verdict.new_date_raw,
+        new_time=verdict.new_time,
+        alternatives=verdict.alternatives,
+    )
 
 
 def detect(message: str) -> ActVerdict:

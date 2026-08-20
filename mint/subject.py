@@ -57,6 +57,7 @@ from typing import Dict, FrozenSet, Iterable, List, Optional, Sequence, Tuple
 STOPWORDS = frozenset("""
 a an the this that these those it its is are was were be been being am
 and or but if then than so as of to for from in on at by with about into
+before after until during while sometime someone somebody something
 over under again further once here there when where why how all any both
 each few more most other some such no nor not only own same too very can
 will just should now i me my we our you your he she they them their who whom
@@ -72,7 +73,7 @@ progress update updates status
 # subject; they are never what distinguishes one subject from another, and
 # leaving them in makes every meeting look like every other meeting.
 GENERIC_HEADS = frozenset("""
-session meeting task deadline schedule instruction message note reminder
+session meet task deadline schedule instruction message reminder
 """.split())
 
 _WORD = re.compile(r"[a-z][a-z0-9'-]*")
@@ -92,6 +93,9 @@ _IRREGULAR = {
     "emails": "email", "models": "model", "trackers": "tracker",
     "assignments": "assignment", "queries": "query", "decisions": "decision",
     "diagrams": "diagram", "charts": "chart", "embeddings": "embedding",
+    # The -ing rule below would fold this to "meete", which then looks like a
+    # content word rather than the generic head it is.
+    "meeting": "meet", "meetings": "meet",
 }
 
 
@@ -190,6 +194,11 @@ class SubjectSpace:
         }
         #: A token never seen before is maximally informative.
         self._default_idf = math.log(self.n_subjects + 1) + 1.0
+        #: How many distinct subjects a token may name and still be allowed to
+        #: carry a one-word match on its own. Expressed as a share of the
+        #: subject vocabulary so it scales with the corpus instead of being a
+        #: constant tuned to this one.
+        self.distinctive_df = max(1, round(DISTINCTIVE_DF_SHARE * self.n_subjects))
 
     def idf(self, token: str) -> float:
         return self._idf.get(token, self._default_idf)
@@ -220,8 +229,35 @@ class SubjectSpace:
         cosine = shared_mass / math.sqrt(ma * mb) if ma and mb else 0.0
         containment = shared_mass / min(ma, mb) if min(ma, mb) else 0.0
 
-        if cosine < COSINE_FLOOR or containment < CONTAINMENT_FLOOR:
+        # A reference qualifies in one of exactly two ways:
+        #
+        #   (a) it is a *sub-phrase* of the subject -- "the assignment" for
+        #       "upload the assignment" -- in which case nearly all of the
+        #       shorter signature's informative mass is covered; or
+        #   (b) it is a *restatement* of the subject in near-identical
+        #       vocabulary -- "model-results review" for "review the model
+        #       results" -- in which case the cosine is high.
+        #
+        # Anything in between is two different subjects that happen to share a
+        # word or two: "prepare the demo video" and "prepare the offline
+        # inference demo" cover two thirds of each other and are unrelated.
+        # Admitting that middle band is what merges them, so it is excluded.
+        sub_phrase = containment >= CONTAINMENT_ACCEPT and cosine >= COSINE_FLOOR
+        restatement = cosine >= COSINE_ACCEPT
+        if not (sub_phrase or restatement):
             return 0.0, []
+
+        # A match resting on a *single* shared token is only allowed when that
+        # token is rare enough to identify a subject on its own. "assignment"
+        # names one subject and may carry a match by itself; "review" names a
+        # dozen and may not. Containment alone does not catch this, because a
+        # one-word probe is trivially contained in anything that shares its
+        # word -- which is precisely the "one common word" grouping the brief
+        # rules out.
+        if len(shared) == 1:
+            token = next(iter(shared))
+            if self.df.get(token, 0) > self.distinctive_df:
+                return 0.0, []
 
         # Report the containment-weighted score: it is the one that decides,
         # and it is the one a reader can interpret ("83% of the shorter
@@ -231,11 +267,20 @@ class SubjectSpace:
         return score, evidence
 
 
-#: Both floors must be cleared. The cosine floor rejects pairs that are simply
-#: dissimilar; the containment floor rejects pairs whose only overlap is a
-#: cheap word, which is the failure mode the brief calls out by name.
+#: Floor for the sub-phrase route: below this the two signatures are simply
+#: dissimilar, however well one is contained in the other.
 COSINE_FLOOR = 0.34
-CONTAINMENT_FLOOR = 0.62
+#: How much of the shorter signature's informative mass the longer one must
+#: cover for the sub-phrase route to apply.
+CONTAINMENT_ACCEPT = 0.92
+#: How similar two signatures must be to match without containment.
+COSINE_ACCEPT = 0.62
+
+#: Share of the subject vocabulary a token may appear in and still identify a
+#: subject on its own. At ~45 distinct subjects this admits tokens naming up to
+#: four of them, which covers "assignment" and "report" while excluding
+#: "review", "send" and "call".
+DISTINCTIVE_DF_SHARE = 0.08
 
 
 def best_match(
