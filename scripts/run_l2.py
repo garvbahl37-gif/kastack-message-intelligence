@@ -188,7 +188,11 @@ def main() -> int:
     print("OUTPUT FILES")
     print(BAR)
     for path in written:
-        print(f"  {path.relative_to(ROOT)}  ({path.stat().st_size/1024:.1f} KB)")
+        try:
+            shown = path.relative_to(ROOT)
+        except ValueError:                     # --out pointed outside the repo
+            shown = path
+        print(f"  {shown}  ({path.stat().st_size/1024:.1f} KB)")
     return 0
 
 

@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Local Message Intelligence — L2</title>
+<meta name="description" content="Priority, subject grouping, semantic search and privacy-aware routing over locally processed messages. No message text leaves the machine.">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <span class="glyph" aria-hidden="true"></span>
+      <div>
+        <h1>Local Message Intelligence — L2</h1>
+        <span id="srcLabel">loading…</span>
+      </div>
+    </div>
+    <div class="srcbar">
+      <a class="btn" href="/">&larr; L1 view</a>
+      <button class="btn" id="btnSample" aria-pressed="true">Sample data</button>
+      <button class="btn btn-primary" id="btnUpload">Upload batches</button>
+      <button class="btn" id="btnAdd" hidden>Add a batch</button>
+      <input type="file" id="file" accept=".csv,text/csv" multiple hidden>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="batches" id="batchList"></div>
+  <div class="rail" id="rail"></div>
+  <nav class="tabs" role="tablist" id="tabs"></nav>
+
+  <!-- overview ---------------------------------------------------------- -->
+  <section class="panel" id="p-overview" role="tabpanel">
+    <div class="grid grid-ov">
+      <div class="card">
+        <div class="head"><h2>Subject status</h2></div>
+        <div class="dist" id="statusDist"></div>
+      </div>
+      <div class="card">
+        <div class="head"><h2>Priority, as of the newest message</h2></div>
+        <div class="dist" id="prioDist"></div>
+      </div>
+      <div class="card">
+        <div class="head"><h2>Privacy routing</h2></div>
+        <div class="dist" id="routeDist"></div>
+      </div>
+      <div class="card">
+        <div class="head"><h2>How L2 extends L1</h2></div>
+        <div id="l2Card" class="note"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- priority ---------------------------------------------------------- -->
+  <section class="panel" id="p-priority" role="tabpanel" hidden>
+    <div class="card">
+      <div class="head"><h2>Priority decisions</h2>
+        <p class="prose">Priority is scored on the subject, not on a sentence: a
+        request is not urgent because of its wording but because its deadline has
+        passed and later messages are still chasing it. Every item extracted from
+        a subject inherits that subject's band. Click a row for the arithmetic.</p></div>
+      <div class="filters">
+        <input class="field" id="qPri" type="search" placeholder="Search subject or group…">
+        <select class="field" id="fBand"></select>
+        <button class="btn" id="fOpen" aria-pressed="false">Open items only</button>
+        <span class="count" id="priCount"></span>
+      </div>
+      <div class="scroll"><table>
+        <thead><tr><th>Group</th><th>Subject</th><th>Status</th><th>Priority</th>
+          <th>Score</th><th>Deadline</th><th>Msgs</th><th>Conf.</th></tr></thead>
+        <tbody id="priBody"></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- groups ------------------------------------------------------------ -->
+  <section class="panel" id="p-groups" role="tabpanel" hidden>
+    <div class="card">
+      <div class="head"><h2>Related-message groups</h2>
+        <p class="prose">Messages are grouped by subject identity, not by shared
+        words. Two subjects that overlap only on a cheap word — “review the privacy
+        checklist” and “review the model results” — stay apart. Click a group for
+        its timeline, deadline history and recorded contradictions.</p></div>
+      <div class="filters">
+        <input class="field" id="qGrp" type="search" placeholder="Search subject or message ID…">
+        <select class="field" id="fStatus"></select>
+        <button class="btn" id="fConf" aria-pressed="false">Contested only</button>
+        <span class="count" id="grpCount"></span>
+      </div>
+      <div class="scroll"><table>
+        <thead><tr><th>Group</th><th>Subject</th><th>Kind</th><th>Status</th>
+          <th>Msgs</th><th>Chases</th><th>Conflicts</th><th>Latest</th><th>Conf.</th></tr></thead>
+        <tbody id="grpBody"></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- assistant --------------------------------------------------------- -->
+  <section class="panel" id="p-ask" role="tabpanel" hidden>
+    <div class="grid" style="grid-template-columns:minmax(320px,1fr) minmax(320px,1.1fr)">
+      <div class="card">
+        <div class="head"><h2>Ask the assistant</h2>
+          <p class="prose">Questions are routed to an intent first and answered from
+          the ledger where one applies; retrieval handles the rest and runs alongside
+          every answer so a relevance score is always shown. If the evidence does not
+          support an answer, it says so instead of composing one.</p></div>
+        <textarea class="field" id="askText" placeholder="e.g. Which critical or high-priority tasks are still pending?"></textarea>
+        <div class="filters" style="margin-top:10px">
+          <button class="btn btn-primary" id="btnAsk">Ask</button>
+          <label class="count" style="display:flex;align-items:center;gap:6px">
+            <input type="checkbox" id="confirmed"> I confirm inclusion of gated content
+          </label>
+        </div>
+        <div class="examples" id="askExamples"></div>
+      </div>
+      <div class="card" id="askOut"><div class="empty">Answers appear here.</div></div>
+    </div>
+  </section>
+
+  <!-- privacy ----------------------------------------------------------- -->
+  <section class="panel" id="p-privacy" role="tabpanel" hidden>
+    <div class="card">
+      <div class="head"><h2>Privacy-aware routing</h2>
+        <p class="prose">Every message is routed at ingest. Blocked messages are never
+        added to the search index, so no query can rank one — the exclusion is
+        structural rather than a filter applied to results. <code>send_to_external_service</code>
+        is denied for every message including harmless ones, because this package
+        contains no network client at all.</p></div>
+      <div class="scroll"><table class="bench" id="policyTable"></table></div>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <div class="head"><h2>Per-message decisions</h2></div>
+      <div class="filters">
+        <input class="field" id="qRoute" type="search" placeholder="Search message ID…">
+        <select class="field" id="fRoute"></select>
+        <span class="count" id="routeCount"></span>
+      </div>
+      <div class="scroll"><table>
+        <thead><tr><th>ID</th><th>Route</th><th>Policy</th><th>Type</th><th>Risk</th>
+          <th>Indexed</th><th>Message</th></tr></thead>
+        <tbody id="routeBody"></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- benchmark --------------------------------------------------------- -->
+  <section class="panel" id="p-bench" role="tabpanel" hidden>
+    <div class="card">
+      <div class="head"><h2>Baseline against optimised, measured live</h2>
+        <p class="prose">The optimised component is the retrieval index. v1 scores
+        TF-IDF cosine against every document; v2 generates candidates from a pruned
+        inverted index, reranks the top ones exactly, and falls back to int8 latent
+        embeddings only when lexical scoring cannot fill the result set. Both are
+        built here, in this process, over the corpus you loaded.</p></div>
+      <div class="filters">
+        <button class="btn btn-primary" id="btnBench">Run the comparison</button>
+        <span class="count" id="benchNote"></span>
+      </div>
+      <div id="benchOut"><div class="empty">Not run yet.</div></div>
+    </div>
+  </section>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true"></aside>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const TABS = [["overview","Overview"],["priority","Priority"],["groups","Groups"],
+              ["ask","Assistant"],["privacy","Privacy"],["bench","Benchmark"]];
+const pretty = s => (s||"").replace(/_/g," ").replace(/^./,c=>c.toUpperCase());
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* Redaction removes the text node rather than styling it, so there is nothing
+   under the bar to select, copy, screenshot or read out of the DOM. */
+function redact(text, type){
+  const label = pretty(type || "redacted");
+  return esc(text).replace(/\*{4,}/g,
+    `<span class="redact" tabindex="0" role="img" aria-label="Redacted ${esc(label)}" data-t="${esc(label)}"></span>`);
+}
+const pri = p => p ? `<span class="pri pri-${p}">${p}</span>` : "";
+const st  = s => `<span class="st st-${s}">${pretty(s)}</span>`;
+const rt  = r => `<span class="rt rt-${r}">${pretty(r)}</span>`;
+const num = (v,d=2) => (v===null||v===undefined) ? "—" : Number(v).toFixed(d);
+
+let DATA = null, POLICY = null, FILES = [], ACTIVE = "overview";
+const state = {qPri:"", band:"", open:false, qGrp:"", status:"", contested:false,
+               qRoute:"", route:""};
+
+/* ---- tabs ------------------------------------------------------------- */
+function buildTabs(){
+  $("#tabs").innerHTML = TABS.map(([id,label],i)=>
+    `<button class="tab" role="tab" data-tab="${id}" aria-selected="${i===0}" id="t-${id}">
+       ${label}<span class="c" id="tc-${id}"></span></button>`).join("");
+  $("#tabs").addEventListener("click", e=>{
+    const b = e.target.closest(".tab"); if(b) show(b.dataset.tab);
+  });
+}
+function show(id){
+  ACTIVE = id;
+  TABS.forEach(([t])=>{
+    $("#t-"+t).setAttribute("aria-selected", String(t===id));
+    $("#p-"+t).hidden = t!==id;
+  });
+}
+
+/* ---- distributions ---------------------------------------------------- */
+function bars(rows, hueOf, total){
+  const scale = Math.max(1, ...rows.map(r=>r[1]));
+  return rows.map(([label,n])=>{
+    const share = total ? ` · ${(n/total*100).toFixed(1)}%` : "";
+    return `<div class="row"><span class="txt">${pretty(label)}</span>
+      <span class="track"><span class="fill" style="width:${(n/scale*100).toFixed(1)}%;background:${hueOf(label)}"></span></span>
+      <span class="num">${n}${share}</span></div>`;
+  }).join("");
+}
+const STATUS_HUE = {pending:"var(--c-action)",in_progress:"var(--c-personal)",
+  completed:"var(--c-promo)",rescheduled:"var(--c-meeting)",cancelled:"var(--dim)",
+  unclear:"var(--c-sensitive)"};
+const PRIO_HUE = {critical:"var(--p-critical)",high:"var(--p-high)",
+  medium:"var(--p-medium)",low:"var(--p-low)"};
+const ROUTE_HUE = {local_only:"var(--route-local)",confirm_required:"var(--route-confirm)",
+  blocked:"var(--route-blocked)"};
+
+/* ---- rail + overview -------------------------------------------------- */
+function renderRail(){
+  const s = DATA.summary;
+  const stats = [
+    ["Messages", s.total_messages, ""],
+    ["Subject groups", s.groups, ""],
+    ["In no group", s.ungrouped_messages, ""],
+    ["Contested", s.contested_groups, "stat--warn"],
+    ["Blocked", s.route_counts.blocked, "stat--alert"],
+    ["Mean group conf.", s.mean_group_confidence.toFixed(3), ""]
+  ];
+  $("#rail").innerHTML = stats.map(([k,v,c])=>
+    `<div class="stat ${c}"><div class="n">${v}</div><div class="k">${k}</div></div>`).join("");
+  $("#tc-priority").textContent = s.groups;
+  $("#tc-groups").textContent = s.groups;
+  $("#tc-privacy").textContent = s.route_counts.blocked + s.route_counts.confirm_required;
+  $("#batchList").innerHTML = s.batches.map(b=>
+    `<span class="batch"><b>${esc(b.name)}</b> ${b.messages} · ${esc(b.kind)}</span>`).join("");
+}
+
+function renderOverview(){
+  const s = DATA.summary, total = s.groups;
+  $("#statusDist").innerHTML = bars(
+    Object.entries(s.group_status_counts).filter(r=>r[1]>0), l=>STATUS_HUE[l], total);
+  $("#prioDist").innerHTML = bars(
+    Object.entries(s.group_priority_counts), l=>PRIO_HUE[l], total);
+  $("#routeDist").innerHTML = bars(
+    Object.entries(s.route_counts), l=>ROUTE_HUE[l], s.total_messages);
+  const ix = s.index || {};
+  $("#l2Card").innerHTML = `
+    <p>L1 read each message once — category, extracted item, sensitive values masked.
+    L2 keeps a <b>ledger</b>: the same pipeline runs first, then every message is
+    assigned to a subject and advances that subject's state machine, in strict
+    chronological order.</p>
+    <p><b>Reference time is ${esc(s.as_of)}</b> — the newest message, not the wall
+    clock. Deadline proximity is measured against it, so the same input always
+    produces the same output and loading another batch is what advances time.</p>
+    <p>${s.grouped_messages} of ${s.total_messages} messages belong to a subject;
+    the rest are promotional, personal, general or sensitive traffic that names no
+    tracked subject. ${s.groups_with_conflicts} group(s) carry a recorded
+    contradiction.</p>
+    <p>Search index: ${ix.documents ?? 0} documents,
+    ${ix.excluded_by_routing ?? 0} withheld by privacy routing,
+    ${ix.posting_lists ?? 0} posting lists,
+    ${ix.semantic_dimensions ?? 0} latent dimensions used as
+    ${esc(ix.semantic_role||"a fallback")}.</p>`;
+}
+
+/* ---- priority --------------------------------------------------------- */
+function priRows(){
+  const q = state.qPri.toLowerCase();
+  return DATA.groups.filter(g=>{
+    if(state.band && (g.priority?.priority||"") !== state.band) return false;
+    if(state.open && (g.status==="completed"||g.status==="cancelled")) return false;
+    if(q && !(g.title.toLowerCase().includes(q) || g.group_id.toLowerCase().includes(q)))
+      return false;
+    return true;
+  }).sort((a,b)=>(b.priority?.score??0)-(a.priority?.score??0));
+}
+function renderPriority(){
+  const rows = priRows();
+  $("#priCount").textContent = `${rows.length} of ${DATA.groups.length}`;
+  $("#priBody").innerHTML = rows.map(g=>`
+    <tr class="clickable" data-g="${esc(g.group_id)}">
+      <td class="id">${esc(g.group_id)}</td>
+      <td>${esc(g.title)}</td>
+      <td>${st(g.status)}</td>
+      <td>${pri(g.priority?.priority)}</td>
+      <td class="id">${num(g.priority?.score,1)}</td>
+      <td class="id">${esc(g.latest_deadline || g.pending_relative_deadline ||
+        (g.latest_schedule ? [g.latest_schedule.date,g.latest_schedule.time].filter(Boolean).join(" ") : "") || "—")}</td>
+      <td class="id">${g.message_count}</td>
+      <td class="id">${num(g.priority?.confidence)}</td>
+    </tr>`).join("") || `<tr><td colspan="8"><div class="empty">Nothing matches.</div></td></tr>`;
+}
+
+/* ---- groups ----------------------------------------------------------- */
+function grpRows(){
+  const q = state.qGrp.toLowerCase();
+  return DATA.groups.filter(g=>{
+    if(state.status && g.status!==state.status) return false;
+    if(state.contested && !g.contested) return false;
+    if(q && !(g.title.toLowerCase().includes(q) ||
+              g.related_message_ids.some(m=>m.toLowerCase().includes(q)))) return false;
+    return true;
+  }).sort((a,b)=>b.message_count-a.message_count);
+}
+function renderGroups(){
+  const rows = grpRows();
+  $("#grpCount").textContent = `${rows.length} of ${DATA.groups.length}`;
+  $("#grpBody").innerHTML = rows.map(g=>`
+    <tr class="clickable" data-g="${esc(g.group_id)}">
+      <td class="id">${esc(g.group_id)}</td>
+      <td>${esc(g.title)}${g.contested?' <span class="badge flag">contested</span>':""}</td>
+      <td class="id">${esc(g.kind)}</td>
+      <td>${st(g.status)}</td>
+      <td class="id">${g.message_count}</td>
+      <td class="id">${g.chase_count}</td>
+      <td class="id">${g.conflicts.length}</td>
+      <td class="id">${esc(g.last_seen.slice(0,10))}</td>
+      <td class="id">${num(g.confidence)}</td>
+    </tr>`).join("") || `<tr><td colspan="9"><div class="empty">Nothing matches.</div></td></tr>`;
+}
+
+/* ---- drawer ----------------------------------------------------------- */
+const MSG = () => Object.fromEntries(DATA.messages.map(m=>[m.message_id,m]));
+function openGroup(gid){
+  const g = DATA.groups.find(x=>x.group_id===gid); if(!g) return;
+  const byId = MSG();
+  const p = g.priority;
+  const cls = m => m.hedged ? "hedged"
+    : (["status_query","open_question"].includes(m.act) ? "chase"
+    : (["completion","cancellation","reschedule","deadline_change","new_task","new_event","progress_update"].includes(m.act) ? "firm" : ""));
+
+  const timeline = g.members.map(m=>{
+    const src = byId[m.message_id] || {};
+    return `<li class="${cls(m)}">
+      <div class="when">${esc(m.timestamp)} · ${esc(m.message_id)} · ${esc(m.sender)}</div>
+      <div class="act">${esc(m.act_label)}${m.hedged?" (hedged)":""}${m.repetition?" · restatement":""}</div>
+      <div class="txt">${redact(src.masked_text||"", src.sensitivity_type)}</div>
+      <div class="when">frame <code>${esc(m.frame)}</code> · link ${num(m.match_score)}
+        ${m.match_tokens.length?`on ${m.match_tokens.map(esc).join(", ")}`:"(seed)"}
+        ${m.weak_link?' <span class="badge flag">weak link</span>':""}</div>
+    </li>`;}).join("");
+
+  const hist = h => h.length ? `<ul class="tl">${h.map(c=>`<li>
+      <div class="when">${esc(c.timestamp)} · ${esc(c.message_id)}${c.origin==="l1_request"?" · original request":""}</div>
+      <div class="act">${esc(c.field)}: ${esc(c.previous ?? "none")} → ${esc(c.new ?? c.raw ?? "unresolved")} (${esc(c.direction)})</div>
+      ${c.flagged_conflict?'<div class="txt">the sender flagged the earlier message as listing another date</div>':""}
+    </li>`).join("")}</ul>` : `<p class="prose">None recorded.</p>`;
+
+  $("#drawer").innerHTML = `
+    <div class="drawer-top">
+      <h3>${esc(g.group_id)}</h3>${pri(p?.priority)}${st(g.status)}
+      <button class="btn" id="closeDrawer" aria-label="Close">Close</button>
+    </div>
+    <div class="quote">${esc(g.title)}</div>
+    <dl class="kv">
+      <dt>Summary</dt><dd class="prose">${esc(g.summary)}</dd>
+      <dt>Status</dt><dd>${st(g.status)} — ${esc(g.status_reason)}
+        ${g.status_source_message_id?`<br><code>${esc(g.status_source_message_id)}</code>`:""}</dd>
+      <dt>Deadline</dt><dd>${esc(g.latest_deadline || "none")}
+        ${g.latest_deadline_source?`<code>${esc(g.latest_deadline_source)}</code>`:""}
+        ${g.pending_relative_deadline?`<br>unresolved: “${esc(g.pending_relative_deadline)}” in <code>${esc(g.pending_relative_source)}</code>`:""}</dd>
+      ${g.latest_schedule?`<dt>Schedule</dt><dd>${esc([g.latest_schedule.date,g.latest_schedule.time].filter(Boolean).join(" at "))}
+        <code>${esc(g.latest_schedule.source_message_id||"")}</code></dd>`:""}
+      <dt>Confidence</dt><dd>${num(g.confidence)} over ${g.message_count} message(s)</dd>
+    </dl>
+    ${p?`<div class="sect"><h4>Priority: ${esc(p.priority)} (score ${num(p.score,1)}, confidence ${num(p.confidence)})</h4>
+      <p class="prose" style="font-size:13px">${esc(p.reason)}</p>
+      ${p.signal_detail.map(s=>`<div class="sig">
+        <span class="w ${s.weight>=0?"pos":"neg"}">${s.weight>0?"+":""}${s.weight.toFixed(2)}</span>
+        <code>${esc(s.signal)}</code><span class="d">${esc(s.detail)}</span></div>`).join("")}
+      ${g.priority_history.length?`<h4 style="margin-top:14px">Priority history</h4>
+        <ul class="tl">${g.priority_history.map(c=>`<li>
+          <div class="when">${esc(c.as_of)} · ${c.trigger==="message"?esc(c.trigger_message_ids.join(", ")):"time passed"}</div>
+          <div class="act">${esc(c.from)} → ${esc(c.to)} (${c.delta>0?"+":""}${num(c.delta,1)})</div>
+          <div class="txt">${esc(c.reason)}</div></li>`).join("")}</ul>`:""}
+    </div>`:""}
+    ${g.conflicts.length?`<div class="sect"><h4>Recorded contradictions</h4>
+      ${g.conflicts.map(c=>`<div class="sig"><code>${esc(c.kind)}</code>
+        <span class="d">${esc(c.detail)} <em>(${c.message_ids.filter(Boolean).map(esc).join(", ")})</em></span></div>`).join("")}
+    </div>`:""}
+    <div class="sect"><h4>Deadline history</h4>${hist(g.deadline_history)}</div>
+    ${g.schedule_history.length?`<div class="sect"><h4>Schedule history</h4>${hist(g.schedule_history)}</div>`:""}
+    <div class="sect"><h4>Timeline — ${g.message_count} message(s)</h4>
+      <ul class="tl">${timeline}</ul></div>`;
+  $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden","false");
+  $("#scrim").classList.add("open");
+  $("#closeDrawer").addEventListener("click", closeDrawer);
+}
+function closeDrawer(){
+  $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden","true");
+  $("#scrim").classList.remove("open");
+}
+
+/* ---- privacy ---------------------------------------------------------- */
+function renderPolicy(){
+  const rows = (POLICY?.policies)||[];
+  $("#policyTable").innerHTML = `
+    <thead><tr><th>Policy</th><th>Route</th><th>Applies to</th><th>Allowed</th>
+      <th>Denied</th><th>Why</th></tr></thead>
+    <tbody>${rows.map(p=>`<tr>
+      <td class="id">${esc(p.policy_id)}</td>
+      <td>${rt(p.route)}</td>
+      <td>${p.sensitivity_types.length?p.sensitivity_types.map(t=>`<code>${esc(t)}</code>`).join(" "):"<em>anything with no finding</em>"}</td>
+      <td>${p.allowed_operations.map(o=>`<code>${esc(o)}</code>`).join(" ")}</td>
+      <td>${p.denied_operations.map(o=>`<code>${esc(o)}</code>`).join(" ")}</td>
+      <td class="wy">${esc(p.rationale)}</td></tr>`).join("")}</tbody>`;
+}
+function renderRoutes(){
+  const q = state.qRoute.toLowerCase();
+  const rows = DATA.routing.decisions.filter(d=>{
+    if(state.route && d.route!==state.route) return false;
+    if(q && !d.message_id.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  $("#routeCount").textContent = `${rows.length} of ${DATA.routing.decisions.length}`;
+  $("#routeBody").innerHTML = rows.slice(0,400).map(d=>`<tr>
+    <td class="id">${esc(d.message_id)}</td>
+    <td>${rt(d.route)}</td>
+    <td class="id">${esc(d.policy_id)}</td>
+    <td class="id">${d.sensitivity_types.map(esc).join(", ")||"—"}</td>
+    <td>${d.risk?`<span class="badge risk-${esc(d.risk)}">${esc(d.risk)}</span>`:"—"}</td>
+    <td class="id">${d.indexed?"yes":"no"}</td>
+    <td>${d.masked_text ? redact(d.masked_text, d.sensitivity_types[0])
+      : `<em style="color:var(--dim)">withheld by ${esc(d.policy_id)}</em>`}</td>
+  </tr>`).join("") || `<tr><td colspan="7"><div class="empty">Nothing matches.</div></td></tr>`;
+}
+
+/* ---- assistant -------------------------------------------------------- */
+const EXAMPLES = [
+  "Which existing task became critical in the demo data?",
+  "Which tasks or meetings were completed or cancelled?",
+  "Which meeting was rescheduled and what is its latest schedule?",
+  "Which messages contain conflicting or uncertain deadlines?",
+  "Which demo messages must be blocked from external processing?",
+  "Which message requires confirmation before processing?",
+  "What tasks should I complete today?",
+  "Which critical or high-priority tasks are still pending?",
+  "What deadlines have changed?"
+];
+async function ask(){
+  const query = $("#askText").value.trim();
+  if(!query || !DATA){ return; }
+  $("#askOut").innerHTML = `<div class="empty">Thinking…</div>`;
+  try{
+    const r = await fetch("/v2/ask",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({session_id:DATA.session_id, query, confirmed:$("#confirmed").checked})});
+    if(r.status===409){ await reload(); return ask(); }
+    if(!r.ok) throw new Error((await r.json().catch(()=>({}))).detail || r.statusText);
+    renderAnswer(await r.json());
+  }catch(err){ $("#askOut").innerHTML = `<div class="empty err">${esc(err.message)}</div>`; }
+}
+function renderAnswer(a){
+  const ok = a.sufficient_evidence;
+  const route = a.privacy_route || {};
+  $("#askOut").innerHTML = `
+    <div class="ans ${ok?"":"insufficient"}">
+      <h3>${ok?"Answer":"Not enough evidence"}</h3>
+      <p class="prose">${esc(a.answer)}</p>
+      <dl class="kv" style="margin-top:12px">
+        <dt>Intent</dt><dd><code>${esc(a.intent)}</code></dd>
+        <dt>Confidence</dt><dd>${num(a.confidence)}</dd>
+        <dt>Privacy</dt><dd>${rt(route.route||"local_only")}
+          ${route.rationale?`<br><span class="wy">${esc(route.rationale)}</span>`:""}</dd>
+        <dt>Latency</dt><dd>${num(a.elapsed_ms,1)} ms</dd>
+      </dl>
+    </div>
+    <div class="sect"><h4>Why this evidence</h4>
+      <p class="prose" style="font-size:13px">${esc(a.reason)}</p></div>
+    ${a.group_ids.length?`<div class="sect"><h4>Groups</h4>
+      ${a.group_ids.map(g=>`<button class="ex" data-g="${esc(g)}">${esc(g)}</button>`).join(" ")}</div>`:""}
+    ${a.evidence.length?`<div class="sect"><h4>Supporting messages (${a.evidence.length})</h4>
+      <div class="ev">${a.evidence.slice(0,14).map(e=>`
+        <span class="sc">${num(e.relevance_score,3)}</span>
+        <span class="mid">${esc(e.message_id)}</span>
+        <span class="wy">${e.content_withheld
+          ? `<em style="color:var(--dim)">content withheld by policy</em>`
+          : redact(e.masked_text||"", "")}<br>${esc(e.why_selected)}</span>`).join("")}</div>
+    </div>`:""}
+    ${a.retrieved.length?`<div class="sect"><h4>Top retrieval, for comparison</h4>
+      <div class="ev">${a.retrieved.map(h=>`
+        <span class="sc">${num(h.score,3)}</span>
+        <span class="mid">${esc(h.message_id)}</span>
+        <span class="wy">lexical ${num(h.lexical_score,3)} · semantic ${num(h.semantic_score,3)}
+          · ${h.matched_terms.map(esc).join(", ")||"no shared term"}</span>`).join("")}</div>
+    </div>`:""}
+    ${a.notes.length?`<div class="sect"><h4>Notes</h4>${a.notes.map(n=>`<p class="prose" style="font-size:13px">${esc(n)}</p>`).join("")}</div>`:""}`;
+  $("#askOut").addEventListener("click", e=>{
+    const b = e.target.closest("button[data-g]");
+    if(b){ show("groups"); openGroup(b.dataset.g); }
+  }, {once:true});
+}
+
+/* ---- benchmark -------------------------------------------------------- */
+async function runBench(){
+  if(!DATA) return;
+  $("#benchOut").innerHTML = `<div class="empty">Measuring…</div>`;
+  try{
+    const r = await fetch("/v2/benchmark",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({session_id:DATA.session_id, repeats:15})});
+    if(r.status===409){ await reload(); return runBench(); }
+    const b = await r.json();
+    const row = (name,d)=>`<tr><td class="id">${esc(name)}</td>
+      <td class="n">${num(d.build_ms,1)}</td><td class="n">${num(d.median_ms,3)}</td>
+      <td class="n">${num(d.p95_ms,3)}</td><td class="n">${num(d.in_memory_kb,0)}</td></tr>`;
+    $("#benchOut").innerHTML = `
+      <table class="bench"><thead><tr><th>Index</th><th>Build (ms)</th>
+        <th>Median (ms)</th><th>p95 (ms)</th><th>Memory (KB)</th></tr></thead>
+        <tbody>${Object.entries(b.results).map(([n,d])=>row(n,d)).join("")}</tbody></table>
+      <dl class="kv" style="margin-top:14px">
+        <dt>Corpus</dt><dd>${b.documents} messages, ${b.indexed} indexed,
+          ${b.excluded_by_privacy_routing} withheld by privacy routing</dd>
+        <dt>Speed-up</dt><dd>${num(b.speedup,2)}× at ${b.documents} documents${
+          b.scaled?`, ${num(b.speedup_scaled,2)}× at ${b.scaled.documents}`:""}</dd>
+        <dt>Ranking fidelity</dt><dd>${(b.ranking_fidelity_at_10*100).toFixed(1)}% of the
+          exact index's top 10 reproduced</dd>
+        <dt>Memory</dt><dd>${num(b.memory_ratio,2)}× the baseline</dd>
+      </dl>
+      ${b.scaled?`<table class="bench" style="margin-top:14px"><thead><tr>
+        <th>Index at ${b.scaled.documents} docs</th><th>Build (ms)</th><th>Median (ms)</th>
+        <th>p95 (ms)</th><th>Memory (KB)</th></tr></thead><tbody>
+        ${["v1-exact-lexical","v2-hybrid-pruned"].map(n=>row(n,b.scaled[n])).join("")}
+      </tbody></table>`:""}
+      <p class="prose" style="margin-top:12px">${esc(b.note)}</p>
+      <p class="prose"><b>Method.</b> ${esc(b.method)}</p>`;
+    $("#benchNote").textContent = `${b.queries} queries × ${b.repeats} repeats`;
+  }catch(err){ $("#benchOut").innerHTML = `<div class="empty err">${esc(err.message)}</div>`; }
+}
+
+/* ---- loading ---------------------------------------------------------- */
+const setSource = t => { $("#srcLabel").textContent = t; };
+function paint(){
+  renderRail(); renderOverview(); renderPriority(); renderGroups();
+  renderPolicy(); renderRoutes();
+  $("#fBand").innerHTML = [`<option value="">All priorities</option>`]
+    .concat(DATA.vocabulary.priorities.map(p=>
+      `<option value="${p}">${pretty(p)} (${DATA.summary.group_priority_counts[p]||0})</option>`)).join("");
+  $("#fStatus").innerHTML = [`<option value="">All statuses</option>`]
+    .concat(DATA.vocabulary.statuses.map(s=>
+      `<option value="${s}">${pretty(s)} (${DATA.summary.group_status_counts[s]||0})</option>`)).join("");
+  $("#fRoute").innerHTML = [`<option value="">All routes</option>`]
+    .concat(DATA.vocabulary.routes.map(r=>
+      `<option value="${r}">${pretty(r)} (${DATA.summary.route_counts[r]||0})</option>`)).join("");
+  $("#btnAdd").hidden = FILES.length===0;
+}
+async function loadPolicy(){
+  try{ POLICY = await (await fetch("/v2/policy")).json(); }catch{ POLICY = {policies:[]}; }
+}
+async function loadSample(){
+  setSource("loading the bundled sample…"); FILES = [];
+  const r = await fetch("/v2/analyze/sample");
+  DATA = await r.json(); await loadPolicy(); paint();
+  setSource(`${DATA.source.name} · ${DATA.source.kind}`);
+  $("#btnSample").setAttribute("aria-pressed","true");
+}
+async function analyse(){
+  setSource(`analysing ${FILES.map(f=>f.name).join(" + ")}…`);
+  const fd = new FormData();
+  FILES.forEach(f=>fd.append("files", f));
+  const r = await fetch("/v2/analyze",{method:"POST",body:fd});
+  if(!r.ok){ const e = await r.json().catch(()=>({detail:r.statusText}));
+    throw new Error(e.detail || "upload failed"); }
+  DATA = await r.json(); await loadPolicy(); paint();
+  setSource(`${FILES.length} batch(es) · ${DATA.summary.total_messages} messages · ` +
+            `in memory only · ${DATA.source.ingest_ms ?? "cached"} ms`);
+  $("#btnSample").setAttribute("aria-pressed","false");
+}
+async function reload(){ if(FILES.length) await analyse(); else await loadSample(); }
+async function pick(files, append){
+  const added = Array.from(files);
+  if(!added.length) return;
+  FILES = append ? FILES.concat(added) : added;
+  try{ await analyse(); }
+  catch(err){ setSource("could not analyse those files: "+err.message); }
+}
+
+/* ---- wiring ----------------------------------------------------------- */
+buildTabs();
+let appendMode = false;
+$("#btnSample").addEventListener("click", loadSample);
+$("#btnUpload").addEventListener("click", ()=>{ appendMode=false; $("#file").click(); });
+$("#btnAdd").addEventListener("click", ()=>{ appendMode=true; $("#file").click(); });
+$("#file").addEventListener("change", e=>{ pick(e.target.files, appendMode); e.target.value=""; });
+
+$("#qPri").addEventListener("input", e=>{ state.qPri=e.target.value; renderPriority(); });
+$("#fBand").addEventListener("change", e=>{ state.band=e.target.value; renderPriority(); });
+$("#fOpen").addEventListener("click", e=>{
+  state.open=!state.open; e.target.setAttribute("aria-pressed",String(state.open)); renderPriority(); });
+$("#priBody").addEventListener("click", e=>{
+  const tr=e.target.closest("tr[data-g]"); if(tr) openGroup(tr.dataset.g); });
+
+$("#qGrp").addEventListener("input", e=>{ state.qGrp=e.target.value; renderGroups(); });
+$("#fStatus").addEventListener("change", e=>{ state.status=e.target.value; renderGroups(); });
+$("#fConf").addEventListener("click", e=>{
+  state.contested=!state.contested; e.target.setAttribute("aria-pressed",String(state.contested)); renderGroups(); });
+$("#grpBody").addEventListener("click", e=>{
+  const tr=e.target.closest("tr[data-g]"); if(tr) openGroup(tr.dataset.g); });
+
+$("#qRoute").addEventListener("input", e=>{ state.qRoute=e.target.value; renderRoutes(); });
+$("#fRoute").addEventListener("change", e=>{ state.route=e.target.value; renderRoutes(); });
+
+$("#askExamples").innerHTML = EXAMPLES.map(x=>`<button class="ex">${esc(x)}</button>`).join("");
+$("#askExamples").addEventListener("click", e=>{
+  if(e.target.classList.contains("ex")){ $("#askText").value=e.target.textContent; ask(); } });
+$("#btnAsk").addEventListener("click", ask);
+$("#askText").addEventListener("keydown", e=>{
+  if(e.key==="Enter"&&(e.metaKey||e.ctrlKey)) ask(); });
+$("#btnBench").addEventListener("click", runBench);
+
+$("#scrim").addEventListener("click", closeDrawer);
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeDrawer(); });
+
+loadSample();
+</script>
+</body>
+</html>

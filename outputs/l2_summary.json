@@ -55,15 +55,17 @@
     "vocabulary": 1833,
     "posting_lists": 1828,
     "terms_pruned_below_idf_floor": 5,
+    "min_df_before_pruning": 40,
     "idf_floor": 2.5107,
     "max_df_share": 0.22,
     "semantic_bytes": 131712,
-    "rerank_depth": 60,
-    "lexical_weight": 0.65,
+    "rerank_depth": 200,
+    "semantic_tiebreak": 0.15,
+    "semantic_role": "recall fallback and tie-break only",
     "semantic_dimensions": 128,
     "semantic_enabled": true
   },
   "contested_groups": 11,
   "groups_with_conflicts": 21,
-  "mean_group_confidence": 0.9343
+  "mean_group_confidence": 0.9339
 }

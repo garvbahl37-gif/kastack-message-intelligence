@@ -53,6 +53,13 @@ from .normalize import tokenize
 #: nothing at 10,000, which is the mistake the first version of this made.
 MAX_DF_SHARE = 0.22
 
+#: ...but a share alone is the *opposite* mistake at the small end. On seven
+#: documents a term in two of them is already over the share, so almost the
+#: whole vocabulary gets pruned and queries return nothing. Pruning only pays
+#: for itself when the posting list it removes is long, so a term must be in at
+#: least this many documents before its share is even considered.
+MIN_PRUNE_DF = 40
+
 #: Query terms used for candidate generation, highest IDF first.
 MAX_QUERY_TERMS = 12
 
@@ -116,6 +123,9 @@ class SearchStats:
     postings_visited: int = 0
     reranked: int = 0
     dense_scan: bool = False
+    #: True when candidate generation found nothing and the exact full scan was
+    #: used instead, so the two paths can be told apart in the benchmark.
+    fallback_scan: bool = False
     documents_scanned: int = 0
 
 
@@ -147,6 +157,7 @@ class _LexicalBase:
         self.meta: List[dict] = []
         self.vectors: List[Dict[str, float]] = []
         self.idf: Dict[str, float] = {}
+        self.df: Dict[str, int] = {}
         self.excluded: List[str] = []
 
     def _terms(self, text: str) -> Dict[str, int]:
@@ -169,6 +180,7 @@ class _LexicalBase:
             for term in counts:
                 df[term] = df.get(term, 0) + 1
         n = max(len(raw), 1)
+        self.df = df
         self.idf = {t: math.log((n + 1) / (c + 1)) + 1.0 for t, c in df.items()}
         return raw
 
@@ -283,9 +295,11 @@ class HybridIndex(_LexicalBase):
         # the difference between 1.6 MB and 160 KB, and it changes nothing
         # about the traversal.
         built: Dict[str, Tuple[List[int], List[float]]] = {}
+        self.pruned = {t for t, c in self.df.items()
+                       if c >= MIN_PRUNE_DF and self.idf[t] < self.idf_floor}
         for i, vec in enumerate(self.vectors):
             for term, weight in vec.items():
-                if self.idf.get(term, 0.0) < self.idf_floor:
+                if term in self.pruned:
                     continue
                 ids, weights = built.setdefault(term, ([], []))
                 ids.append(i)
@@ -294,8 +308,7 @@ class HybridIndex(_LexicalBase):
             term: (array.array("i", ids), array.array("f", weights))
             for term, (ids, weights) in built.items()
         }
-        self.pruned_terms = sum(1 for v in self.idf.values()
-                                if v < self.idf_floor)
+        self.pruned_terms = len(self.pruned)
 
         # -- int8 semantic embeddings ---------------------------------------
         self.embeddings: List[Optional[Quantised]] = []
@@ -312,8 +325,7 @@ class HybridIndex(_LexicalBase):
     # -- stage one ----------------------------------------------------------
     def _candidates(self, qvec: Dict[str, float],
                     stats: SearchStats) -> Dict[int, float]:
-        terms = [(t, w) for t, w in qvec.items()
-                 if self.idf.get(t, 0.0) >= self.idf_floor]
+        terms = [(t, w) for t, w in qvec.items() if t not in self.pruned]
         terms.sort(key=lambda tw: -self.idf.get(tw[0], 0.0))
         acc: Dict[int, float] = {}
         for term, qw in terms[:MAX_QUERY_TERMS]:
@@ -324,6 +336,21 @@ class HybridIndex(_LexicalBase):
             stats.postings_visited += len(ids)
             for i, dw in zip(ids, weights):
                 acc[i] = acc.get(i, 0.0) + qw * dw
+
+        # Correctness guard. If every term the query offered was pruned or
+        # unknown, the fast path has nothing to traverse -- but the documents
+        # may still match on the pruned terms. Falling back to the full scan
+        # here costs what the baseline always costs, and only in the case where
+        # the optimisation had nothing to contribute anyway. Returning an empty
+        # result instead would make the optimised index quietly less correct
+        # than the one it replaced, which is not a trade worth making.
+        if not acc and qvec:
+            stats.fallback_scan = True
+            stats.documents_scanned = len(self.vectors)
+            for i, vec in enumerate(self.vectors):
+                score = sum(qw * vec[t] for t, qw in qvec.items() if t in vec)
+                if score > 0:
+                    acc[i] = score
         return acc
 
     # -- stage two ----------------------------------------------------------
@@ -415,6 +442,7 @@ class HybridIndex(_LexicalBase):
             "vocabulary": len(self.idf),
             "posting_lists": len(self.postings),
             "terms_pruned_below_idf_floor": self.pruned_terms,
+            "min_df_before_pruning": MIN_PRUNE_DF,
             "idf_floor": round(self.idf_floor, 4),
             "max_df_share": self.max_df_share,
             "semantic_bytes": self.semantic_bytes(),

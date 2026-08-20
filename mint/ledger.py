@@ -457,12 +457,17 @@ def run(
         prepared.append((batch, prepared_rows))
 
     # ---- pass 1: subject vocabulary --------------------------------------
+    # Only the primary signature of each message feeds the IDF statistics. A
+    # variant is another way of naming the *same* message's subject -- L1's
+    # extracted title alongside the L2 frame's capture -- and counting it
+    # separately would make a word look like it names two subjects when it
+    # names one. It is still used for matching; it just does not vote on how
+    # informative its own tokens are.
     signatures = []
     for inp in all_inputs:
-        sig, variants, _ = G.subject_for(inp)
+        sig, _variants, _ = G.subject_for(inp)
         if sig:
             signatures.append(sig)
-        signatures.extend(variants)
     space = G.SubjectSpace(signatures)
     ledger.space = space
     builder = G.GroupBuilder(space)

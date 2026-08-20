@@ -52,31 +52,9 @@
     "retrieved": [
       {
         "message_id": "MSG_0136",
-        "score": 0.3864,
+        "score": 0.3032,
         "lexical_score": 0.3032,
-        "semantic_score": 0.5411,
-        "matched_terms": [
-          "the",
-          "demo",
-          "the demo"
-        ]
-      },
-      {
-        "message_id": "MSG_0561",
-        "score": 0.3741,
-        "lexical_score": 0.2868,
-        "semantic_score": 0.5362,
-        "matched_terms": [
-          "the",
-          "demo",
-          "the demo"
-        ]
-      },
-      {
-        "message_id": "MSG_0361",
-        "score": 0.374,
-        "lexical_score": 0.2868,
-        "semantic_score": 0.536,
+        "semantic_score": 0.0,
         "matched_terms": [
           "the",
           "demo",
@@ -85,9 +63,31 @@
       },
       {
         "message_id": "MSG_0147",
-        "score": 0.3736,
+        "score": 0.2868,
         "lexical_score": 0.2868,
-        "semantic_score": 0.5349,
+        "semantic_score": 0.0,
+        "matched_terms": [
+          "the",
+          "demo",
+          "the demo"
+        ]
+      },
+      {
+        "message_id": "MSG_0361",
+        "score": 0.2868,
+        "lexical_score": 0.2868,
+        "semantic_score": 0.0,
+        "matched_terms": [
+          "the",
+          "demo",
+          "the demo"
+        ]
+      },
+      {
+        "message_id": "MSG_0561",
+        "score": 0.2868,
+        "lexical_score": 0.2868,
+        "semantic_score": 0.0,
         "matched_terms": [
           "the",
           "demo",
@@ -96,9 +96,9 @@
       },
       {
         "message_id": "MSG_0113",
-        "score": 0.3696,
+        "score": 0.2849,
         "lexical_score": 0.2849,
-        "semantic_score": 0.5269,
+        "semantic_score": 0.0,
         "matched_terms": [
           "the",
           "demo",
@@ -203,7 +203,7 @@
       },
       {
         "message_id": "MSG_0934",
-        "relevance_score": 0.857,
+        "relevance_score": 0.8572,
         "evidence_source": "structured",
         "why_selected": "this message set GROUP_033 to cancelled: a message withdraws the request",
         "masked_text": "You can cancel send the revised presentation; it is no longer required.",
@@ -299,7 +299,7 @@
       },
       {
         "message_id": "MSG_0949",
-        "relevance_score": 0.7622,
+        "relevance_score": 0.7621,
         "evidence_source": "structured",
         "why_selected": "this message set GROUP_038 to completed: a message reports the work finished",
         "masked_text": "Update: submit the weekly report has been completed successfully.",
@@ -312,48 +312,48 @@
     ],
     "retrieved": [
       {
-        "message_id": "MSG_1058",
-        "score": 0.3263,
-        "lexical_score": 0.1299,
-        "semantic_score": 0.6911,
+        "message_id": "MSG_1074",
+        "score": 0.1384,
+        "lexical_score": 0.1384,
+        "semantic_score": 0.0,
         "matched_terms": [
-          "or"
+          "were"
         ]
       },
       {
-        "message_id": "MSG_1068",
-        "score": 0.3227,
-        "lexical_score": 0.1244,
-        "semantic_score": 0.6911,
+        "message_id": "MSG_1078",
+        "score": 0.1373,
+        "lexical_score": 0.1373,
+        "semantic_score": 0.0,
         "matched_terms": [
-          "or"
-        ]
-      },
-      {
-        "message_id": "MSG_1063",
-        "score": 0.3202,
-        "lexical_score": 0.1255,
-        "semantic_score": 0.6819,
-        "matched_terms": [
-          "or"
+          "were"
         ]
       },
       {
         "message_id": "DEMO_023",
-        "score": 0.2475,
+        "score": 0.1328,
         "lexical_score": 0.1328,
-        "semantic_score": 0.4603,
+        "semantic_score": 0.0,
         "matched_terms": [
           "or"
         ]
       },
       {
-        "message_id": "MSG_0408",
-        "score": 0.1692,
-        "lexical_score": 0.0915,
-        "semantic_score": 0.3136,
+        "message_id": "MSG_1058",
+        "score": 0.1299,
+        "lexical_score": 0.1299,
+        "semantic_score": 0.0,
         "matched_terms": [
-          "meetings"
+          "or"
+        ]
+      },
+      {
+        "message_id": "DEMO_008",
+        "score": 0.1271,
+        "lexical_score": 0.1271,
+        "semantic_score": 0.0,
+        "matched_terms": [
+          "cancelled"
         ]
       }
     ],
@@ -667,9 +667,9 @@
     "retrieved": [
       {
         "message_id": "MSG_0992",
-        "score": 0.3021,
+        "score": 0.1769,
         "lexical_score": 0.1769,
-        "semantic_score": 0.5348,
+        "semantic_score": 0.0,
         "matched_terms": [
           "meeting",
           "latest"
@@ -677,39 +677,39 @@
       },
       {
         "message_id": "MSG_1007",
-        "score": 0.2888,
+        "score": 0.1689,
         "lexical_score": 0.1689,
-        "semantic_score": 0.5116,
+        "semantic_score": 0.0,
         "matched_terms": [
           "meeting",
           "latest"
         ]
       },
       {
+        "message_id": "MSG_0291",
+        "score": 0.1301,
+        "lexical_score": 0.1301,
+        "semantic_score": 0.0,
+        "matched_terms": [
+          "its"
+        ]
+      },
+      {
         "message_id": "MSG_0387",
-        "score": 0.2222,
+        "score": 0.1295,
         "lexical_score": 0.1295,
-        "semantic_score": 0.3943,
+        "semantic_score": 0.0,
         "matched_terms": [
           "was"
         ]
       },
       {
-        "message_id": "MSG_0291",
-        "score": 0.2175,
-        "lexical_score": 0.1301,
-        "semantic_score": 0.3797,
+        "message_id": "MSG_0348",
+        "score": 0.1294,
+        "lexical_score": 0.1294,
+        "semantic_score": 0.0,
         "matched_terms": [
-          "its"
-        ]
-      },
-      {
-        "message_id": "MSG_0263",
-        "score": 0.2127,
-        "lexical_score": 0.1239,
-        "semantic_score": 0.3778,
-        "matched_terms": [
-          "its"
+          "was"
         ]
       }
     ],
@@ -1070,7 +1070,7 @@
     "retrieved": [
       {
         "message_id": "MSG_1058",
-        "score": 0.4717,
+        "score": 0.3453,
         "lexical_score": 0.1983,
         "semantic_score": 0.9795,
         "matched_terms": [
@@ -1078,17 +1078,8 @@
         ]
       },
       {
-        "message_id": "MSG_1068",
-        "score": 0.4648,
-        "lexical_score": 0.19,
-        "semantic_score": 0.9752,
-        "matched_terms": [
-          "or"
-        ]
-      },
-      {
         "message_id": "MSG_1063",
-        "score": 0.4626,
+        "score": 0.3365,
         "lexical_score": 0.1916,
         "semantic_score": 0.9658,
         "matched_terms": [
@@ -1096,8 +1087,17 @@
         ]
       },
       {
+        "message_id": "MSG_1068",
+        "score": 0.3362,
+        "lexical_score": 0.19,
+        "semantic_score": 0.9752,
+        "matched_terms": [
+          "or"
+        ]
+      },
+      {
         "message_id": "DEMO_023",
-        "score": 0.3853,
+        "score": 0.3115,
         "lexical_score": 0.2029,
         "semantic_score": 0.7241,
         "matched_terms": [
@@ -1106,7 +1106,7 @@
       },
       {
         "message_id": "MSG_0625",
-        "score": 0.0224,
+        "score": 0.0096,
         "lexical_score": 0.0,
         "semantic_score": 0.0639,
         "matched_terms": []
@@ -1175,46 +1175,46 @@
     ],
     "retrieved": [
       {
-        "message_id": "MSG_0077",
-        "score": 0.2844,
-        "lexical_score": 0.2168,
-        "semantic_score": 0.4099,
+        "message_id": "MSG_0136",
+        "score": 0.2181,
+        "lexical_score": 0.2181,
+        "semantic_score": 0.0,
         "matched_terms": [
           "demo"
         ]
       },
       {
-        "message_id": "MSG_0606",
-        "score": 0.2835,
-        "lexical_score": 0.2125,
-        "semantic_score": 0.4155,
+        "message_id": "MSG_0077",
+        "score": 0.2168,
+        "lexical_score": 0.2168,
+        "semantic_score": 0.0,
         "matched_terms": [
           "demo"
         ]
       },
       {
         "message_id": "MSG_0619",
-        "score": 0.2827,
+        "score": 0.2138,
         "lexical_score": 0.2138,
-        "semantic_score": 0.4107,
+        "semantic_score": 0.0,
         "matched_terms": [
           "demo"
         ]
       },
       {
-        "message_id": "MSG_0136",
-        "score": 0.2827,
-        "lexical_score": 0.2181,
-        "semantic_score": 0.4025,
+        "message_id": "MSG_0606",
+        "score": 0.2125,
+        "lexical_score": 0.2125,
+        "semantic_score": 0.0,
         "matched_terms": [
           "demo"
         ]
       },
       {
         "message_id": "MSG_0138",
-        "score": 0.2811,
+        "score": 0.212,
         "lexical_score": 0.212,
-        "semantic_score": 0.4094,
+        "semantic_score": 0.0,
         "matched_terms": [
           "demo"
         ]
@@ -1576,47 +1576,47 @@
     "retrieved": [
       {
         "message_id": "MSG_1058",
-        "score": 0.3653,
+        "score": 0.2418,
         "lexical_score": 0.2418,
-        "semantic_score": 0.5946,
-        "matched_terms": [
-          "confirmation"
-        ]
-      },
-      {
-        "message_id": "MSG_1068",
-        "score": 0.361,
-        "lexical_score": 0.2316,
-        "semantic_score": 0.6014,
+        "semantic_score": 0.0,
         "matched_terms": [
           "confirmation"
         ]
       },
       {
         "message_id": "MSG_1063",
-        "score": 0.3599,
+        "score": 0.2336,
         "lexical_score": 0.2336,
-        "semantic_score": 0.5943,
+        "semantic_score": 0.0,
         "matched_terms": [
           "confirmation"
         ]
       },
       {
-        "message_id": "MSG_0980",
-        "score": 0.2238,
-        "lexical_score": 0.0958,
-        "semantic_score": 0.4615,
+        "message_id": "MSG_1068",
+        "score": 0.2316,
+        "lexical_score": 0.2316,
+        "semantic_score": 0.0,
         "matched_terms": [
-          "message"
+          "confirmation"
         ]
       },
       {
-        "message_id": "MSG_0974",
-        "score": 0.1936,
-        "lexical_score": 0.0978,
-        "semantic_score": 0.3715,
+        "message_id": "MSG_0190",
+        "score": 0.1049,
+        "lexical_score": 0.1049,
+        "semantic_score": 0.0,
         "matched_terms": [
-          "message"
+          "before"
+        ]
+      },
+      {
+        "message_id": "MSG_0110",
+        "score": 0.1007,
+        "lexical_score": 0.1007,
+        "semantic_score": 0.0,
+        "matched_terms": [
+          "before"
         ]
       }
     ],
@@ -1746,24 +1746,10 @@
     ],
     "retrieved": [
       {
-        "message_id": "MSG_0992",
-        "score": 0.5351,
-        "lexical_score": 0.4294,
-        "semantic_score": 0.7315,
-        "matched_terms": [
-          "the",
-          "latest",
-          "status",
-          "of",
-          "the latest",
-          "latest status"
-        ]
-      },
-      {
         "message_id": "MSG_1002",
-        "score": 0.5241,
+        "score": 0.4316,
         "lexical_score": 0.4316,
-        "semantic_score": 0.6959,
+        "semantic_score": 0.0,
         "matched_terms": [
           "the",
           "latest",
@@ -1774,10 +1760,10 @@
         ]
       },
       {
-        "message_id": "MSG_1007",
-        "score": 0.5207,
-        "lexical_score": 0.41,
-        "semantic_score": 0.7264,
+        "message_id": "MSG_0992",
+        "score": 0.4294,
+        "lexical_score": 0.4294,
+        "semantic_score": 0.0,
         "matched_terms": [
           "the",
           "latest",
@@ -1789,9 +1775,23 @@
       },
       {
         "message_id": "MSG_0997",
-        "score": 0.5093,
+        "score": 0.4121,
         "lexical_score": 0.4121,
-        "semantic_score": 0.6899,
+        "semantic_score": 0.0,
+        "matched_terms": [
+          "the",
+          "latest",
+          "status",
+          "of",
+          "the latest",
+          "latest status"
+        ]
+      },
+      {
+        "message_id": "MSG_1007",
+        "score": 0.41,
+        "lexical_score": 0.41,
+        "semantic_score": 0.0,
         "matched_terms": [
           "the",
           "latest",
@@ -1803,9 +1803,9 @@
       },
       {
         "message_id": "MSG_1012",
-        "score": 0.4973,
+        "score": 0.3948,
         "lexical_score": 0.3948,
-        "semantic_score": 0.6877,
+        "semantic_score": 0.0,
         "matched_terms": [
           "the",
           "latest",
@@ -1856,7 +1856,7 @@
     "retrieved": [
       {
         "message_id": "DEMO_022",
-        "score": 0.9912,
+        "score": 1.1368,
         "lexical_score": 0.9869,
         "semantic_score": 0.999,
         "matched_terms": [
@@ -1869,43 +1869,43 @@
         ]
       },
       {
-        "message_id": "MSG_0551",
-        "score": 0.2293,
-        "lexical_score": 0.073,
-        "semantic_score": 0.5195,
+        "message_id": "MSG_0585",
+        "score": 0.1586,
+        "lexical_score": 0.0787,
+        "semantic_score": 0.5326,
         "matched_terms": [
           "the",
           "form"
         ]
       },
       {
-        "message_id": "MSG_0420",
-        "score": 0.2277,
-        "lexical_score": 0.0716,
-        "semantic_score": 0.5177,
+        "message_id": "MSG_0045",
+        "score": 0.1549,
+        "lexical_score": 0.0744,
+        "semantic_score": 0.5368,
         "matched_terms": [
           "the",
           "form"
         ]
       },
       {
-        "message_id": "DEMO_021",
-        "score": 0.2197,
-        "lexical_score": 0.0535,
-        "semantic_score": 0.5283,
+        "message_id": "MSG_0546",
+        "score": 0.1549,
+        "lexical_score": 0.0744,
+        "semantic_score": 0.5367,
         "matched_terms": [
           "the",
           "form"
         ]
       },
       {
-        "message_id": "MSG_0387",
-        "score": 0.2093,
-        "lexical_score": 0.0696,
-        "semantic_score": 0.4688,
+        "message_id": "MSG_0398",
+        "score": 0.154,
+        "lexical_score": 0.0744,
+        "semantic_score": 0.5307,
         "matched_terms": [
-          "was",
-          "the"
+          "the",
+          "form"
         ]
       }
     ],

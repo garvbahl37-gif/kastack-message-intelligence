@@ -781,10 +781,9 @@ def build(inputs: Sequence[SubjectInput]) -> List[MessageGroup]:
     """
     signatures: List[SubjectSignature] = []
     for inp in inputs:
-        sig, variants, _ = subject_for(inp)
+        sig, _variants, _ = subject_for(inp)
         if sig:
             signatures.append(sig)
-        signatures.extend(variants)
 
     builder = GroupBuilder(SubjectSpace(signatures))
     for inp in inputs:

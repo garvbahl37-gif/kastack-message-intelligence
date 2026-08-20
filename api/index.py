@@ -26,7 +26,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from fastapi import FastAPI, File, HTTPException, UploadFile  # noqa: E402
-from fastapi.responses import HTMLResponse, JSONResponse  # noqa: E402
+from fastapi.responses import HTMLResponse, JSONResponse, Response  # noqa: E402
 from pydantic import BaseModel, Field  # noqa: E402
 
 from mint import __version__, pipeline  # noqa: E402
@@ -240,11 +240,34 @@ def classify_one(payload: MessageIn) -> dict:
     }
 
 
+@api.get("/app.css")
+def stylesheet():
+    """One stylesheet, shared by the L1 and L2 pages.
+
+    Both views are the same product, so they use the same palette and the same
+    components; serving the CSS once is how that stays true rather than
+    drifting into two lookalikes.
+    """
+    path = WEB_DIR / "app.css"
+    if not path.exists():
+        raise HTTPException(404, "stylesheet not found")
+    return Response(path.read_text(encoding="utf-8"), media_type="text/css")
+
+
 @api.get("/", response_class=HTMLResponse)
 def index() -> HTMLResponse:
     path = WEB_DIR / "index.html"
     if not path.exists():
         return HTMLResponse("<h1>UI not found</h1>", status_code=500)
+    return HTMLResponse(path.read_text(encoding="utf-8"))
+
+
+@api.get("/l2", response_class=HTMLResponse)
+def l2_index() -> HTMLResponse:
+    """The L2 view: priority, subject groups, the assistant, privacy, benchmark."""
+    path = WEB_DIR / "l2.html"
+    if not path.exists():
+        return HTMLResponse("<h1>L2 UI not found</h1>", status_code=500)
     return HTMLResponse(path.read_text(encoding="utf-8"))
 
 

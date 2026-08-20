@@ -217,11 +217,11 @@ FRAMES: List[Frame] = [
     (COMPLETION, "completion_report", _c(
         r"^(?:update|confirmed|status)\s*:\s*" + SUBJ +
         r"\s+(?:has\s+been|is|was)\s+(?:completed|finished|done|submitted|"
-        r"delivered)\b")),
+        r"delivered|signed\s+off|wrapped\s+up|sorted)\b")),
     (COMPLETION, "completion_statement", _c(
         r"\b" + SUBJ + r"\s+(?:has\s+been|have\s+been|is|was)\s+"
         r"(?:successfully\s+)?(?:completed|finished|submitted|delivered|"
-        r"closed\s+out)\b(?!\s*\?)")),
+        r"closed\s+out|signed\s+off|wrapped\s+up)\b(?!\s*\?)")),
 
     # ---- work in progress -------------------------------------------------
     # No message in the supplied corpus asserts progress -- the corpus only
@@ -322,7 +322,8 @@ FRAMES: List[Frame] = [
     # asserting it firmly.
     (AMBIGUOUS_UPDATE, "hedged_completion", _c(
         r"\b" + SUBJ + r"\s+(?:might|may|could)\s+(?:already\s+)?be\s+"
-        r"(?:done|finished|completed|handled)\b")),
+        r"(?:done|finished|completed|handled|signed\s+off|wrapped\s+up|"
+        r"sorted)\b")),
     (AMBIGUOUS_UPDATE, "hedged_third_party", _c(
         r"\b(?P<who>[A-Z][a-z]+)\s+said\s+someone\s+probably\s+handled\s+"
         + SUBJ + r"\s*\.?$")),

@@ -198,7 +198,13 @@ class SubjectSpace:
         #: carry a one-word match on its own. Expressed as a share of the
         #: subject vocabulary so it scales with the corpus instead of being a
         #: constant tuned to this one.
-        self.distinctive_df = max(1, round(DISTINCTIVE_DF_SHARE * self.n_subjects))
+        # Floor of two, not one. A short reference to a subject -- "the
+        # assignment", "audit" -- forms a signature of its own, so a token that
+        # names exactly one real subject already has a document frequency of
+        # two by the time it is looked up. A floor of one would make every
+        # sparse reference unmatchable on a small corpus.
+        self.distinctive_df = max(
+            2, round(DISTINCTIVE_DF_SHARE * self.n_subjects))
 
     def idf(self, token: str) -> float:
         return self._idf.get(token, self._default_idf)
@@ -277,10 +283,12 @@ CONTAINMENT_ACCEPT = 0.92
 COSINE_ACCEPT = 0.62
 
 #: Share of the subject vocabulary a token may appear in and still identify a
-#: subject on its own. At ~45 distinct subjects this admits tokens naming up to
-#: four of them, which covers "assignment" and "report" while excluding
-#: "review", "send" and "call".
-DISTINCTIVE_DF_SHARE = 0.08
+#: subject on its own. At the 67 distinct subjects this corpus produces it
+#: admits tokens naming up to three, which covers "assignment", "report" and
+#: "form" while excluding "review", "send" and "demo" -- each of which names
+#: four or more subjects here, so a bare "demo" genuinely does not say which
+#: one is meant.
+DISTINCTIVE_DF_SHARE = 0.05
 
 
 def best_match(
