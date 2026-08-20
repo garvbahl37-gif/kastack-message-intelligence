@@ -78,6 +78,11 @@ p{margin:0}
 .btn:visited{color:var(--paper)}
 .btn:hover{border-color:var(--graphite); background:var(--raise)}
 .btn[aria-pressed="true"]{border-color:var(--c-personal); color:var(--c-personal)}
+/* The pressed hue is a light cyan tuned for a dark card; on white it is
+   2.3:1. The border keeps the bright hue -- it is a line, not text. */
+@media (prefers-color-scheme: light){
+  .btn[aria-pressed="true"]{color:#0D74A6}
+}
 .btn-primary{background:var(--paper); color:var(--carbon); border-color:var(--paper); font-weight:600}
 .btn-primary:hover{opacity:.88; background:var(--paper)}
 
@@ -98,6 +103,12 @@ p{margin:0}
 .stat .k{margin-top:7px; font-size:10px; letter-spacing:0.13em; text-transform:uppercase; color:var(--dim)}
 .stat--alert .n{color:var(--c-sensitive)}
 .stat--warn .n{color:var(--c-action)}
+/* 30px numerals only need 3:1, but the dark-theme hues give 1.9-2.3 on a light
+   page, so the light theme darkens them past 4.5 anyway -- these are the
+   figures a reader is meant to take away. */
+@media (prefers-color-scheme: light){
+  .stat--alert .n{color:#C83745} .stat--warn .n{color:#A15C00}
+}
 
 /* ---- tabs ----------------------------------------------------------- */
 .tabs{display:flex; gap:2px; overflow-x:auto; border-bottom:1px solid var(--rule); scrollbar-width:none}
