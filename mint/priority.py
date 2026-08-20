@@ -216,20 +216,36 @@ class PriorityDecision:
         }
 
 
+#: Score movement that counts as a change even when the band holds. A subject
+#: going from "just inside critical" to "far inside critical" has genuinely
+#: escalated, and a system that only reports band crossings cannot say so --
+#: which is exactly the question "what became urgent?" is asking.
+SCORE_MOVE = 1.5
+
+
 @dataclass
 class PriorityChange:
-    """A recorded move between bands, and what caused it."""
+    """A recorded move in priority, and what caused it."""
 
     as_of: str
     previous: str
     new: str
     trigger: str                       # "message" | "elapsed_time" | "initial"
+    kind: str = "band_change"          # band_change | escalation | de_escalation
+    previous_score: float = 0.0
+    score: float = 0.0
     trigger_message_ids: List[str] = field(default_factory=list)
     reason: str = ""
 
+    @property
+    def delta(self) -> float:
+        return round(self.score - self.previous_score, 3)
+
     def to_dict(self) -> dict:
         return {"as_of": self.as_of, "from": self.previous, "to": self.new,
-                "trigger": self.trigger,
+                "kind": self.kind, "trigger": self.trigger,
+                "previous_score": self.previous_score, "score": self.score,
+                "delta": self.delta,
                 "trigger_message_ids": self.trigger_message_ids,
                 "reason": self.reason}
 
@@ -477,23 +493,36 @@ def track(
     if previous is None:
         return PriorityChange(
             as_of=current.as_of, previous="-", new=current.priority,
-            trigger="initial", trigger_message_ids=list(new_message_ids),
+            trigger="initial", kind="initial", previous_score=0.0,
+            score=current.score, trigger_message_ids=list(new_message_ids),
             reason="first assessment of this subject",
         )
-    if previous.priority == current.priority:
+
+    band_changed = previous.priority != current.priority
+    delta = current.score - previous.score
+    if not band_changed and abs(delta) < SCORE_MOVE:
         return None
-    if new_message_ids:
-        return PriorityChange(
-            as_of=current.as_of, previous=previous.priority,
-            new=current.priority, trigger="message",
-            trigger_message_ids=list(new_message_ids),
-            reason=(f"new messages about this subject changed its assessment "
-                    f"from {previous.priority} to {current.priority}"),
-        )
+
+    if band_changed:
+        kind = "band_change"
+    else:
+        kind = "escalation" if delta > 0 else "de_escalation"
+
+    trigger = "message" if new_message_ids else "elapsed_time"
+    if band_changed:
+        moved = f"from {previous.priority} to {current.priority}"
+    else:
+        moved = (f"within {current.priority}, score {previous.score} -> "
+                 f"{current.score}")
+    if trigger == "message":
+        reason = f"new messages about this subject moved its assessment {moved}"
+    else:
+        reason = (f"no new message mentioned this subject; the assessment "
+                  f"moved {moved} because the reference time advanced")
+
     return PriorityChange(
         as_of=current.as_of, previous=previous.priority, new=current.priority,
-        trigger="elapsed_time", trigger_message_ids=[],
-        reason=(f"no new message mentioned this subject; the assessment moved "
-                f"from {previous.priority} to {current.priority} because the "
-                f"reference time advanced past its deadline"),
+        trigger=trigger, kind=kind, previous_score=previous.score,
+        score=current.score, trigger_message_ids=list(new_message_ids),
+        reason=reason,
     )

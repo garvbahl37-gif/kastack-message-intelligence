@@ -415,6 +415,13 @@ def from_l1_extraction(verdict: ActVerdict, item_type: Optional[str]) -> ActVerd
 
     Applied only when L1 actually produced an item and no L2 frame claimed the
     message, so a genuine L2 act is never overwritten.
+
+    The subject phrase is dropped rather than carried over. The only phrase
+    available on this path is whatever the unmatched-question fallback
+    captured, which for "Can you review the privacy checklist before
+    2026-09-09?" is the entire sentence. Clearing it makes `subject_for` fall
+    through to the title L1 already extracted -- "Review the privacy
+    checklist" -- which is both the better identity and the better label.
     """
     if item_type not in ("task", "event"):
         return verdict
@@ -425,7 +432,7 @@ def from_l1_extraction(verdict: ActVerdict, item_type: Optional[str]) -> ActVerd
         confidence=0.85,
         frame="l1_extraction",
         evidence="L1 classified this message as actionable and extracted an item",
-        subject_phrase=verdict.subject_phrase,
+        subject_phrase=None,
         hedged=verdict.hedged,
         repetition=verdict.repetition,
         repeat_depth=verdict.repeat_depth,

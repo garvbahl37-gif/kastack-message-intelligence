@@ -375,11 +375,16 @@ class GroupBuilder:
                     best = (g, score, tokens)
         return best
 
+    @staticmethod
+    def _title(sig: SubjectSignature) -> str:
+        raw = sig.display or " ".join(sorted(sig.tokens))
+        return raw[:1].upper() + raw[1:] if raw else raw
+
     def _new_group(self, sig: SubjectSignature, kind: str) -> MessageGroup:
         self._n += 1
         return MessageGroup(
             group_id=f"GROUP_{self._n:03d}",
-            title=sig.display or " ".join(sorted(sig.tokens)),
+            title=self._title(sig),
             kind=kind,
             signature=sig,
         )
@@ -604,7 +609,8 @@ class GroupBuilder:
             # group's identity, and matching against every variant means a
             # sparse reference like "the assignment" still lands here.
             if len(sig.specific) > len(g.signature.specific):
-                g.signature, g.title = sig, sig.display or g.title
+                g.signature = sig
+                g.title = self._title(sig) or g.title
             if all(sig.tokens != v.tokens for v in g.variants) \
                     and sig.tokens != g.signature.tokens:
                 g.variants.append(sig)
