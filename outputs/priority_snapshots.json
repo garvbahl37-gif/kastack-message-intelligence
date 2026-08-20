@@ -6,7 +6,7 @@
       "critical": 0,
       "high": 20,
       "medium": 0,
-      "low": 30
+      "low": 29
     },
     "changes": [
       {
@@ -157,30 +157,6 @@
         "group_id": "GROUP_007",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
-        "to": "low",
-        "kind": "initial",
-        "trigger": "initial",
-        "previous_score": 0.0,
-        "score": 0.4,
-        "delta": 0.4,
-        "trigger_message_ids": [
-          "MSG_0012",
-          "MSG_0057",
-          "MSG_0148",
-          "MSG_0460",
-          "MSG_0533",
-          "MSG_0570",
-          "MSG_0692",
-          "MSG_0738",
-          "MSG_0771",
-          "MSG_0879"
-        ],
-        "reason": "first assessment of this subject"
-      },
-      {
-        "group_id": "GROUP_008",
-        "as_of": "2026-09-24 10:23:00",
-        "from": "-",
         "to": "high",
         "kind": "initial",
         "trigger": "initial",
@@ -202,7 +178,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_009",
+        "group_id": "GROUP_008",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -226,7 +202,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_010",
+        "group_id": "GROUP_009",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -250,7 +226,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -274,7 +250,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_012",
+        "group_id": "GROUP_011",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -298,7 +274,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_013",
+        "group_id": "GROUP_012",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -322,7 +298,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_014",
+        "group_id": "GROUP_013",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -346,7 +322,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_015",
+        "group_id": "GROUP_014",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -370,7 +346,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_016",
+        "group_id": "GROUP_015",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -394,7 +370,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_017",
+        "group_id": "GROUP_016",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -409,7 +385,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_018",
+        "group_id": "GROUP_017",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -433,7 +409,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_019",
+        "group_id": "GROUP_018",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -457,7 +433,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_020",
+        "group_id": "GROUP_019",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -481,7 +457,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_021",
+        "group_id": "GROUP_020",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -505,7 +481,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_022",
+        "group_id": "GROUP_021",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -529,7 +505,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_023",
+        "group_id": "GROUP_022",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -553,7 +529,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_024",
+        "group_id": "GROUP_023",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -577,7 +553,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_025",
+        "group_id": "GROUP_024",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -592,7 +568,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_026",
+        "group_id": "GROUP_025",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -616,7 +592,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_027",
+        "group_id": "GROUP_026",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -640,7 +616,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_028",
+        "group_id": "GROUP_027",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -664,7 +640,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_029",
+        "group_id": "GROUP_028",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -688,7 +664,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_030",
+        "group_id": "GROUP_029",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -712,7 +688,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_031",
+        "group_id": "GROUP_030",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -727,7 +703,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_032",
+        "group_id": "GROUP_031",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -751,7 +727,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_033",
+        "group_id": "GROUP_032",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -775,7 +751,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_034",
+        "group_id": "GROUP_033",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -799,7 +775,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_035",
+        "group_id": "GROUP_034",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -823,7 +799,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_036",
+        "group_id": "GROUP_035",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -847,7 +823,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_037",
+        "group_id": "GROUP_036",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -871,7 +847,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_038",
+        "group_id": "GROUP_037",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -895,7 +871,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_039",
+        "group_id": "GROUP_038",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -919,7 +895,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_040",
+        "group_id": "GROUP_039",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -934,7 +910,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_041",
+        "group_id": "GROUP_040",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -949,7 +925,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_042",
+        "group_id": "GROUP_041",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "high",
@@ -973,7 +949,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_043",
+        "group_id": "GROUP_042",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -997,7 +973,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_044",
+        "group_id": "GROUP_043",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -1021,7 +997,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_045",
+        "group_id": "GROUP_044",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -1045,7 +1021,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_046",
+        "group_id": "GROUP_045",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -1060,7 +1036,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_047",
+        "group_id": "GROUP_046",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -1075,7 +1051,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_048",
+        "group_id": "GROUP_047",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -1090,7 +1066,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_049",
+        "group_id": "GROUP_048",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -1105,7 +1081,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_050",
+        "group_id": "GROUP_049",
         "as_of": "2026-09-24 10:23:00",
         "from": "-",
         "to": "low",
@@ -1127,8 +1103,8 @@
     "counts": {
       "critical": 8,
       "high": 7,
-      "medium": 11,
-      "low": 36
+      "medium": 12,
+      "low": 33
     },
     "changes": [
       {
@@ -1202,7 +1178,7 @@
         "reason": "new messages about this subject moved its assessment from low to medium"
       },
       {
-        "group_id": "GROUP_008",
+        "group_id": "GROUP_007",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "critical",
@@ -1223,7 +1199,7 @@
         "reason": "new messages about this subject moved its assessment from high to critical"
       },
       {
-        "group_id": "GROUP_009",
+        "group_id": "GROUP_008",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1239,14 +1215,12 @@
           "MSG_0973",
           "MSG_0974",
           "MSG_0998",
-          "MSG_1013",
-          "MSG_1020",
-          "MSG_1030"
+          "MSG_1013"
         ],
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_010",
+        "group_id": "GROUP_009",
         "as_of": "2026-10-02 23:07:00",
         "from": "low",
         "to": "medium",
@@ -1261,7 +1235,7 @@
         "reason": "new messages about this subject moved its assessment from low to medium"
       },
       {
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "critical",
@@ -1281,7 +1255,7 @@
         "reason": "new messages about this subject moved its assessment from high to critical"
       },
       {
-        "group_id": "GROUP_012",
+        "group_id": "GROUP_011",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1301,7 +1275,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_013",
+        "group_id": "GROUP_012",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1321,7 +1295,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_014",
+        "group_id": "GROUP_013",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "critical",
@@ -1339,7 +1313,7 @@
         "reason": "new messages about this subject moved its assessment from high to critical"
       },
       {
-        "group_id": "GROUP_015",
+        "group_id": "GROUP_014",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "critical",
@@ -1358,7 +1332,7 @@
         "reason": "new messages about this subject moved its assessment from high to critical"
       },
       {
-        "group_id": "GROUP_016",
+        "group_id": "GROUP_015",
         "as_of": "2026-10-02 23:07:00",
         "from": "low",
         "to": "medium",
@@ -1373,7 +1347,7 @@
         "reason": "new messages about this subject moved its assessment from low to medium"
       },
       {
-        "group_id": "GROUP_021",
+        "group_id": "GROUP_020",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1391,7 +1365,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_022",
+        "group_id": "GROUP_021",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1414,7 +1388,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_023",
+        "group_id": "GROUP_022",
         "as_of": "2026-10-02 23:07:00",
         "from": "low",
         "to": "high",
@@ -1430,7 +1404,7 @@
         "reason": "new messages about this subject moved its assessment from low to high"
       },
       {
-        "group_id": "GROUP_027",
+        "group_id": "GROUP_026",
         "as_of": "2026-10-02 23:07:00",
         "from": "low",
         "to": "high",
@@ -1446,7 +1420,7 @@
         "reason": "new messages about this subject moved its assessment from low to high"
       },
       {
-        "group_id": "GROUP_028",
+        "group_id": "GROUP_027",
         "as_of": "2026-10-02 23:07:00",
         "from": "low",
         "to": "high",
@@ -1461,7 +1435,7 @@
         "reason": "new messages about this subject moved its assessment from low to high"
       },
       {
-        "group_id": "GROUP_029",
+        "group_id": "GROUP_028",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1481,7 +1455,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_032",
+        "group_id": "GROUP_031",
         "as_of": "2026-10-02 23:07:00",
         "from": "low",
         "to": "medium",
@@ -1496,7 +1470,7 @@
         "reason": "new messages about this subject moved its assessment from low to medium"
       },
       {
-        "group_id": "GROUP_033",
+        "group_id": "GROUP_032",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1516,7 +1490,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_034",
+        "group_id": "GROUP_033",
         "as_of": "2026-10-02 23:07:00",
         "from": "low",
         "to": "medium",
@@ -1531,7 +1505,7 @@
         "reason": "new messages about this subject moved its assessment from low to medium"
       },
       {
-        "group_id": "GROUP_035",
+        "group_id": "GROUP_034",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1549,7 +1523,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_036",
+        "group_id": "GROUP_035",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1565,7 +1539,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_037",
+        "group_id": "GROUP_036",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1581,7 +1555,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_038",
+        "group_id": "GROUP_037",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "low",
@@ -1600,7 +1574,7 @@
         "reason": "new messages about this subject moved its assessment from high to low"
       },
       {
-        "group_id": "GROUP_039",
+        "group_id": "GROUP_038",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "critical",
@@ -1617,7 +1591,7 @@
         "reason": "new messages about this subject moved its assessment from high to critical"
       },
       {
-        "group_id": "GROUP_042",
+        "group_id": "GROUP_041",
         "as_of": "2026-10-02 23:07:00",
         "from": "high",
         "to": "critical",
@@ -1634,7 +1608,7 @@
         "reason": "new messages about this subject moved its assessment from high to critical"
       },
       {
-        "group_id": "GROUP_051",
+        "group_id": "GROUP_050",
         "as_of": "2026-10-02 23:07:00",
         "from": "-",
         "to": "high",
@@ -1650,7 +1624,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_052",
+        "group_id": "GROUP_051",
         "as_of": "2026-10-02 23:07:00",
         "from": "-",
         "to": "high",
@@ -1666,7 +1640,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_053",
+        "group_id": "GROUP_052",
         "as_of": "2026-10-02 23:07:00",
         "from": "-",
         "to": "high",
@@ -1682,7 +1656,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_054",
+        "group_id": "GROUP_053",
         "as_of": "2026-10-02 23:07:00",
         "from": "-",
         "to": "medium",
@@ -1694,6 +1668,22 @@
         "trigger_message_ids": [
           "MSG_1019",
           "MSG_1029"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_054",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 2.15,
+        "delta": 2.15,
+        "trigger_message_ids": [
+          "MSG_1020",
+          "MSG_1030"
         ],
         "reason": "first assessment of this subject"
       },
@@ -1788,43 +1778,9 @@
         "score": 0.2,
         "delta": 0.2,
         "trigger_message_ids": [
-          "MSG_1057",
-          "MSG_1062",
-          "MSG_1067"
-        ],
-        "reason": "first assessment of this subject"
-      },
-      {
-        "group_id": "GROUP_061",
-        "as_of": "2026-10-02 23:07:00",
-        "from": "-",
-        "to": "low",
-        "kind": "initial",
-        "trigger": "initial",
-        "previous_score": 0.0,
-        "score": 0.2,
-        "delta": 0.2,
-        "trigger_message_ids": [
           "MSG_1058",
           "MSG_1063",
           "MSG_1068"
-        ],
-        "reason": "first assessment of this subject"
-      },
-      {
-        "group_id": "GROUP_062",
-        "as_of": "2026-10-02 23:07:00",
-        "from": "-",
-        "to": "low",
-        "kind": "initial",
-        "trigger": "initial",
-        "previous_score": 0.0,
-        "score": 0.2,
-        "delta": 0.2,
-        "trigger_message_ids": [
-          "MSG_1059",
-          "MSG_1064",
-          "MSG_1069"
         ],
         "reason": "first assessment of this subject"
       }
@@ -1835,9 +1791,9 @@
     "as_of": "2026-10-05 01:24:00",
     "counts": {
       "critical": 7,
-      "high": 12,
+      "high": 13,
       "medium": 11,
-      "low": 36
+      "low": 32
     },
     "changes": [
       {
@@ -1854,7 +1810,7 @@
         "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
       },
       {
-        "group_id": "GROUP_010",
+        "group_id": "GROUP_009",
         "as_of": "2026-10-05 01:24:00",
         "from": "medium",
         "to": "low",
@@ -1869,7 +1825,7 @@
         "reason": "new messages about this subject moved its assessment from medium to low"
       },
       {
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "as_of": "2026-10-05 01:24:00",
         "from": "critical",
         "to": "critical",
@@ -1885,7 +1841,7 @@
         "reason": "new messages about this subject moved its assessment within critical, score 4.7 -> 9.3"
       },
       {
-        "group_id": "GROUP_014",
+        "group_id": "GROUP_013",
         "as_of": "2026-10-05 01:24:00",
         "from": "critical",
         "to": "low",
@@ -1901,7 +1857,7 @@
         "reason": "new messages about this subject moved its assessment from critical to low"
       },
       {
-        "group_id": "GROUP_016",
+        "group_id": "GROUP_015",
         "as_of": "2026-10-05 01:24:00",
         "from": "medium",
         "to": "high",
@@ -1914,7 +1870,7 @@
         "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
       },
       {
-        "group_id": "GROUP_024",
+        "group_id": "GROUP_023",
         "as_of": "2026-10-05 01:24:00",
         "from": "low",
         "to": "medium",
@@ -1927,7 +1883,7 @@
         "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
       },
       {
-        "group_id": "GROUP_030",
+        "group_id": "GROUP_029",
         "as_of": "2026-10-05 01:24:00",
         "from": "low",
         "to": "medium",
@@ -1940,7 +1896,7 @@
         "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
       },
       {
-        "group_id": "GROUP_032",
+        "group_id": "GROUP_031",
         "as_of": "2026-10-05 01:24:00",
         "from": "medium",
         "to": "high",
@@ -1953,7 +1909,7 @@
         "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
       },
       {
-        "group_id": "GROUP_034",
+        "group_id": "GROUP_033",
         "as_of": "2026-10-05 01:24:00",
         "from": "medium",
         "to": "high",
@@ -1966,7 +1922,7 @@
         "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
       },
       {
-        "group_id": "GROUP_054",
+        "group_id": "GROUP_053",
         "as_of": "2026-10-05 01:24:00",
         "from": "medium",
         "to": "high",
@@ -1975,6 +1931,19 @@
         "previous_score": 2.9,
         "score": 4.1,
         "delta": 1.2,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_054",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "medium",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 2.15,
+        "score": 3.95,
+        "delta": 1.8,
         "trigger_message_ids": [],
         "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
       },
@@ -2005,7 +1974,7 @@
         "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
       },
       {
-        "group_id": "GROUP_063",
+        "group_id": "GROUP_061",
         "as_of": "2026-10-05 01:24:00",
         "from": "-",
         "to": "medium",
@@ -2020,7 +1989,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_064",
+        "group_id": "GROUP_062",
         "as_of": "2026-10-05 01:24:00",
         "from": "-",
         "to": "medium",
@@ -2035,7 +2004,7 @@
         "reason": "first assessment of this subject"
       },
       {
-        "group_id": "GROUP_065",
+        "group_id": "GROUP_063",
         "as_of": "2026-10-05 01:24:00",
         "from": "-",
         "to": "low",
@@ -2046,21 +2015,6 @@
         "delta": 0.4,
         "trigger_message_ids": [
           "DEMO_022"
-        ],
-        "reason": "first assessment of this subject"
-      },
-      {
-        "group_id": "GROUP_066",
-        "as_of": "2026-10-05 01:24:00",
-        "from": "-",
-        "to": "low",
-        "kind": "initial",
-        "trigger": "initial",
-        "previous_score": 0.0,
-        "score": 0.7,
-        "delta": 0.7,
-        "trigger_message_ids": [
-          "DEMO_023"
         ],
         "reason": "first assessment of this subject"
       }

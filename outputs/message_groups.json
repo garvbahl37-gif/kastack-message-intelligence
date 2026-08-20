@@ -89,8 +89,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -107,8 +107,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -125,8 +125,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -143,8 +143,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -161,8 +161,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -179,8 +179,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -197,8 +197,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -215,8 +215,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -233,8 +233,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -251,8 +251,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -269,8 +269,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "family",
-          "dinner"
+          "dinner",
+          "family"
         ],
         "weak_link": false,
         "seed": false,
@@ -1761,9 +1761,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1780,9 +1780,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1799,9 +1799,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1818,9 +1818,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1837,9 +1837,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1856,9 +1856,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1875,9 +1875,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1894,9 +1894,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1913,9 +1913,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1932,9 +1932,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1951,9 +1951,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -1970,9 +1970,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "bill",
           "pay",
-          "electricity",
-          "bill"
+          "electricity"
         ],
         "weak_link": false,
         "seed": false,
@@ -2568,276 +2568,6 @@
   },
   {
     "group_id": "GROUP_007",
-    "title": "I will send the login details separately",
-    "kind": "task",
-    "related_message_ids": [
-      "MSG_0012",
-      "MSG_0057",
-      "MSG_0148",
-      "MSG_0460",
-      "MSG_0533",
-      "MSG_0570",
-      "MSG_0692",
-      "MSG_0738",
-      "MSG_0771",
-      "MSG_0879"
-    ],
-    "related_item_ids": [
-      "TASK_0004",
-      "TASK_0019",
-      "TASK_0044",
-      "TASK_0126",
-      "TASK_0151",
-      "TASK_0166",
-      "TASK_0201",
-      "TASK_0212",
-      "TASK_0218",
-      "TASK_0246"
-    ],
-    "status": "pending",
-    "status_label": "Pending",
-    "status_reason": "the subject was raised as new work",
-    "status_source_message_id": "MSG_0012",
-    "latest_deadline": null,
-    "latest_deadline_source": null,
-    "pending_relative_deadline": null,
-    "pending_relative_source": null,
-    "latest_schedule": null,
-    "summary": "Raised on 2026-09-01 by Neha.",
-    "confidence": 0.97,
-    "message_count": 10,
-    "chase_count": 0,
-    "restatement_count": 0,
-    "deadline_restatements": 0,
-    "response_required": false,
-    "contested": false,
-    "unresolved_alternatives": [],
-    "first_seen": "2026-09-01 14:47:00",
-    "last_seen": "2026-09-23 21:26:00",
-    "subject_tokens": [
-      "detail",
-      "login",
-      "send",
-      "separately"
-    ],
-    "members": [
-      {
-        "message_id": "MSG_0012",
-        "timestamp": "2026-09-01 14:47:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "detail",
-          "login",
-          "send",
-          "separately"
-        ],
-        "weak_link": false,
-        "seed": true,
-        "item_id": "TASK_0004"
-      },
-      {
-        "message_id": "MSG_0057",
-        "timestamp": "2026-09-02 18:32:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0019"
-      },
-      {
-        "message_id": "MSG_0148",
-        "timestamp": "2026-09-05 02:39:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0044"
-      },
-      {
-        "message_id": "MSG_0460",
-        "timestamp": "2026-09-13 03:03:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0126"
-      },
-      {
-        "message_id": "MSG_0533",
-        "timestamp": "2026-09-15 00:04:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0151"
-      },
-      {
-        "message_id": "MSG_0570",
-        "timestamp": "2026-09-15 22:53:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0166"
-      },
-      {
-        "message_id": "MSG_0692",
-        "timestamp": "2026-09-19 02:07:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0201"
-      },
-      {
-        "message_id": "MSG_0738",
-        "timestamp": "2026-09-20 06:29:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0212"
-      },
-      {
-        "message_id": "MSG_0771",
-        "timestamp": "2026-09-21 02:50:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0218"
-      },
-      {
-        "message_id": "MSG_0879",
-        "timestamp": "2026-09-23 21:26:00",
-        "sender": "Neha",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "l1_extraction",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "login",
-          "separately",
-          "detail",
-          "send"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0246"
-      }
-    ],
-    "status_history": [
-      {
-        "message_id": "MSG_0012",
-        "timestamp": "2026-09-01 14:47:00",
-        "from": "unclear",
-        "to": "pending",
-        "act": "new_task",
-        "reason": "the subject was raised as new work"
-      }
-    ],
-    "deadline_history": [],
-    "schedule_history": [],
-    "conflicts": []
-  },
-  {
-    "group_id": "GROUP_008",
     "title": "Renew the library book",
     "kind": "task",
     "related_message_ids": [
@@ -2933,9 +2663,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -2952,9 +2682,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -2971,9 +2701,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -2990,9 +2720,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3009,9 +2739,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3028,9 +2758,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3047,9 +2777,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3066,9 +2796,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3085,9 +2815,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3104,9 +2834,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3123,9 +2853,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3142,9 +2872,9 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3161,9 +2891,9 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3180,9 +2910,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3199,9 +2929,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3218,9 +2948,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "library",
           "book",
-          "renew",
-          "library"
+          "renew"
         ],
         "weak_link": false,
         "seed": false,
@@ -3390,7 +3120,7 @@
     ]
   },
   {
-    "group_id": "GROUP_009",
+    "group_id": "GROUP_008",
     "title": "Review the model results",
     "kind": "task",
     "related_message_ids": [
@@ -3411,8 +3141,6 @@
       "MSG_0974",
       "MSG_0998",
       "MSG_1013",
-      "MSG_1020",
-      "MSG_1030",
       "DEMO_005"
     ],
     "related_item_ids": [
@@ -3430,22 +3158,20 @@
       "TASK_0275",
       "TASK_0314",
       "TASK_0327",
-      "TASK_0336",
-      "EVENT_0172",
-      "TASK_0347"
+      "TASK_0336"
     ],
     "status": "completed",
     "status_label": "Completed",
     "status_reason": "a message reports the work finished",
     "status_source_message_id": "MSG_0935",
-    "latest_deadline": "2026-10-04",
-    "latest_deadline_source": "MSG_1030",
+    "latest_deadline": "2026-09-30",
+    "latest_deadline_source": "MSG_0974",
     "pending_relative_deadline": null,
     "pending_relative_source": null,
     "latest_schedule": null,
-    "summary": "Raised on 2026-09-01 by Neha; the deadline changed 3 time(s) and now stands at 2026-10-04 (from MSG_1030); 9 original request(s) restated the subject with a different date; chased 5 time(s); reported complete in MSG_0935; the messages contradict each other, so the status is contested.",
-    "confidence": 0.8483,
-    "message_count": 20,
+    "summary": "Raised on 2026-09-01 by Neha; the deadline changed 2 time(s) and now stands at 2026-09-30 (from MSG_0974); 9 original request(s) restated the subject with a different date; chased 5 time(s); reported complete in MSG_0935; the messages contradict each other, so the status is contested.",
+    "confidence": 0.8578,
+    "message_count": 18,
     "chase_count": 5,
     "restatement_count": 0,
     "deadline_restatements": 9,
@@ -3754,7 +3480,7 @@
         "frame": "still_needs_attention",
         "hedged": false,
         "repetition": false,
-        "match_score": 0.9235,
+        "match_score": 0.924,
         "match_tokens": [
           "model",
           "result"
@@ -3780,43 +3506,6 @@
         "weak_link": false,
         "seed": false,
         "item_id": "TASK_0336"
-      },
-      {
-        "message_id": "MSG_1020",
-        "timestamp": "2026-09-30 18:07:00",
-        "sender": "Mentor",
-        "act": "new_event",
-        "act_label": "new meeting or event announced",
-        "frame": "new_session_scheduled",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 0.6315,
-        "match_tokens": [
-          "result",
-          "review"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "EVENT_0172"
-      },
-      {
-        "message_id": "MSG_1030",
-        "timestamp": "2026-10-01 02:57:00",
-        "sender": "HR Team",
-        "act": "new_task",
-        "act_label": "new task raised",
-        "frame": "new_task_marker",
-        "hedged": false,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "quantization",
-          "result",
-          "review"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0347"
       },
       {
         "message_id": "DEMO_005",
@@ -3988,28 +3677,6 @@
         "direction": "later",
         "flagged_conflict": true,
         "origin": "l2_update"
-      },
-      {
-        "message_id": "MSG_1020",
-        "timestamp": "2026-09-30 18:07:00",
-        "field": "deadline",
-        "previous": "2026-09-30",
-        "new": "2026-10-04",
-        "raw": null,
-        "direction": "later",
-        "flagged_conflict": false,
-        "origin": "l2_update"
-      },
-      {
-        "message_id": "MSG_1030",
-        "timestamp": "2026-10-01 02:57:00",
-        "field": "deadline",
-        "previous": "2026-10-04",
-        "new": "2026-10-04",
-        "raw": null,
-        "direction": "unchanged",
-        "flagged_conflict": false,
-        "origin": "l2_update"
       }
     ],
     "schedule_history": [],
@@ -4061,13 +3728,6 @@
         "detail": "the subject was chased after it was reported completed, so the two sides disagree about whether any work is outstanding"
       },
       {
-        "kind": "deadline_changed",
-        "message_ids": [
-          "MSG_1020"
-        ],
-        "detail": "the deadline moved from 2026-09-30 to 2026-10-04 (later)"
-      },
-      {
         "kind": "chased_after_closure",
         "message_ids": [
           "DEMO_005",
@@ -4078,7 +3738,7 @@
     ]
   },
   {
-    "group_id": "GROUP_010",
+    "group_id": "GROUP_009",
     "title": "Team stand-up",
     "kind": "event",
     "related_message_ids": [
@@ -4168,8 +3828,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4187,8 +3847,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4206,8 +3866,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4225,8 +3885,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4244,8 +3904,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4263,8 +3923,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4282,8 +3942,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4301,8 +3961,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4320,8 +3980,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4339,8 +3999,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4358,8 +4018,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "stand",
           "team",
+          "stand",
           "up"
         ],
         "weak_link": false,
@@ -4421,7 +4081,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_011",
+    "group_id": "GROUP_010",
     "title": "Confirm the interview slot",
     "kind": "task",
     "related_message_ids": [
@@ -4519,9 +4179,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4538,9 +4198,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4557,9 +4217,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4576,9 +4236,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4595,9 +4255,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4614,9 +4274,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4633,9 +4293,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4652,9 +4312,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4671,9 +4331,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4690,9 +4350,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4709,9 +4369,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4728,9 +4388,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4747,9 +4407,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4766,9 +4426,9 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4785,9 +4445,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4804,9 +4464,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -4823,9 +4483,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "confirm",
           "slot",
-          "interview",
-          "confirm"
+          "interview"
         ],
         "weak_link": false,
         "seed": false,
@@ -5013,7 +4673,7 @@
     ]
   },
   {
-    "group_id": "GROUP_012",
+    "group_id": "GROUP_011",
     "title": "Email the signed document",
     "kind": "task",
     "related_message_ids": [
@@ -5551,7 +5211,7 @@
     ]
   },
   {
-    "group_id": "GROUP_013",
+    "group_id": "GROUP_012",
     "title": "Update the project tracker",
     "kind": "task",
     "related_message_ids": [
@@ -6120,7 +5780,7 @@
     ]
   },
   {
-    "group_id": "GROUP_014",
+    "group_id": "GROUP_013",
     "title": "Upload the assignment",
     "kind": "task",
     "related_message_ids": [
@@ -6406,7 +6066,7 @@
         "frame": "any_progress",
         "hedged": false,
         "repetition": false,
-        "match_score": 0.8452,
+        "match_score": 0.8449,
         "match_tokens": [
           "assignment"
         ],
@@ -6613,7 +6273,7 @@
     ]
   },
   {
-    "group_id": "GROUP_015",
+    "group_id": "GROUP_014",
     "title": "Complete the onboarding form",
     "kind": "task",
     "related_message_ids": [
@@ -6706,8 +6366,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6725,8 +6385,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6744,8 +6404,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6763,8 +6423,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6782,8 +6442,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6801,8 +6461,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6820,8 +6480,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6839,8 +6499,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6858,8 +6518,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6877,8 +6537,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6896,8 +6556,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6915,8 +6575,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6934,8 +6594,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -6951,7 +6611,7 @@
         "frame": "handled_yet",
         "hedged": false,
         "repetition": false,
-        "match_score": 0.9058,
+        "match_score": 0.9057,
         "match_tokens": [
           "onboard",
           "form"
@@ -6971,8 +6631,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "complete",
           "onboard",
+          "complete",
           "form"
         ],
         "weak_link": false,
@@ -7106,7 +6766,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_016",
+    "group_id": "GROUP_015",
     "title": "Study-group session",
     "kind": "event",
     "related_message_ids": [
@@ -7195,9 +6855,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7214,9 +6874,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7233,9 +6893,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7252,9 +6912,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7271,9 +6931,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7290,9 +6950,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7309,9 +6969,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7328,9 +6988,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7347,9 +7007,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7366,9 +7026,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
+          "study",
           "session",
-          "group",
-          "study"
+          "group"
         ],
         "weak_link": false,
         "seed": false,
@@ -7421,7 +7081,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_017",
+    "group_id": "GROUP_016",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -7478,7 +7138,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_018",
+    "group_id": "GROUP_017",
     "title": "Demo was ready",
     "kind": "task",
     "related_message_ids": [
@@ -7726,7 +7386,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_019",
+    "group_id": "GROUP_018",
     "title": "Review the file before the meeting",
     "kind": "task",
     "related_message_ids": [
@@ -7809,8 +7469,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7828,8 +7488,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7847,8 +7507,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7866,8 +7526,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7885,8 +7545,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7904,8 +7564,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7923,8 +7583,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7942,8 +7602,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7961,8 +7621,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "file",
           "meet",
+          "file",
           "review"
         ],
         "weak_link": false,
@@ -7985,7 +7645,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_020",
+    "group_id": "GROUP_019",
     "title": "Client discussion",
     "kind": "event",
     "related_message_ids": [
@@ -8330,7 +7990,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_021",
+    "group_id": "GROUP_020",
     "title": "Complete the Python exercise",
     "kind": "task",
     "related_message_ids": [
@@ -8818,7 +8478,7 @@
     ]
   },
   {
-    "group_id": "GROUP_022",
+    "group_id": "GROUP_021",
     "title": "Call the service centre",
     "kind": "task",
     "related_message_ids": [
@@ -8917,8 +8577,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -8936,8 +8596,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -8955,8 +8615,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -8974,8 +8634,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -8993,8 +8653,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9012,8 +8672,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9031,8 +8691,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9050,8 +8710,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9069,8 +8729,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9088,8 +8748,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9107,8 +8767,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9126,8 +8786,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9145,8 +8805,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9164,8 +8824,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9183,8 +8843,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9202,8 +8862,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9221,8 +8881,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9240,8 +8900,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "service",
           "centre",
+          "service",
           "call"
         ],
         "weak_link": false,
@@ -9442,7 +9102,7 @@
     ]
   },
   {
-    "group_id": "GROUP_023",
+    "group_id": "GROUP_022",
     "title": "Product demo",
     "kind": "event",
     "related_message_ids": [
@@ -9787,7 +9447,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_024",
+    "group_id": "GROUP_023",
     "title": "Doctor appointment",
     "kind": "event",
     "related_message_ids": [
@@ -10090,7 +9750,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_025",
+    "group_id": "GROUP_024",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -10147,7 +9807,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_026",
+    "group_id": "GROUP_025",
     "title": "Call Maya when you are free",
     "kind": "task",
     "related_message_ids": [
@@ -10231,8 +9891,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10250,8 +9910,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10269,8 +9929,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10288,8 +9948,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10307,8 +9967,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10326,8 +9986,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10345,8 +10005,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10364,8 +10024,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10383,8 +10043,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "free",
-          "call",
-          "maya"
+          "maya",
+          "call"
         ],
         "weak_link": false,
         "seed": false,
@@ -10406,7 +10066,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_027",
+    "group_id": "GROUP_026",
     "title": "AI workshop",
     "kind": "event",
     "related_message_ids": [
@@ -10495,8 +10155,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10513,8 +10173,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10531,8 +10191,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10549,8 +10209,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10567,8 +10227,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10585,8 +10245,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10603,8 +10263,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10621,8 +10281,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10639,8 +10299,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10657,8 +10317,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10675,8 +10335,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "ai",
-          "workshop"
+          "workshop",
+          "ai"
         ],
         "weak_link": false,
         "seed": false,
@@ -10751,7 +10411,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_028",
+    "group_id": "GROUP_027",
     "title": "Project review",
     "kind": "event",
     "related_message_ids": [
@@ -11054,7 +10714,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_029",
+    "group_id": "GROUP_028",
     "title": "Finish the test cases",
     "kind": "task",
     "related_message_ids": [
@@ -11621,7 +11281,7 @@
     ]
   },
   {
-    "group_id": "GROUP_030",
+    "group_id": "GROUP_029",
     "title": "Placement briefing",
     "kind": "event",
     "related_message_ids": [
@@ -11966,7 +11626,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_031",
+    "group_id": "GROUP_030",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -12023,7 +11683,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_032",
+    "group_id": "GROUP_031",
     "title": "Sprint planning",
     "kind": "event",
     "related_message_ids": [
@@ -12326,7 +11986,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_033",
+    "group_id": "GROUP_032",
     "title": "Send the revised presentation",
     "kind": "task",
     "related_message_ids": [
@@ -12372,7 +12032,7 @@
     "pending_relative_source": null,
     "latest_schedule": null,
     "summary": "Raised on 2026-09-03 by Maya; the deadline changed 1 time(s) and now stands at 2026-09-29 (from MSG_0985); 9 original request(s) restated the subject with a different date; chased 3 time(s); 1 restatement(s) of earlier messages; cancelled in MSG_0934; the messages contradict each other, so the status is contested.",
-    "confidence": 0.8572,
+    "confidence": 0.857,
     "message_count": 16,
     "chase_count": 3,
     "restatement_count": 1,
@@ -12419,8 +12079,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12438,8 +12098,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12457,8 +12117,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12476,8 +12136,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12495,8 +12155,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12514,8 +12174,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12533,8 +12193,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12552,8 +12212,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12571,8 +12231,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12590,8 +12250,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12609,8 +12269,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12628,8 +12288,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "revised",
-          "presentation",
-          "send"
+          "send",
+          "presentation"
         ],
         "weak_link": false,
         "seed": false,
@@ -12644,7 +12304,7 @@
         "frame": "handled_yet",
         "hedged": false,
         "repetition": false,
-        "match_score": 0.9147,
+        "match_score": 0.9108,
         "match_tokens": [
           "revised",
           "presentation"
@@ -12875,7 +12535,7 @@
     ]
   },
   {
-    "group_id": "GROUP_034",
+    "group_id": "GROUP_033",
     "title": "Technical interview",
     "kind": "event",
     "related_message_ids": [
@@ -13178,7 +12838,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_035",
+    "group_id": "GROUP_034",
     "title": "Prepare the demo video",
     "kind": "task",
     "related_message_ids": [
@@ -13665,7 +13325,7 @@
     ]
   },
   {
-    "group_id": "GROUP_036",
+    "group_id": "GROUP_035",
     "title": "Send the expense receipt",
     "kind": "task",
     "related_message_ids": [
@@ -14111,7 +13771,7 @@
     ]
   },
   {
-    "group_id": "GROUP_037",
+    "group_id": "GROUP_036",
     "title": "Verify the dataset labels",
     "kind": "task",
     "related_message_ids": [
@@ -14198,9 +13858,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14217,9 +13877,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14236,9 +13896,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14255,9 +13915,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14274,9 +13934,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14293,9 +13953,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14312,9 +13972,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14331,9 +13991,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14350,9 +14010,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14369,9 +14029,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14388,9 +14048,9 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "label",
           "verify",
-          "dataset"
+          "dataset",
+          "label"
         ],
         "weak_link": false,
         "seed": false,
@@ -14558,7 +14218,7 @@
     ]
   },
   {
-    "group_id": "GROUP_038",
+    "group_id": "GROUP_037",
     "title": "Submit the weekly report",
     "kind": "task",
     "related_message_ids": [
@@ -14854,7 +14514,7 @@
         "frame": "hedged_completion",
         "hedged": true,
         "repetition": false,
-        "match_score": 0.7796,
+        "match_score": 0.7794,
         "match_tokens": [
           "report"
         ],
@@ -15079,7 +14739,7 @@
     ]
   },
   {
-    "group_id": "GROUP_039",
+    "group_id": "GROUP_038",
     "title": "Share the meeting notes",
     "kind": "task",
     "related_message_ids": [
@@ -15167,8 +14827,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15186,8 +14846,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15205,8 +14865,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15224,8 +14884,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15243,8 +14903,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15262,8 +14922,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15281,8 +14941,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15300,8 +14960,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15319,8 +14979,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15338,8 +14998,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15357,8 +15017,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15376,8 +15036,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "share",
           "note",
+          "share",
           "meet"
         ],
         "weak_link": false,
@@ -15530,7 +15190,7 @@
     ]
   },
   {
-    "group_id": "GROUP_040",
+    "group_id": "GROUP_039",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -15587,7 +15247,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_041",
+    "group_id": "GROUP_040",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -15644,7 +15304,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_042",
+    "group_id": "GROUP_041",
     "title": "Back up the project files",
     "kind": "task",
     "related_message_ids": [
@@ -16108,7 +15768,7 @@
     ]
   },
   {
-    "group_id": "GROUP_043",
+    "group_id": "GROUP_042",
     "title": "Design review",
     "kind": "event",
     "related_message_ids": [
@@ -16356,7 +16016,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_044",
+    "group_id": "GROUP_043",
     "title": "Send it soon",
     "kind": "task",
     "related_message_ids": [
@@ -16604,7 +16264,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_045",
+    "group_id": "GROUP_044",
     "title": "College seminar",
     "kind": "event",
     "related_message_ids": [
@@ -16685,8 +16345,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16703,8 +16363,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16721,8 +16381,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16739,8 +16399,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16757,8 +16417,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16775,8 +16435,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16793,8 +16453,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16811,8 +16471,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16829,8 +16489,8 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "seminar",
-          "college"
+          "college",
+          "seminar"
         ],
         "weak_link": false,
         "seed": false,
@@ -16852,7 +16512,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_046",
+    "group_id": "GROUP_045",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -16909,7 +16569,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_047",
+    "group_id": "GROUP_046",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -16966,7 +16626,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_048",
+    "group_id": "GROUP_047",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -17023,7 +16683,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_049",
+    "group_id": "GROUP_048",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -17080,7 +16740,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_050",
+    "group_id": "GROUP_049",
     "title": "Review",
     "kind": "event",
     "related_message_ids": [
@@ -17137,7 +16797,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_051",
+    "group_id": "GROUP_050",
     "title": "Prepare the offline inference demo",
     "kind": "event",
     "related_message_ids": [
@@ -17254,7 +16914,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_052",
+    "group_id": "GROUP_051",
     "title": "Compare two embedding models",
     "kind": "task",
     "related_message_ids": [
@@ -17323,8 +16983,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "embedd",
           "two",
+          "embedd",
           "compare",
           "model"
         ],
@@ -17360,7 +17020,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_053",
+    "group_id": "GROUP_052",
     "title": "Document privacy-routing decisions",
     "kind": "task",
     "related_message_ids": [
@@ -17429,10 +17089,10 @@
         "repetition": false,
         "match_score": 1.0,
         "match_tokens": [
-          "route",
           "decision",
-          "document",
-          "privacy"
+          "route",
+          "privacy",
+          "document"
         ],
         "weak_link": false,
         "seed": false,
@@ -17477,7 +17137,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_054",
+    "group_id": "GROUP_053",
     "title": "Create a latency chart",
     "kind": "task",
     "related_message_ids": [
@@ -17544,8 +17204,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "chart",
           "create",
+          "chart",
           "latency"
         ],
         "weak_link": false,
@@ -17572,6 +17232,120 @@
         "new": "2026-10-03",
         "raw": null,
         "direction": "set",
+        "flagged_conflict": false,
+        "origin": "l2_update"
+      }
+    ],
+    "schedule_history": [],
+    "conflicts": []
+  },
+  {
+    "group_id": "GROUP_054",
+    "title": "Review the quantization results",
+    "kind": "event",
+    "related_message_ids": [
+      "MSG_1020",
+      "MSG_1030"
+    ],
+    "related_item_ids": [
+      "EVENT_0172",
+      "TASK_0347"
+    ],
+    "status": "pending",
+    "status_label": "Pending",
+    "status_reason": "the subject was raised as new work",
+    "status_source_message_id": "MSG_1020",
+    "latest_deadline": "2026-10-04",
+    "latest_deadline_source": "MSG_1030",
+    "pending_relative_deadline": null,
+    "pending_relative_source": null,
+    "latest_schedule": null,
+    "summary": "Raised on 2026-09-30 by Mentor; deadline 2026-10-04 (from MSG_1030).",
+    "confidence": 0.97,
+    "message_count": 2,
+    "chase_count": 0,
+    "restatement_count": 0,
+    "deadline_restatements": 0,
+    "response_required": false,
+    "contested": false,
+    "unresolved_alternatives": [],
+    "first_seen": "2026-09-30 18:07:00",
+    "last_seen": "2026-10-01 02:57:00",
+    "subject_tokens": [
+      "quantization",
+      "result",
+      "review"
+    ],
+    "members": [
+      {
+        "message_id": "MSG_1020",
+        "timestamp": "2026-09-30 18:07:00",
+        "sender": "Mentor",
+        "act": "new_event",
+        "act_label": "new meeting or event announced",
+        "frame": "new_session_scheduled",
+        "hedged": false,
+        "repetition": false,
+        "match_score": 1.0,
+        "match_tokens": [
+          "quantization",
+          "result",
+          "review"
+        ],
+        "weak_link": false,
+        "seed": true,
+        "item_id": "EVENT_0172"
+      },
+      {
+        "message_id": "MSG_1030",
+        "timestamp": "2026-10-01 02:57:00",
+        "sender": "HR Team",
+        "act": "new_task",
+        "act_label": "new task raised",
+        "frame": "new_task_marker",
+        "hedged": false,
+        "repetition": false,
+        "match_score": 1.0,
+        "match_tokens": [
+          "quantization",
+          "result",
+          "review"
+        ],
+        "weak_link": false,
+        "seed": false,
+        "item_id": "TASK_0347"
+      }
+    ],
+    "status_history": [
+      {
+        "message_id": "MSG_1020",
+        "timestamp": "2026-09-30 18:07:00",
+        "from": "unclear",
+        "to": "pending",
+        "act": "new_event",
+        "reason": "the subject was raised as new work"
+      }
+    ],
+    "deadline_history": [
+      {
+        "message_id": "MSG_1020",
+        "timestamp": "2026-09-30 18:07:00",
+        "field": "deadline",
+        "previous": null,
+        "new": "2026-10-04",
+        "raw": null,
+        "direction": "set",
+        "flagged_conflict": false,
+        "origin": "l2_update"
+      },
+      {
+        "message_id": "MSG_1030",
+        "timestamp": "2026-10-01 02:57:00",
+        "field": "deadline",
+        "previous": "2026-10-04",
+        "new": "2026-10-04",
+        "raw": null,
+        "direction": "unchanged",
         "flagged_conflict": false,
         "origin": "l2_update"
       }
@@ -17649,8 +17423,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "without",
           "internet",
+          "without",
           "assistant",
           "test"
         ],
@@ -17865,8 +17639,8 @@
         "match_score": 1.0,
         "match_tokens": [
           "memory",
-          "usage",
-          "measure"
+          "measure",
+          "usage"
         ],
         "weak_link": false,
         "seed": false,
@@ -18081,8 +17855,8 @@
         "repetition": true,
         "match_score": 1.0,
         "match_tokens": [
-          "query",
           "validate",
+          "query",
           "mandatory"
         ],
         "weak_link": false,
@@ -18118,115 +17892,6 @@
   },
   {
     "group_id": "GROUP_060",
-    "title": "Follow-up: we may move the meeting, I will confirm later",
-    "kind": "task",
-    "related_message_ids": [
-      "MSG_1057",
-      "MSG_1062",
-      "MSG_1067"
-    ],
-    "related_item_ids": [
-      "TASK_0352",
-      "TASK_0355",
-      "TASK_0358"
-    ],
-    "status": "pending",
-    "status_label": "Pending",
-    "status_reason": "L1 extracted a task or event for this subject and no later message reports it finished, cancelled or moved",
-    "status_source_message_id": "MSG_1057",
-    "latest_deadline": null,
-    "latest_deadline_source": null,
-    "pending_relative_deadline": null,
-    "pending_relative_source": null,
-    "latest_schedule": null,
-    "summary": "Raised on 2026-10-02 by Rohan.",
-    "confidence": 0.8841,
-    "message_count": 3,
-    "chase_count": 0,
-    "restatement_count": 0,
-    "deadline_restatements": 0,
-    "response_required": false,
-    "contested": false,
-    "unresolved_alternatives": [],
-    "first_seen": "2026-10-02 02:48:00",
-    "last_seen": "2026-10-02 11:38:00",
-    "subject_tokens": [
-      "confirm",
-      "follow",
-      "later",
-      "meet",
-      "move",
-      "up"
-    ],
-    "members": [
-      {
-        "message_id": "MSG_1057",
-        "timestamp": "2026-10-02 02:48:00",
-        "sender": "Rohan",
-        "act": "ambiguous_update",
-        "act_label": "uncertain update",
-        "frame": "may_move_event",
-        "hedged": true,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "confirm",
-          "later",
-          "meet",
-          "move"
-        ],
-        "weak_link": false,
-        "seed": true,
-        "item_id": "TASK_0352"
-      },
-      {
-        "message_id": "MSG_1062",
-        "timestamp": "2026-10-02 07:13:00",
-        "sender": "Aarav",
-        "act": "ambiguous_update",
-        "act_label": "uncertain update",
-        "frame": "may_move_event",
-        "hedged": true,
-        "repetition": true,
-        "match_score": 0.9064,
-        "match_tokens": [
-          "move",
-          "later",
-          "confirm",
-          "meet"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0355"
-      },
-      {
-        "message_id": "MSG_1067",
-        "timestamp": "2026-10-02 11:38:00",
-        "sender": "Rohan",
-        "act": "ambiguous_update",
-        "act_label": "uncertain update",
-        "frame": "may_move_event",
-        "hedged": true,
-        "repetition": true,
-        "match_score": 0.7498,
-        "match_tokens": [
-          "move",
-          "later",
-          "confirm",
-          "meet"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0358"
-      }
-    ],
-    "status_history": [],
-    "deadline_history": [],
-    "schedule_history": [],
-    "conflicts": []
-  },
-  {
-    "group_id": "GROUP_061",
     "title": "Wait for confirmation",
     "kind": "task",
     "related_message_ids": [
@@ -18350,120 +18015,7 @@
     ]
   },
   {
-    "group_id": "GROUP_062",
-    "title": "Follow-up: maya said someone probably handled the task",
-    "kind": "task",
-    "related_message_ids": [
-      "MSG_1059",
-      "MSG_1064",
-      "MSG_1069"
-    ],
-    "related_item_ids": [
-      "TASK_0354",
-      "TASK_0357",
-      "TASK_0360"
-    ],
-    "status": "pending",
-    "status_label": "Pending",
-    "status_reason": "L1 extracted a task or event for this subject and no later message reports it finished, cancelled or moved",
-    "status_source_message_id": "MSG_1059",
-    "latest_deadline": null,
-    "latest_deadline_source": null,
-    "pending_relative_deadline": null,
-    "pending_relative_source": null,
-    "latest_schedule": null,
-    "summary": "Raised on 2026-10-02 by Ananya.",
-    "confidence": 0.8992,
-    "message_count": 3,
-    "chase_count": 0,
-    "restatement_count": 0,
-    "deadline_restatements": 0,
-    "response_required": false,
-    "contested": false,
-    "unresolved_alternatives": [],
-    "first_seen": "2026-10-02 04:34:00",
-    "last_seen": "2026-10-02 13:24:00",
-    "subject_tokens": [
-      "follow",
-      "handled",
-      "maya",
-      "probably",
-      "said",
-      "task",
-      "up"
-    ],
-    "members": [
-      {
-        "message_id": "MSG_1059",
-        "timestamp": "2026-10-02 04:34:00",
-        "sender": "Ananya",
-        "act": "ambiguous_update",
-        "act_label": "uncertain update",
-        "frame": "hedged_third_party",
-        "hedged": true,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "handled",
-          "maya",
-          "probably",
-          "said",
-          "task"
-        ],
-        "weak_link": false,
-        "seed": true,
-        "item_id": "TASK_0354"
-      },
-      {
-        "message_id": "MSG_1064",
-        "timestamp": "2026-10-02 08:59:00",
-        "sender": "Ananya",
-        "act": "ambiguous_update",
-        "act_label": "uncertain update",
-        "frame": "hedged_third_party",
-        "hedged": true,
-        "repetition": true,
-        "match_score": 0.9228,
-        "match_tokens": [
-          "task",
-          "said",
-          "probably",
-          "handled",
-          "maya"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0357"
-      },
-      {
-        "message_id": "MSG_1069",
-        "timestamp": "2026-10-02 13:24:00",
-        "sender": "Ananya",
-        "act": "ambiguous_update",
-        "act_label": "uncertain update",
-        "frame": "hedged_third_party",
-        "hedged": true,
-        "repetition": true,
-        "match_score": 0.7938,
-        "match_tokens": [
-          "task",
-          "said",
-          "probably",
-          "handled",
-          "maya"
-        ],
-        "weak_link": false,
-        "seed": false,
-        "item_id": "TASK_0360"
-      }
-    ],
-    "status_history": [],
-    "deadline_history": [],
-    "schedule_history": [],
-    "conflicts": []
-  },
-  {
-    "group_id": "GROUP_063",
+    "group_id": "GROUP_061",
     "title": "Test the optimized assistant in offline mode",
     "kind": "task",
     "related_message_ids": [
@@ -18549,7 +18101,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_064",
+    "group_id": "GROUP_062",
     "title": "Latency-review",
     "kind": "event",
     "related_message_ids": [
@@ -18629,7 +18181,7 @@
     "conflicts": []
   },
   {
-    "group_id": "GROUP_065",
+    "group_id": "GROUP_063",
     "title": "Was the compliance form approved by the finance director",
     "kind": "task",
     "related_message_ids": [
@@ -18648,7 +18200,7 @@
     "pending_relative_source": null,
     "latest_schedule": null,
     "summary": "Raised on 2026-10-05 by Unknown Sender.",
-    "confidence": 0.96,
+    "confidence": 0.93,
     "message_count": 1,
     "chase_count": 0,
     "restatement_count": 0,
@@ -18683,7 +18235,7 @@
           "finance",
           "form"
         ],
-        "weak_link": false,
+        "weak_link": true,
         "seed": true,
         "item_id": "TASK_0366"
       }
@@ -18701,81 +18253,5 @@
     "deadline_history": [],
     "schedule_history": [],
     "conflicts": []
-  },
-  {
-    "group_id": "GROUP_066",
-    "title": "Deadline may be Monday, or it may be Wednesday. Wait for the official update",
-    "kind": "task",
-    "related_message_ids": [
-      "DEMO_023"
-    ],
-    "related_item_ids": [
-      "TASK_0367"
-    ],
-    "status": "pending",
-    "status_label": "Pending",
-    "status_reason": "L1 extracted a task or event for this subject and no later message reports it finished, cancelled or moved",
-    "status_source_message_id": "DEMO_023",
-    "latest_deadline": null,
-    "latest_deadline_source": null,
-    "pending_relative_deadline": null,
-    "pending_relative_source": null,
-    "latest_schedule": null,
-    "summary": "Raised on 2026-10-05 by Project Lead; mutually exclusive options were offered without a choice: Monday or Wednesday.",
-    "confidence": 0.83,
-    "message_count": 1,
-    "chase_count": 0,
-    "restatement_count": 0,
-    "deadline_restatements": 0,
-    "response_required": false,
-    "contested": false,
-    "unresolved_alternatives": [
-      "Monday",
-      "Wednesday"
-    ],
-    "first_seen": "2026-10-05 00:43:00",
-    "last_seen": "2026-10-05 00:43:00",
-    "subject_tokens": [
-      "deadline",
-      "monday",
-      "official",
-      "wait",
-      "wednesday"
-    ],
-    "members": [
-      {
-        "message_id": "DEMO_023",
-        "timestamp": "2026-10-05 00:43:00",
-        "sender": "Project Lead",
-        "act": "ambiguous_update",
-        "act_label": "uncertain update",
-        "frame": "hedged_deadline",
-        "hedged": true,
-        "repetition": false,
-        "match_score": 1.0,
-        "match_tokens": [
-          "deadline",
-          "monday",
-          "official",
-          "wait",
-          "wednesday"
-        ],
-        "weak_link": false,
-        "seed": true,
-        "item_id": "TASK_0367"
-      }
-    ],
-    "status_history": [],
-    "deadline_history": [],
-    "schedule_history": [],
-    "conflicts": [
-      {
-        "kind": "unresolved_alternatives",
-        "message_ids": [
-          "DEMO_023"
-        ],
-        "detail": "the sender offered mutually exclusive options (Monday or Wednesday) without choosing one"
-      }
-    ]
   }
 ]

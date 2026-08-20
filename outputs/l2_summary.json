@@ -24,11 +24,11 @@
       "to": "2026-10-05 01:24:00"
     }
   ],
-  "groups": 66,
-  "grouped_messages": 574,
-  "ungrouped_messages": 530,
+  "groups": 63,
+  "grouped_messages": 557,
+  "ungrouped_messages": 547,
   "group_status_counts": {
-    "pending": 42,
+    "pending": 39,
     "in_progress": 0,
     "completed": 6,
     "rescheduled": 12,
@@ -37,9 +37,9 @@
   },
   "group_priority_counts": {
     "critical": 7,
-    "high": 12,
+    "high": 13,
     "medium": 11,
-    "low": 36
+    "low": 32
   },
   "items": 543,
   "route_counts": {
@@ -52,8 +52,8 @@
     "index": "v2-hybrid-pruned",
     "documents": 1029,
     "excluded_by_routing": 75,
-    "vocabulary": 1833,
-    "posting_lists": 1828,
+    "vocabulary": 1829,
+    "posting_lists": 1824,
     "terms_pruned_below_idf_floor": 5,
     "min_df_before_pruning": 40,
     "idf_floor": 2.5107,
@@ -66,6 +66,6 @@
     "semantic_enabled": true
   },
   "contested_groups": 11,
-  "groups_with_conflicts": 21,
-  "mean_group_confidence": 0.9339
+  "groups_with_conflicts": 20,
+  "mean_group_confidence": 0.9365
 }

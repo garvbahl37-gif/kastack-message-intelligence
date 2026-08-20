@@ -283,13 +283,18 @@ class Ledger:
                 "timestamp": rec.timestamp,
                 "sender": rec.sender,
                 "category": rec.classification.category,
-                # Masked text is included for locally-processed and
-                # confirmation-gated messages so the file is reviewable. For a
-                # blocked message even the masked sentence is left out: the
-                # sensitive report already carries it, and this file exists to
-                # record the decision, not to duplicate the content.
-                "masked_text": (rec.masked_text
-                                if rec.route.route != R.BLOCKED else None),
+                # Masked text is included only where seeing the mask is the
+                # point -- messages that actually tripped a detector, minus the
+                # blocked ones, whose masked form the sensitive report already
+                # carries. For the ~90% of messages with nothing sensitive in
+                # them the sentence adds nothing to a record of privacy
+                # decisions and would republish the corpus into a file that
+                # exists to document routing.
+                "masked_text": (
+                    rec.masked_text
+                    if (rec.scan_result.is_sensitive
+                        and rec.route.route != R.BLOCKED)
+                    else None),
                 "indexed": rec.route.indexable,
             })
             out.append(payload)

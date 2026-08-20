@@ -21,7 +21,8 @@ otherwise.
 | **Live demo — L2** | https://kastack-message-intelligence.vercel.app/l2 |
 | **Live demo — L1** | https://kastack-message-intelligence.vercel.app |
 | **Repository** | https://github.com/garvbahl37-gif/kastack-message-intelligence |
-| **Walkthrough** | [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md) |
+| **Walkthrough — L2** | [`docs/DEMO_SCRIPT_L2.md`](docs/DEMO_SCRIPT_L2.md) |
+| **Walkthrough — L1** | [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md) |
 
 The hosted demo loads a synthetic sample written for this repository. The
 assessment datasets are not committed here and are not deployed; use **Upload

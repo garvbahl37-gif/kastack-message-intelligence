@@ -2,14 +2,14 @@
   {
     "query": "Which existing task became critical in the demo data?",
     "intent": "became_priority",
-    "answer": "Confirm the interview slot (GROUP_011, TASK_0007, TASK_0051, TASK_0058) escalated further within critical: score 4.7 -> 9.3 on ['DEMO_001', 'DEMO_016']. Assessed critical: the deadline of 2026-10-02 (MSG_0976) passed 3 day(s) before the most recent message; DEMO_001 states the deadline as \"tomorrow at 10:00\"; it was not resolved to a date, so the proximity is taken from the wording; at least one message about this subject uses explicit urgency wording. MSG_0976 pushed the deadline from 2026-09-28 back to 2026-10-02.",
+    "answer": "Confirm the interview slot (GROUP_010, TASK_0007, TASK_0051, TASK_0058) escalated further within critical: score 4.7 -> 9.3 on ['DEMO_001', 'DEMO_016']. Assessed critical: the deadline of 2026-10-02 (MSG_0976) passed 3 day(s) before the most recent message; DEMO_001 states the deadline as \"tomorrow at 10:00\"; it was not resolved to a date, so the proximity is taken from the wording; at least one message about this subject uses explicit urgency wording. MSG_0976 pushed the deadline from 2026-09-28 back to 2026-10-02.",
     "sufficient_evidence": true,
     "supporting_message_ids": [
       "DEMO_001",
       "DEMO_016"
     ],
     "group_ids": [
-      "GROUP_011"
+      "GROUP_010"
     ],
     "item_ids": [
       "TASK_0007",
@@ -28,10 +28,10 @@
         "message_id": "DEMO_001",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "this message arrived in l2_demo_messages.csv and is what moved GROUP_011 to critical",
+        "why_selected": "this message arrived in l2_demo_messages.csv and is what moved GROUP_010 to critical",
         "masked_text": "The deadline to confirm the interview slot is now tomorrow at 10 AM. This is urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": null,
         "timestamp": "2026-10-04 09:41:00",
         "sender": "Aarav"
@@ -40,10 +40,10 @@
         "message_id": "DEMO_016",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "this message arrived in l2_demo_messages.csv and is what moved GROUP_011 to critical",
+        "why_selected": "this message arrived in l2_demo_messages.csv and is what moved GROUP_010 to critical",
         "masked_text": "Confirm the interview slot might already be finished, but I cannot confirm it.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": "TASK_0365",
         "timestamp": "2026-10-04 19:56:00",
         "sender": "Aarav"
@@ -135,18 +135,18 @@
       "MSG_0949"
     ],
     "group_ids": [
+      "GROUP_008",
       "GROUP_009",
-      "GROUP_010",
+      "GROUP_011",
       "GROUP_012",
-      "GROUP_013",
+      "GROUP_020",
       "GROUP_021",
-      "GROUP_022",
-      "GROUP_029",
-      "GROUP_033",
+      "GROUP_028",
+      "GROUP_032",
+      "GROUP_034",
       "GROUP_035",
       "GROUP_036",
-      "GROUP_037",
-      "GROUP_038"
+      "GROUP_037"
     ],
     "item_ids": [
       "TASK_0006",
@@ -169,10 +169,10 @@
         "message_id": "DEMO_008",
         "relevance_score": 0.97,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_010 to cancelled: a message withdraws the request",
+        "why_selected": "this message set GROUP_009 to cancelled: a message withdraws the request",
         "masked_text": "The team stand-up has been cancelled.",
         "content_withheld": false,
-        "group_id": "GROUP_010",
+        "group_id": "GROUP_009",
         "item_id": null,
         "timestamp": "2026-10-04 14:28:00",
         "sender": "Rohan"
@@ -181,10 +181,10 @@
         "message_id": "MSG_0942",
         "relevance_score": 0.86,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_013 to cancelled: a message withdraws the request",
+        "why_selected": "this message set GROUP_012 to cancelled: a message withdraws the request",
         "masked_text": "You can cancel update the project tracker; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_013",
+        "group_id": "GROUP_012",
         "item_id": "TASK_0287",
         "timestamp": "2026-09-27 21:13:00",
         "sender": "Maya"
@@ -193,22 +193,22 @@
         "message_id": "MSG_0938",
         "relevance_score": 0.88,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_021 to cancelled: a message withdraws the request",
+        "why_selected": "this message set GROUP_020 to cancelled: a message withdraws the request",
         "masked_text": "You can cancel complete the Python exercise; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_021",
+        "group_id": "GROUP_020",
         "item_id": "TASK_0284",
         "timestamp": "2026-09-27 17:41:00",
         "sender": "Ananya"
       },
       {
         "message_id": "MSG_0934",
-        "relevance_score": 0.8572,
+        "relevance_score": 0.857,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_033 to cancelled: a message withdraws the request",
+        "why_selected": "this message set GROUP_032 to cancelled: a message withdraws the request",
         "masked_text": "You can cancel send the revised presentation; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_033",
+        "group_id": "GROUP_032",
         "item_id": "TASK_0282",
         "timestamp": "2026-09-27 14:09:00",
         "sender": "Maya"
@@ -217,10 +217,10 @@
         "message_id": "MSG_0940",
         "relevance_score": 0.88,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_036 to cancelled: a message withdraws the request",
+        "why_selected": "this message set GROUP_035 to cancelled: a message withdraws the request",
         "masked_text": "You can cancel send the expense receipt; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_036",
+        "group_id": "GROUP_035",
         "item_id": "TASK_0285",
         "timestamp": "2026-09-27 19:27:00",
         "sender": "Meera"
@@ -229,22 +229,22 @@
         "message_id": "MSG_0948",
         "relevance_score": 0.88,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_037 to cancelled: a message withdraws the request",
+        "why_selected": "this message set GROUP_036 to cancelled: a message withdraws the request",
         "masked_text": "You can cancel verify the dataset labels; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_037",
+        "group_id": "GROUP_036",
         "item_id": "TASK_0291",
         "timestamp": "2026-09-28 02:31:00",
         "sender": "Neha"
       },
       {
         "message_id": "MSG_0935",
-        "relevance_score": 0.8483,
+        "relevance_score": 0.8578,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_009 to completed: a message reports the work finished",
+        "why_selected": "this message set GROUP_008 to completed: a message reports the work finished",
         "masked_text": "Update: review the model results has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_009",
+        "group_id": "GROUP_008",
         "item_id": null,
         "timestamp": "2026-09-27 15:02:00",
         "sender": "Neha"
@@ -253,10 +253,10 @@
         "message_id": "MSG_0933",
         "relevance_score": 0.88,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_012 to completed: a message reports the work finished",
+        "why_selected": "this message set GROUP_011 to completed: a message reports the work finished",
         "masked_text": "Update: email the signed document has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_012",
+        "group_id": "GROUP_011",
         "item_id": null,
         "timestamp": "2026-09-27 13:16:00",
         "sender": "Kabir"
@@ -265,10 +265,10 @@
         "message_id": "MSG_0939",
         "relevance_score": 0.86,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_022 to completed: a message reports the work finished",
+        "why_selected": "this message set GROUP_021 to completed: a message reports the work finished",
         "masked_text": "Update: call the service centre has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_022",
+        "group_id": "GROUP_021",
         "item_id": null,
         "timestamp": "2026-09-27 18:34:00",
         "sender": "Tara"
@@ -277,10 +277,10 @@
         "message_id": "MSG_0931",
         "relevance_score": 0.86,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_029 to completed: a message reports the work finished",
+        "why_selected": "this message set GROUP_028 to completed: a message reports the work finished",
         "masked_text": "Update: finish the test cases has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_029",
+        "group_id": "GROUP_028",
         "item_id": null,
         "timestamp": "2026-09-27 11:30:00",
         "sender": "Ishaan"
@@ -289,10 +289,10 @@
         "message_id": "MSG_0937",
         "relevance_score": 0.88,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_035 to completed: a message reports the work finished",
+        "why_selected": "this message set GROUP_034 to completed: a message reports the work finished",
         "masked_text": "Update: prepare the demo video has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_035",
+        "group_id": "GROUP_034",
         "item_id": null,
         "timestamp": "2026-09-27 16:48:00",
         "sender": "Rohan"
@@ -301,10 +301,10 @@
         "message_id": "MSG_0949",
         "relevance_score": 0.7621,
         "evidence_source": "structured",
-        "why_selected": "this message set GROUP_038 to completed: a message reports the work finished",
+        "why_selected": "this message set GROUP_037 to completed: a message reports the work finished",
         "masked_text": "Update: submit the weekly report has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_038",
+        "group_id": "GROUP_037",
         "item_id": null,
         "timestamp": "2026-09-28 03:24:00",
         "sender": "Aarav"
@@ -330,15 +330,6 @@
         ]
       },
       {
-        "message_id": "DEMO_023",
-        "score": 0.1328,
-        "lexical_score": 0.1328,
-        "semantic_score": 0.0,
-        "matched_terms": [
-          "or"
-        ]
-      },
-      {
         "message_id": "MSG_1058",
         "score": 0.1299,
         "lexical_score": 0.1299,
@@ -348,9 +339,18 @@
         ]
       },
       {
+        "message_id": "DEMO_023",
+        "score": 0.1288,
+        "lexical_score": 0.1288,
+        "semantic_score": 0.0,
+        "matched_terms": [
+          "or"
+        ]
+      },
+      {
         "message_id": "DEMO_008",
-        "score": 0.1271,
-        "lexical_score": 0.1271,
+        "score": 0.127,
+        "lexical_score": 0.127,
         "semantic_score": 0.0,
         "matched_terms": [
           "cancelled"
@@ -397,16 +397,16 @@
       "GROUP_001",
       "GROUP_003",
       "GROUP_006",
-      "GROUP_010",
-      "GROUP_016",
-      "GROUP_020",
+      "GROUP_009",
+      "GROUP_015",
+      "GROUP_019",
+      "GROUP_022",
       "GROUP_023",
-      "GROUP_024",
+      "GROUP_026",
       "GROUP_027",
-      "GROUP_028",
-      "GROUP_030",
-      "GROUP_032",
-      "GROUP_034"
+      "GROUP_029",
+      "GROUP_031",
+      "GROUP_033"
     ],
     "item_ids": [
       "EVENT_0001",
@@ -475,10 +475,10 @@
         "message_id": "MSG_0954",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_010",
+        "why_selected": "a reschedule act on GROUP_009",
         "masked_text": "The team stand-up has been moved to 2026-10-02 at 13:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_010",
+        "group_id": "GROUP_009",
         "item_id": "TASK_0296",
         "timestamp": "2026-09-28 07:49:00",
         "sender": "Rohan"
@@ -487,10 +487,10 @@
         "message_id": "MSG_0966",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_030",
+        "why_selected": "a reschedule act on GROUP_029",
         "masked_text": "The placement briefing has been moved to 2026-10-02 at 11:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_030",
+        "group_id": "GROUP_029",
         "item_id": "TASK_0308",
         "timestamp": "2026-09-28 18:25:00",
         "sender": "Rohan"
@@ -499,10 +499,10 @@
         "message_id": "MSG_0970",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_030",
+        "why_selected": "a reschedule act on GROUP_029",
         "masked_text": "The placement briefing has been moved to 2026-10-06 at 15:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_030",
+        "group_id": "GROUP_029",
         "item_id": "TASK_0312",
         "timestamp": "2026-09-28 21:57:00",
         "sender": "Meera"
@@ -535,10 +535,10 @@
         "message_id": "MSG_0968",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_034",
+        "why_selected": "a reschedule act on GROUP_033",
         "masked_text": "The technical interview has been moved to 2026-10-04 at 13:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_034",
+        "group_id": "GROUP_033",
         "item_id": "TASK_0310",
         "timestamp": "2026-09-28 20:11:00",
         "sender": "Neha"
@@ -547,10 +547,10 @@
         "message_id": "MSG_0967",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_032",
+        "why_selected": "a reschedule act on GROUP_031",
         "masked_text": "The sprint planning has been moved to 2026-10-03 at 12:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_032",
+        "group_id": "GROUP_031",
         "item_id": "TASK_0309",
         "timestamp": "2026-09-28 19:18:00",
         "sender": "Kabir"
@@ -559,10 +559,10 @@
         "message_id": "MSG_0959",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_023",
+        "why_selected": "a reschedule act on GROUP_022",
         "masked_text": "The product demo has been moved to 2026-10-07 at 11:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_023",
+        "group_id": "GROUP_022",
         "item_id": "TASK_0301",
         "timestamp": "2026-09-28 12:14:00",
         "sender": "Ananya"
@@ -571,10 +571,10 @@
         "message_id": "MSG_0965",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_023",
+        "why_selected": "a reschedule act on GROUP_022",
         "masked_text": "The product demo has been moved to 2026-10-01 at 10:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_023",
+        "group_id": "GROUP_022",
         "item_id": "TASK_0307",
         "timestamp": "2026-09-28 17:32:00",
         "sender": "Ananya"
@@ -583,10 +583,10 @@
         "message_id": "MSG_0962",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_027",
+        "why_selected": "a reschedule act on GROUP_026",
         "masked_text": "The AI workshop has been moved to 2026-10-10 at 14:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_027",
+        "group_id": "GROUP_026",
         "item_id": "TASK_0304",
         "timestamp": "2026-09-28 14:53:00",
         "sender": "Ishaan"
@@ -595,10 +595,10 @@
         "message_id": "MSG_0964",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_027",
+        "why_selected": "a reschedule act on GROUP_026",
         "masked_text": "The AI workshop has been moved to 2026-09-30 at 16:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_027",
+        "group_id": "GROUP_026",
         "item_id": "TASK_0306",
         "timestamp": "2026-09-28 16:39:00",
         "sender": "Maya"
@@ -607,10 +607,10 @@
         "message_id": "MSG_0963",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_028",
+        "why_selected": "a reschedule act on GROUP_027",
         "masked_text": "The project review has been moved to 2026-09-29 at 15:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_028",
+        "group_id": "GROUP_027",
         "item_id": "TASK_0305",
         "timestamp": "2026-09-28 15:46:00",
         "sender": "Aarav"
@@ -619,10 +619,10 @@
         "message_id": "MSG_0957",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_020",
+        "why_selected": "a reschedule act on GROUP_019",
         "masked_text": "The client discussion has been moved to 2026-10-05 at 16:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_020",
+        "group_id": "GROUP_019",
         "item_id": "TASK_0299",
         "timestamp": "2026-09-28 10:28:00",
         "sender": "Aarav"
@@ -631,10 +631,10 @@
         "message_id": "MSG_0961",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_020",
+        "why_selected": "a reschedule act on GROUP_019",
         "masked_text": "The client discussion has been moved to 2026-10-09 at 13:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_020",
+        "group_id": "GROUP_019",
         "item_id": "TASK_0303",
         "timestamp": "2026-09-28 14:00:00",
         "sender": "Ananya"
@@ -643,10 +643,10 @@
         "message_id": "MSG_0960",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "a reschedule act on GROUP_024",
+        "why_selected": "a reschedule act on GROUP_023",
         "masked_text": "The doctor appointment has been moved to 2026-10-08 at 12:00. Please use the new schedule.",
         "content_withheld": false,
-        "group_id": "GROUP_024",
+        "group_id": "GROUP_023",
         "item_id": "TASK_0302",
         "timestamp": "2026-09-28 13:07:00",
         "sender": "Kabir"
@@ -677,8 +677,8 @@
       },
       {
         "message_id": "MSG_1007",
-        "score": 0.1689,
-        "lexical_score": 0.1689,
+        "score": 0.1687,
+        "lexical_score": 0.1687,
         "semantic_score": 0.0,
         "matched_terms": [
           "meeting",
@@ -725,7 +725,7 @@
   {
     "query": "Which messages contain conflicting or uncertain deadlines?",
     "intent": "conflicts",
-    "answer": "38 contradiction(s) are recorded across 19 subject(s): 22 x deadline changed, 12 x deadline changed after closure, 4 x unresolved alternatives. 24 message(s) are uncertain in themselves -- they hedge a date or offer options without choosing: DEMO_023, MSG_0037, MSG_0054, MSG_0098, MSG_0152, MSG_0213, MSG_0217, MSG_0227, MSG_0235, MSG_0240 and 14 more. Unresolved: Confirm the interview slot -- newest deadline given only as \"tomorrow at 10:00\" in DEMO_001. Contested subjects (messages disagree about their state): Review the model results, Email the signed document, Update the project tracker, Complete the Python exercise, Call the service centre, Finish the test cases.",
+    "answer": "36 contradiction(s) are recorded across 18 subject(s): 21 x deadline changed, 12 x deadline changed after closure, 3 x unresolved alternatives. 24 message(s) are uncertain in themselves -- they hedge a date or offer options without choosing: DEMO_023, MSG_0037, MSG_0054, MSG_0098, MSG_0152, MSG_0213, MSG_0217, MSG_0227, MSG_0235, MSG_0240 and 14 more. Unresolved: Confirm the interview slot -- newest deadline given only as \"tomorrow at 10:00\" in DEMO_001. Contested subjects (messages disagree about their state): Review the model results, Email the signed document, Update the project tracker, Complete the Python exercise, Call the service centre, Finish the test cases.",
     "sufficient_evidence": true,
     "supporting_message_ids": [
       "MSG_0980",
@@ -735,7 +735,6 @@
       "MSG_0973",
       "MSG_0935",
       "MSG_0974",
-      "MSG_1020",
       "MSG_0972",
       "MSG_0976",
       "DEMO_006",
@@ -751,28 +750,28 @@
       "MSG_0985",
       "MSG_0934",
       "MSG_0977",
-      "MSG_0937"
+      "MSG_0937",
+      "MSG_0981"
     ],
     "group_ids": [
       "GROUP_002",
       "GROUP_005",
+      "GROUP_007",
       "GROUP_008",
-      "GROUP_009",
-      "GROUP_011",
+      "GROUP_010",
+      "GROUP_012",
       "GROUP_013",
-      "GROUP_014",
+      "GROUP_020",
       "GROUP_021",
-      "GROUP_022",
-      "GROUP_029",
-      "GROUP_033",
+      "GROUP_028",
+      "GROUP_032",
+      "GROUP_034",
       "GROUP_035",
       "GROUP_036",
       "GROUP_037",
       "GROUP_038",
-      "GROUP_039",
-      "GROUP_042",
-      "GROUP_061",
-      "GROUP_066"
+      "GROUP_041",
+      "GROUP_060"
     ],
     "item_ids": [],
     "reason": "conflicts are recorded by the grouper as it walks the messages in time order -- a hedge that contradicts a firm status, a chase after a closure, a deadline restated differently, or options offered without a choice",
@@ -806,10 +805,10 @@
         "message_id": "MSG_0975",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_008 as a deadline changed: the deadline moved from 2026-09-10 to 2026-10-01 (later)",
+        "why_selected": "recorded in GROUP_007 as a deadline changed: the deadline moved from 2026-09-10 to 2026-10-01 (later)",
         "masked_text": "The deadline to renew the library book is now 2026-10-01, earlier than previously planned. Treat this as urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_008",
+        "group_id": "GROUP_007",
         "item_id": null,
         "timestamp": "2026-09-29 02:22:00",
         "sender": "Vikram"
@@ -818,10 +817,10 @@
         "message_id": "MSG_0986",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_008 as a deadline changed: the deadline moved from 2026-10-01 to 2026-09-30 (earlier) and the sender flagged the earlier message as listing another date",
+        "why_selected": "recorded in GROUP_007 as a deadline changed: the deadline moved from 2026-10-01 to 2026-09-30 (earlier) and the sender flagged the earlier message as listing another date",
         "masked_text": "Please note that renew the library book is due on 2026-09-30, although the earlier message listed another date.",
         "content_withheld": false,
-        "group_id": "GROUP_008",
+        "group_id": "GROUP_007",
         "item_id": "TASK_0320",
         "timestamp": "2026-09-29 12:05:00",
         "sender": "Vikram"
@@ -830,10 +829,10 @@
         "message_id": "MSG_0973",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_009 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_008 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "The deadline to review the model results is now 2026-09-29, earlier than previously planned. Treat this as urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_009",
+        "group_id": "GROUP_008",
         "item_id": null,
         "timestamp": "2026-09-29 00:36:00",
         "sender": "Neha"
@@ -842,10 +841,10 @@
         "message_id": "MSG_0935",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_009 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_008 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "Update: review the model results has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_009",
+        "group_id": "GROUP_008",
         "item_id": null,
         "timestamp": "2026-09-27 15:02:00",
         "sender": "Neha"
@@ -854,34 +853,22 @@
         "message_id": "MSG_0974",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_009 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_008 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "Please note that review the model results is due on 2026-09-30, although the earlier message listed another date.",
         "content_withheld": false,
-        "group_id": "GROUP_009",
+        "group_id": "GROUP_008",
         "item_id": "TASK_0314",
         "timestamp": "2026-09-29 01:29:00",
         "sender": "Neha"
       },
       {
-        "message_id": "MSG_1020",
-        "relevance_score": 1.0,
-        "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_009 as a deadline changed: the deadline moved from 2026-09-30 to 2026-10-04 (later)",
-        "masked_text": "A new review the quantization results session is scheduled for 2026-10-04 at 14:00.",
-        "content_withheld": false,
-        "group_id": "GROUP_009",
-        "item_id": "EVENT_0172",
-        "timestamp": "2026-09-30 18:07:00",
-        "sender": "Mentor"
-      },
-      {
         "message_id": "MSG_0972",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_011 as a deadline changed: the deadline moved from 2026-09-04 to 2026-09-28 (later) and the sender flagged the earlier message as listing another date",
+        "why_selected": "recorded in GROUP_010 as a deadline changed: the deadline moved from 2026-09-04 to 2026-09-28 (later) and the sender flagged the earlier message as listing another date",
         "masked_text": "Please note that confirm the interview slot is due on 2026-09-28, although the earlier message listed another date.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": "TASK_0313",
         "timestamp": "2026-09-28 23:43:00",
         "sender": "Aarav"
@@ -890,10 +877,10 @@
         "message_id": "MSG_0976",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_011 as a deadline changed: the deadline moved from 2026-09-28 to 2026-10-02 (later) and the sender flagged the earlier message as listing another date",
+        "why_selected": "recorded in GROUP_010 as a deadline changed: the deadline moved from 2026-09-28 to 2026-10-02 (later) and the sender flagged the earlier message as listing another date",
         "masked_text": "Please note that confirm the interview slot is due on 2026-10-02, although the earlier message listed another date.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": "TASK_0315",
         "timestamp": "2026-09-29 03:15:00",
         "sender": "Aarav"
@@ -902,10 +889,10 @@
         "message_id": "DEMO_006",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_013 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
+        "why_selected": "recorded in GROUP_012 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
         "masked_text": "One message says Friday, but the latest instruction says update the project tracker is due on 2026-10-06.",
         "content_withheld": false,
-        "group_id": "GROUP_013",
+        "group_id": "GROUP_012",
         "item_id": "TASK_0363",
         "timestamp": "2026-10-04 13:06:00",
         "sender": "Maya"
@@ -914,10 +901,10 @@
         "message_id": "MSG_0942",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_013 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
+        "why_selected": "recorded in GROUP_012 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
         "masked_text": "You can cancel update the project tracker; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_013",
+        "group_id": "GROUP_012",
         "item_id": "TASK_0287",
         "timestamp": "2026-09-27 21:13:00",
         "sender": "Maya"
@@ -926,10 +913,10 @@
         "message_id": "DEMO_020",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_014 as a deadline changed: the deadline moved from 2026-09-05 to 2026-10-20 (later)",
+        "why_selected": "recorded in GROUP_013 as a deadline changed: the deadline moved from 2026-09-05 to 2026-10-20 (later)",
         "masked_text": "The deadline for upload the assignment has been extended to 2026-10-20.",
         "content_withheld": false,
-        "group_id": "GROUP_014",
+        "group_id": "GROUP_013",
         "item_id": null,
         "timestamp": "2026-10-04 22:40:00",
         "sender": "Kabir"
@@ -938,10 +925,10 @@
         "message_id": "MSG_0987",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_021 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
+        "why_selected": "recorded in GROUP_020 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
         "masked_text": "The deadline to complete the Python exercise is now 2026-10-01, earlier than previously planned. Treat this as urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_021",
+        "group_id": "GROUP_020",
         "item_id": null,
         "timestamp": "2026-09-29 12:58:00",
         "sender": "Ananya"
@@ -950,10 +937,10 @@
         "message_id": "MSG_0938",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_021 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
+        "why_selected": "recorded in GROUP_020 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
         "masked_text": "You can cancel complete the Python exercise; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_021",
+        "group_id": "GROUP_020",
         "item_id": "TASK_0284",
         "timestamp": "2026-09-27 17:41:00",
         "sender": "Ananya"
@@ -962,10 +949,10 @@
         "message_id": "MSG_0988",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_022 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_021 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "Please note that call the service centre is due on 2026-10-02, although the earlier message listed another date.",
         "content_withheld": false,
-        "group_id": "GROUP_022",
+        "group_id": "GROUP_021",
         "item_id": "TASK_0321",
         "timestamp": "2026-09-29 13:51:00",
         "sender": "Tara"
@@ -974,10 +961,10 @@
         "message_id": "MSG_0939",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_022 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_021 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "Update: call the service centre has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_022",
+        "group_id": "GROUP_021",
         "item_id": null,
         "timestamp": "2026-09-27 18:34:00",
         "sender": "Tara"
@@ -986,10 +973,10 @@
         "message_id": "MSG_0979",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_029 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_028 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "The deadline to finish the test cases is now 2026-09-29, earlier than previously planned. Treat this as urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_029",
+        "group_id": "GROUP_028",
         "item_id": null,
         "timestamp": "2026-09-29 05:54:00",
         "sender": "Ishaan"
@@ -998,10 +985,10 @@
         "message_id": "MSG_0931",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_029 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_028 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "Update: finish the test cases has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_029",
+        "group_id": "GROUP_028",
         "item_id": null,
         "timestamp": "2026-09-27 11:30:00",
         "sender": "Ishaan"
@@ -1010,10 +997,10 @@
         "message_id": "MSG_0983",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_029 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_028 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "The deadline to finish the test cases is now 2026-09-27, earlier than previously planned. Treat this as urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_029",
+        "group_id": "GROUP_028",
         "item_id": null,
         "timestamp": "2026-09-29 09:26:00",
         "sender": "Ishaan"
@@ -1022,10 +1009,10 @@
         "message_id": "MSG_0985",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_033 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
+        "why_selected": "recorded in GROUP_032 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
         "masked_text": "The deadline to send the revised presentation is now 2026-09-29, earlier than previously planned. Treat this as urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_033",
+        "group_id": "GROUP_032",
         "item_id": null,
         "timestamp": "2026-09-29 11:12:00",
         "sender": "Maya"
@@ -1034,10 +1021,10 @@
         "message_id": "MSG_0934",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_033 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
+        "why_selected": "recorded in GROUP_032 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
         "masked_text": "You can cancel send the revised presentation; it is no longer required.",
         "content_withheld": false,
-        "group_id": "GROUP_033",
+        "group_id": "GROUP_032",
         "item_id": "TASK_0282",
         "timestamp": "2026-09-27 14:09:00",
         "sender": "Maya"
@@ -1046,10 +1033,10 @@
         "message_id": "MSG_0977",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_035 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_034 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "The deadline to prepare the demo video is now 2026-09-27, earlier than previously planned. Treat this as urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_035",
+        "group_id": "GROUP_034",
         "item_id": null,
         "timestamp": "2026-09-29 04:08:00",
         "sender": "Rohan"
@@ -1058,13 +1045,25 @@
         "message_id": "MSG_0937",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "recorded in GROUP_035 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
+        "why_selected": "recorded in GROUP_034 as a deadline changed after closure: the deadline was changed after the subject was reported completed",
         "masked_text": "Update: prepare the demo video has been completed successfully.",
         "content_withheld": false,
-        "group_id": "GROUP_035",
+        "group_id": "GROUP_034",
         "item_id": null,
         "timestamp": "2026-09-27 16:48:00",
         "sender": "Rohan"
+      },
+      {
+        "message_id": "MSG_0981",
+        "relevance_score": 1.0,
+        "evidence_source": "structured",
+        "why_selected": "recorded in GROUP_035 as a deadline changed after closure: the deadline was changed after the subject was reported cancelled",
+        "masked_text": "The deadline to send the expense receipt is now 2026-10-01, earlier than previously planned. Treat this as urgent.",
+        "content_withheld": false,
+        "group_id": "GROUP_035",
+        "item_id": null,
+        "timestamp": "2026-09-29 07:40:00",
+        "sender": "Meera"
       }
     ],
     "retrieved": [
@@ -1079,8 +1078,8 @@
       },
       {
         "message_id": "MSG_1063",
-        "score": 0.3365,
-        "lexical_score": 0.1916,
+        "score": 0.3363,
+        "lexical_score": 0.1914,
         "semantic_score": 0.9658,
         "matched_terms": [
           "or"
@@ -1097,9 +1096,9 @@
       },
       {
         "message_id": "DEMO_023",
-        "score": 0.3115,
-        "lexical_score": 0.2029,
-        "semantic_score": 0.7241,
+        "score": 0.3002,
+        "lexical_score": 0.1968,
+        "semantic_score": 0.6898,
         "matched_terms": [
           "or"
         ]
@@ -1585,8 +1584,8 @@
       },
       {
         "message_id": "MSG_1063",
-        "score": 0.2336,
-        "lexical_score": 0.2336,
+        "score": 0.2334,
+        "lexical_score": 0.2334,
         "semantic_score": 0.0,
         "matched_terms": [
           "confirmation"
@@ -1660,7 +1659,7 @@
   {
     "query": "What is the latest status of the task referenced by DEMO_016?",
     "intent": "latest_status",
-    "answer": "Confirm the interview slot (GROUP_011) is Pending. Raised on 2026-09-02 by Aarav; the deadline changed 2 time(s) and now stands at 2026-10-02 (from MSG_0976); the newest deadline was given only as \"tomorrow at 10:00\" in DEMO_001 and has not been resolved to a date; 9 original request(s) restated the subject with a different date; chased 3 time(s); 1 restatement(s) of earlier messages. DEMO_016 hedges about this subject, so it does not change the recorded status -- an uncertain report is not a status. Current priority: critical.",
+    "answer": "Confirm the interview slot (GROUP_010) is Pending. Raised on 2026-09-02 by Aarav; the deadline changed 2 time(s) and now stands at 2026-10-02 (from MSG_0976); the newest deadline was given only as \"tomorrow at 10:00\" in DEMO_001 and has not been resolved to a date; 9 original request(s) restated the subject with a different date; chased 3 time(s); 1 restatement(s) of earlier messages. DEMO_016 hedges about this subject, so it does not change the recorded status -- an uncertain report is not a status. Current priority: critical.",
     "sufficient_evidence": true,
     "supporting_message_ids": [
       "MSG_0027",
@@ -1670,7 +1669,7 @@
       "DEMO_016"
     ],
     "group_ids": [
-      "GROUP_011"
+      "GROUP_010"
     ],
     "item_ids": [
       "TASK_0007",
@@ -1680,7 +1679,7 @@
       "TASK_0087",
       "TASK_0092"
     ],
-    "reason": "resolved the question to GROUP_011 and read the status its state machine settled on after processing all 18 messages in time order",
+    "reason": "resolved the question to GROUP_010 and read the status its state machine settled on after processing all 18 messages in time order",
     "confidence": 0.95,
     "evidence": [
       {
@@ -1690,7 +1689,7 @@
         "why_selected": "this is the message that set the status: the subject was raised as new work",
         "masked_text": "Please note: Please confirm the interview slot by 2026-09-05.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": "TASK_0007",
         "timestamp": "2026-09-02 00:02:00",
         "sender": "Aarav"
@@ -1699,10 +1698,10 @@
         "message_id": "MSG_0982",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "the most recent traffic on GROUP_011 (deadline changed)",
+        "why_selected": "the most recent traffic on GROUP_010 (deadline changed)",
         "masked_text": "Follow-up: please note that confirm the interview slot is due on 2026-10-02, although the earlier message listed another date.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": "TASK_0318",
         "timestamp": "2026-09-29 08:33:00",
         "sender": "Aarav"
@@ -1711,10 +1710,10 @@
         "message_id": "MSG_1002",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "the most recent traffic on GROUP_011 (status chased)",
+        "why_selected": "the most recent traffic on GROUP_010 (status chased)",
         "masked_text": "Please check the latest status of confirm the interview slot.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": "TASK_0329",
         "timestamp": "2026-09-30 02:13:00",
         "sender": "Aarav"
@@ -1723,10 +1722,10 @@
         "message_id": "DEMO_001",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "the most recent traffic on GROUP_011 (deadline changed)",
+        "why_selected": "the most recent traffic on GROUP_010 (deadline changed)",
         "masked_text": "The deadline to confirm the interview slot is now tomorrow at 10 AM. This is urgent.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": null,
         "timestamp": "2026-10-04 09:41:00",
         "sender": "Aarav"
@@ -1735,10 +1734,10 @@
         "message_id": "DEMO_016",
         "relevance_score": 1.0,
         "evidence_source": "structured",
-        "why_selected": "the most recent traffic on GROUP_011 (uncertain update)",
+        "why_selected": "the most recent traffic on GROUP_010 (uncertain update)",
         "masked_text": "Confirm the interview slot might already be finished, but I cannot confirm it.",
         "content_withheld": false,
-        "group_id": "GROUP_011",
+        "group_id": "GROUP_010",
         "item_id": "TASK_0365",
         "timestamp": "2026-10-04 19:56:00",
         "sender": "Aarav"
@@ -1789,8 +1788,8 @@
       },
       {
         "message_id": "MSG_1007",
-        "score": 0.41,
-        "lexical_score": 0.41,
+        "score": 0.4096,
+        "lexical_score": 0.4096,
         "semantic_score": 0.0,
         "matched_terms": [
           "the",
@@ -1803,8 +1802,8 @@
       },
       {
         "message_id": "MSG_1012",
-        "score": 0.3948,
-        "lexical_score": 0.3948,
+        "score": 0.3944,
+        "lexical_score": 0.3944,
         "semantic_score": 0.0,
         "matched_terms": [
           "the",
@@ -1828,13 +1827,13 @@
   {
     "query": "Was the compliance form approved by the finance director?",
     "intent": "yes_no_verification",
-    "answer": "There is not enough evidence to answer this. GROUP_065 (Was the compliance form approved by the finance director) collects 1 message(s) on this subject and none of them asserts an outcome -- nothing reports it done, cancelled, rescheduled or given a new deadline. DEMO_022 raises the subject and nothing in the corpus replies.",
+    "answer": "There is not enough evidence to answer this. GROUP_063 (Was the compliance form approved by the finance director) collects 1 message(s) on this subject and none of them asserts an outcome -- nothing reports it done, cancelled, rescheduled or given a new deadline. DEMO_022 raises the subject and nothing in the corpus replies.",
     "sufficient_evidence": false,
     "supporting_message_ids": [
       "DEMO_022"
     ],
     "group_ids": [
-      "GROUP_065"
+      "GROUP_063"
     ],
     "item_ids": [],
     "reason": "a yes/no question can only be answered by a message that asserts an outcome. The subject was located, but every message about it is a question or a request, so the honest answer is that the corpus does not say",
@@ -1842,12 +1841,12 @@
     "evidence": [
       {
         "message_id": "DEMO_022",
-        "relevance_score": 0.96,
+        "relevance_score": 0.93,
         "evidence_source": "structured",
         "why_selected": "this message raises the same subject without asserting anything about it",
         "masked_text": "Was the compliance form approved by the finance director?",
         "content_withheld": false,
-        "group_id": "GROUP_065",
+        "group_id": "GROUP_063",
         "item_id": "TASK_0366",
         "timestamp": "2026-10-05 00:02:00",
         "sender": "Unknown Sender"

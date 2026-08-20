@@ -22,3 +22,4 @@ __pycache__/
 
 # --- personal recording aid, not part of the submission --------------------
 tools/
+.env*
