@@ -282,6 +282,14 @@ textarea.field{width:100%; min-height:110px; resize:vertical; line-height:1.55}
 .st-completed{color:var(--c-promo)} .st-cancelled{color:var(--dim)}
 .st-rescheduled{color:var(--c-meeting)} .st-pending{color:var(--c-action)}
 .st-unclear{color:var(--c-sensitive)}
+/* Status is 12px text drawn in the category hue. Those hues are tuned to sit
+   on a near-black card and drop to 2.2-2.8:1 on a white one, so the light
+   theme darkens them. The swatches and bars that use the same hues as blocks
+   of colour are left alone. */
+@media (prefers-color-scheme: light){
+  .st-completed{color:#047E48} .st-rescheduled{color:#6C5DCB}
+  .st-pending{color:#A15C00}   .st-unclear{color:#C83745}
+}
 
 /* A timeline, not a table: the order is the argument. */
 .tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:1px solid var(--rule)}
