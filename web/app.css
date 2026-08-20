@@ -6,7 +6,7 @@
    ========================================================================== */
 :root{
   --carbon:#0F1216; --slate:#171B22; --raise:#1D222B; --rule:#262C36;
-  --paper:#E8EAEF; --graphite:#8A93A3; --dim:#5D6675; --ink:#05070A;
+  --paper:#E8EAEF; --graphite:#8A93A3; --dim:#7A8392; --ink:#05070A;
 
   --c-action:#E8A33D; --c-meeting:#9B8CFA; --c-personal:#4FB6E8;
   --c-general:#7C8798; --c-promo:#46C08A; --c-sensitive:#F2616F;
@@ -20,7 +20,14 @@
 @media (prefers-color-scheme:light){
   :root{
     --carbon:#EEF0F4; --slate:#FFFFFF; --raise:#F6F7FA; --rule:#D6DAE2;
-    --paper:#12151B; --graphite:#5A6373; --dim:#8A93A3; --ink:#12151B;
+    --paper:#12151B; --graphite:#5A6373; --dim:#656E7E; --ink:#12151B;
+
+    /* Badge text is 10px uppercase drawn in the risk hue directly on a light
+       card. The dark-theme hues are tuned to sit on #171B22 and fall to
+       2.2-3.6:1 on white, so the badges get darker variants here. Only the
+       badge text changes: swatches, bars and chart fills keep the original
+       hues, because a block of colour is not held to a text contrast ratio. */
+    --r-high:#C83745; --r-medium:#A15C00; --r-low:#636E7F;
   }
 }
 
@@ -153,6 +160,8 @@ main{padding:26px 0 80px}
 }
 .risk-high{color:var(--r-high)} .risk-medium{color:var(--r-medium)} .risk-low{color:var(--r-low)}
 .flag{color:var(--c-action)}
+/* Same reason as the risk hues: this is 10px text, not a swatch. */
+@media (prefers-color-scheme: light){ .flag{color:#A15C00} }
 
 /* ---- SIGNATURE: the redaction bar ------------------------------------
    Rendered darker than the page and with no text node underneath, so there
@@ -260,7 +269,11 @@ textarea.field{width:100%; min-height:110px; resize:vertical; line-height:1.55}
 .pri{display:inline-block;padding:2px 9px;border-radius:99px;font:600 11px/1.6 var(--mono);
   letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
 .pri-critical{background:var(--p-critical)} .pri-high{background:var(--p-high)}
-.pri-medium{background:var(--p-medium)} .pri-low{background:var(--p-low);color:var(--paper)}
+.pri-medium{background:var(--p-medium)}
+/* The low pill's background is a fixed mid-grey, so its text is a fixed light
+   colour rather than the theme's text colour. Inheriting --paper flipped it to
+   near-black under the light theme, giving 3.15:1 on that grey. */
+.pri-low{background:var(--p-low);color:#E8EAEF}
 .rt{display:inline-flex;align-items:center;gap:6px;font:500 12px/1.5 var(--sans)}
 .rt::before{content:"";width:8px;height:8px;border-radius:99px;background:var(--route-local)}
 .rt-confirm_required::before{background:var(--route-confirm)}
