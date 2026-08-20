@@ -174,10 +174,14 @@ def read_rows(source: str | Path | io.StringIO | Iterable[str]) -> List[dict]:
 
     missing = [c for c in REQUIRED_COLUMNS if c not in rows[0]]
     if missing:
+        # Report what the file actually has rather than restating the
+        # requirement. When every column is missing -- which is the common
+        # case, because the user picked the wrong file -- naming the expected
+        # columns twice reads as a bug; naming the ones that are there tells
+        # them immediately what they uploaded.
         raise ValueError(
             f"missing required column(s): {', '.join(missing)}. "
-            f"Expected: {', '.join(REQUIRED_COLUMNS)}"
-        )
+            f"Found: {', '.join(rows[0]) if rows[0] else '(no columns)'}")
 
     rows.sort(key=lambda r: ((r.get("timestamp") or ""), r.get("message_id") or ""))
     return rows

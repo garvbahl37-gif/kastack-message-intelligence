@@ -183,9 +183,16 @@ function redact(text, type){
   return esc(text).replace(/\*{4,}/g,
     `<span class="redact" tabindex="0" role="img" aria-label="Redacted ${esc(label)}" data-t="${esc(label)}"></span>`);
 }
+/* Statuses and routes are rendered with the labels the API ships rather than a
+   prettified version of the enum key. "Processed locally" and "Blocked from
+   downstream use" say what the route means; "Local only" and "Blocked" leave
+   the reader to guess, and the two spellings drifting apart is how a UI ends
+   up describing a decision differently from the file that records it. */
+const label = (kind, key) =>
+  (DATA?.vocabulary?.[kind] || {})[key] || pretty(key);
 const pri = p => p ? `<span class="pri pri-${p}">${p}</span>` : "";
-const st  = s => `<span class="st st-${s}">${pretty(s)}</span>`;
-const rt  = r => `<span class="rt rt-${r}">${pretty(r)}</span>`;
+const st  = s => `<span class="st st-${s}">${label("status_labels", s)}</span>`;
+const rt  = r => `<span class="rt rt-${r}">${label("route_labels", r)}</span>`;
 const num = (v,d=2) => (v===null||v===undefined) ? "—" : Number(v).toFixed(d);
 
 let DATA = null, POLICY = null, FILES = [], ACTIVE = "overview";
