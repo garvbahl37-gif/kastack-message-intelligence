@@ -33,7 +33,7 @@
         "to": "2026-10-05 01:24:00"
       }
     ],
-    "ingest_ms": 205.1
+    "ingest_ms": 198.5
   },
   "method": {
     "repeats_per_query": 30,
@@ -43,10 +43,10 @@
     "paraphrases": "written by hand for this benchmark, split by whether their words occur in the semantic model's vocabulary at all"
   },
   "build_ms": {
-    "v1-exact-lexical": 9.51,
-    "v2-hybrid-pruned": 64.41,
-    "v2-lexical-only": 11.42,
-    "v2-semantic-always": 64.21
+    "v1-exact-lexical": 9.14,
+    "v2-hybrid-pruned": 62.95,
+    "v2-lexical-only": 11.56,
+    "v2-semantic-always": 63.43
   },
   "size": {
     "v1-exact-lexical": {
@@ -86,34 +86,34 @@
     "v1-exact-lexical": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.3861,
-      "p95_ms": 0.5467,
-      "mean_ms": 0.3487,
-      "max_ms": 3.4838
+      "median_ms": 0.3834,
+      "p95_ms": 0.5359,
+      "mean_ms": 0.3457,
+      "max_ms": 3.4875
     },
     "v2-hybrid-pruned": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.0525,
-      "p95_ms": 0.5211,
-      "mean_ms": 0.1551,
-      "max_ms": 2.6148
+      "median_ms": 0.0519,
+      "p95_ms": 0.316,
+      "mean_ms": 0.1508,
+      "max_ms": 2.4069
     },
     "v2-lexical-only": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.0456,
-      "p95_ms": 0.1348,
-      "mean_ms": 0.065,
-      "max_ms": 0.3437
+      "median_ms": 0.0454,
+      "p95_ms": 0.1364,
+      "mean_ms": 0.0656,
+      "max_ms": 0.3744
     },
     "v2-semantic-always": {
       "queries": 42,
       "samples": 1260,
-      "median_ms": 0.3724,
-      "p95_ms": 1.139,
-      "mean_ms": 0.5369,
-      "max_ms": 2.3571
+      "median_ms": 0.3669,
+      "p95_ms": 1.1079,
+      "mean_ms": 0.5238,
+      "max_ms": 2.4713
     }
   },
   "latency_scaled": {
@@ -122,18 +122,18 @@
     "v1-exact-lexical": {
       "queries": 42,
       "samples": 420,
-      "median_ms": 4.1274,
-      "p95_ms": 9.3115,
-      "mean_ms": 4.0374,
-      "max_ms": 12.4855
+      "median_ms": 4.1138,
+      "p95_ms": 9.204,
+      "mean_ms": 4.0249,
+      "max_ms": 12.1292
     },
     "v2-hybrid-pruned": {
       "queries": 42,
       "samples": 420,
-      "median_ms": 0.2121,
-      "p95_ms": 0.4828,
-      "mean_ms": 0.5101,
-      "max_ms": 10.8597
+      "median_ms": 0.2085,
+      "p95_ms": 0.5061,
+      "mean_ms": 0.5092,
+      "max_ms": 10.8864
     }
   },
   "quality": {
@@ -249,8 +249,8 @@
   },
   "finding": "The semantic layer does not earn its cost as a scorer on this corpus. Blending it into every query (v2-semantic-always) is slower than lexical scoring, reproduces less of the exact ranking, and does not improve recall on hand-written paraphrases. Every subject here is phrased with a consistent vocabulary, so there is little synonymy for a latent space to bridge and it mostly blurs an already-sharp signal. The shipped index therefore uses it only where lexical scoring returns too few candidates to fill the result set, which costs nothing on the queries lexical scoring can already answer.",
   "headline": {
-    "speedup_v2_vs_v1": 7.35,
-    "speedup_v2_vs_v1_scaled": 19.46,
+    "speedup_v2_vs_v1": 7.39,
+    "speedup_v2_vs_v1_scaled": 19.73,
     "embedding_compression_ratio": 8.0,
     "memory_ratio_v2_over_v1": 1.46
   }

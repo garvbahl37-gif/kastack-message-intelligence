@@ -458,7 +458,11 @@ def main() -> int:
               f"exact index's top 10 (top-1 agreement "
               f"{value['top1_agreement']:.1%})")
     print()
-    print(f"  wrote {dest.relative_to(ROOT)}")
+    try:
+        shown = dest.relative_to(ROOT)
+    except ValueError:                     # --out pointed outside the repo
+        shown = dest
+    print(f"  wrote {shown}")
     return 0
 
 

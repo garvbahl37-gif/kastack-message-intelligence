@@ -850,10 +850,17 @@ This is the most interesting thing the benchmark found, and it changed the
 design.
 
 The first version blended lexical and semantic scores on every query. Measured
-against exact lexical scoring it was **slower** (0.372 ms against 0.386 ms
-median — it had thrown away the inverted index's advantage), reproduced **less**
-of the exact ranking (93.1% of the top 10, against 99.8%), and was **worse** on
-hand-written paraphrases (0.792 against 0.850 recall@10).
+against the design that shipped, it was **7× slower** (0.35 ms against 0.05 ms
+median — computing a query embedding on every call threw away the inverted
+index's entire advantage, leaving it no faster than the exact full scan it was
+meant to improve on), reproduced **less of the exact ranking** (93.1% of the top
+10 against 99.8%, and 85.7% top-1 agreement against 100%), and was **worse on
+the paraphrases it was supposed to help with** (0.450 against 0.500 recall@10
+on the out-of-vocabulary set, and no better on the in-vocabulary set, where both
+score 0.850).
+
+That last number is the one that settled it. The semantic layer exists to rescue
+paraphrases, and scoring with it did not rescue a single one.
 
 The reason is a property of this corpus rather than of LSA. Every subject here is
 phrased with a consistent vocabulary, so lexical overlap is already close to
@@ -1211,8 +1218,8 @@ intercepts to a plain JSON artifact, and ~80 lines of standard-library Python
 reproduce the forward pass. `tests/test_model.py` asserts agreement with
 scikit-learn's own `predict_proba` to within 1e-3.
 
-This buys three things: the runtime installs one dependency instead of a ~100 MB
-scientific stack; the artifact is a diffable, reviewable file of numbers rather
+This buys three things: the runtime installs two small dependencies instead of a
+~100 MB scientific stack; the artifact is a diffable, reviewable file of numbers rather
 than an opaque pickle that executes code on load; and because the forward pass
 is right there, each prediction decomposes into the exact token contributions
 that produced it — which is what the UI's evidence panel shows.
@@ -1463,8 +1470,10 @@ documented inline throughout the source, not only in this file.
 **Where the AI tool was most and least useful, honestly.** It was fastest at the
 parts with a clear specification — frame grammars, serialisation, the web views,
 test scaffolding. It was least reliable exactly where this project needed
-judgement: the first hybrid retrieval design it produced was slower *and* worse
-than the baseline, and only measuring it revealed that. Several of the decisions
+judgement: the first hybrid retrieval design it produced was seven times slower
+than the one that shipped, no faster than the baseline it was meant to improve
+on, and no better at the paraphrases it existed to catch. Only measuring it
+revealed that. Several of the decisions
 I am most confident in — the containment test, the corroboration gate, the
 assertion test behind refusal — came from looking at outputs that were wrong and
 working out why. The benchmark exists because I did not trust the design, and it

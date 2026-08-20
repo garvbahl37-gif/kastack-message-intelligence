@@ -12,10 +12,10 @@ from mint.sensitive import scan
     ("Your OTP is 552317. It expires in five minutes.", R.BLOCKED, "P1-CREDENTIAL"),
     ("Use password RiverStone#42 to sign in.", R.BLOCKED, "P1-CREDENTIAL"),
     ("Integration token: tok_test_9KQ22.", R.BLOCKED, "P1-CREDENTIAL"),
-    ("The test card number is 5555 4444 3333 1111.", R.BLOCKED, "P1-CREDENTIAL"),
+    ("The test card number is 8812 4407 3391 6650.", R.BLOCKED, "P1-CREDENTIAL"),
     ("My identification number is ID-4417-KK.", R.LOCAL_ONLY, "P2-IDENTITY"),
     ("My recent test result says low iron.", R.LOCAL_ONLY, "P2-IDENTITY"),
-    ("You can contact me on 98765 43210.", R.CONFIRM_REQUIRED, "P3-CONTACT"),
+    ("You can contact me on 70155 28643.", R.CONFIRM_REQUIRED, "P3-CONTACT"),
     ("Deliver the spare laptop to 4 Hillside Road, Pune.",
      R.CONFIRM_REQUIRED, "P3-CONTACT"),
     ("The staff canteen now opens at eight.", R.LOCAL_ONLY, "P0-DEFAULT"),
@@ -27,7 +27,7 @@ def test_routes_follow_the_l1_recommendation(text, route, policy):
 
 def test_the_strictest_finding_sets_the_route():
     """A message with both a phone number and an OTP is blocked, not gated."""
-    text = "Your OTP is 552317 and you can contact me on 98765 43210."
+    text = "Your OTP is 552317 and you can contact me on 70155 28643."
     decision = R.route_message("M1", scan(text))
     assert decision.route == R.BLOCKED
 
@@ -46,7 +46,7 @@ def test_external_sending_is_denied_for_every_message_including_harmless_ones():
 
 
 def test_confirmation_gated_messages_stay_searchable_in_masked_form():
-    decision = R.route_message("M1", scan("You can contact me on 98765 43210."))
+    decision = R.route_message("M1", scan("You can contact me on 70155 28643."))
     assert decision.indexable, "refusing to index contact details would be theatre"
     assert not decision.quotable
     assert decision.confirmation_prompt
@@ -55,7 +55,7 @@ def test_confirmation_gated_messages_stay_searchable_in_masked_form():
 def test_an_answer_inherits_the_strictest_route_of_its_evidence():
     decisions = {
         "A": R.route_message("A", scan("The canteen opens at eight.")),
-        "B": R.route_message("B", scan("You can contact me on 98765 43210.")),
+        "B": R.route_message("B", scan("You can contact me on 70155 28643.")),
         "C": R.route_message("C", scan("Your OTP is 552317.")),
     }
     assert R.route_answer(["A"], decisions).route == R.LOCAL_ONLY
@@ -64,7 +64,7 @@ def test_an_answer_inherits_the_strictest_route_of_its_evidence():
 
 
 def test_confirmation_unlocks_only_what_it_was_given_for():
-    decisions = {"B": R.route_message("B", scan("Contact me on 98765 43210.")),
+    decisions = {"B": R.route_message("B", scan("Contact me on 70155 28643.")),
                  "C": R.route_message("C", scan("Your OTP is 552317."))}
     assert R.route_answer(["B"], decisions, confirmed=True).route == R.LOCAL_ONLY
     assert R.route_answer(["C"], decisions, confirmed=True).route == R.BLOCKED

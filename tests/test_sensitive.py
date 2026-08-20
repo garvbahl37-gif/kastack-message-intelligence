@@ -22,7 +22,7 @@ CASES = [
     ("My identification number is ID-9931-AB.", "government_id", "high"),
     ("My recent test result says low haemoglobin.", "health_information", "high"),
     ("My home address is 7 Hill Street, Pune-11.", "postal_address", "medium"),
-    ("You can contact me on 91234 56789.", "phone_number", "medium"),
+    ("You can contact me on 80442 91736.", "phone_number", "medium"),
 ]
 
 
