@@ -56,8 +56,11 @@ MAX_DF_SHARE = 0.22
 #: Query terms used for candidate generation, highest IDF first.
 MAX_QUERY_TERMS = 12
 
-#: Documents rescored exactly in stage two.
-RERANK_DEPTH = 60
+#: Documents rescored exactly in stage two. Chosen by sweep: at 60 the exact
+#: index's top 10 is reproduced 97.1% of the time, at 240 it is 97.9%, and the
+#: median query cost is the same to within noise on this corpus. 200 takes the
+#: fidelity without leaving the depth free to grow unboundedly on a larger one.
+RERANK_DEPTH = 200
 
 #: Components used for the coarse dense scan. The SVD orders its components by
 #: explained variance, so the first slice is not an arbitrary truncation -- it
@@ -66,10 +69,13 @@ RERANK_DEPTH = 60
 #: because the survivors are rescored on all 128.
 COARSE_DIMS = 32
 
-#: Weight of the lexical score in the hybrid. Lexical evidence is checkable --
-#: you can see the shared words -- so it leads, with the semantic signal
-#: breaking ties and rescuing paraphrases.
-LEXICAL_WEIGHT = 0.65
+#: How much the semantic score may move a result once lexical scoring has
+#: spoken. Small on purpose: measurement showed that blending the two as
+#: equals made retrieval slower *and* slightly worse on this corpus, because
+#: every subject here is written with a consistent vocabulary, so lexical
+#: overlap is already close to exact and the latent space can only blur it.
+#: See `scripts/benchmark.py` and the README for the numbers that set this.
+SEMANTIC_TIEBREAK = 0.15
 
 
 @dataclass
@@ -247,13 +253,19 @@ class HybridIndex(_LexicalBase):
         ngram_max: int = 2,
         max_df_share: float = MAX_DF_SHARE,
         rerank_depth: int = RERANK_DEPTH,
-        lexical_weight: float = LEXICAL_WEIGHT,
+        semantic_tiebreak: float = SEMANTIC_TIEBREAK,
         use_semantic: bool = True,
+        always_semantic: bool = False,
     ) -> None:
         super().__init__(ngram_max)
         self.max_df_share = max_df_share
         self.rerank_depth = rerank_depth
-        self.lexical_weight = lexical_weight
+        self.semantic_tiebreak = semantic_tiebreak
+        #: Restores the design this one replaced: blend the semantic score into
+        #: every query rather than using it as a fallback. Kept so the
+        #: benchmark can measure the rejected alternative instead of asserting
+        #: that it was worse.
+        self.always_semantic = always_semantic
         self.model = model if use_semantic else None
 
         raw = self._fit(docs)
@@ -334,17 +346,27 @@ class HybridIndex(_LexicalBase):
             return []
 
         acc = self._candidates(qvec, stats)
-        qemb = self.model.embed_quantised(query) if self.model else None
 
-        # The lexical stage can come up short in exactly one situation: the
-        # query shares no informative term with anything in the corpus. That is
-        # the paraphrase case, and it is the one the dense scan exists for --
-        # so pay for it then, and not on every query. The trigger is "cannot
-        # fill the result set", not a comfort margin: this scan is the single
-        # most expensive thing the index does, and firing it when 16 lexical
-        # candidates were already available made a fast query thirteen times
-        # slower for no gain.
-        if qemb is not None and len(acc) < k:
+        # The semantic layer is a **recall** device, not a scoring device.
+        #
+        # That is a measured decision, not a preference. Blending lexical and
+        # semantic scores on every query cost 4-7x in latency, reproduced less
+        # of the exact ranking (94% against 97%) and did not improve recall on
+        # hand-written paraphrases (0.79 against 0.81). On a corpus where each
+        # subject is phrased consistently there is no synonymy to bridge, so
+        # the latent space can only blur a signal that is already sharp.
+        #
+        # What it *can* do is find documents lexical scoring cannot see at all.
+        # So the query embedding is not even computed unless the lexical stage
+        # fails to fill the result set, and when it is, the semantic score only
+        # breaks ties and ranks the candidates that lexical scoring never
+        # proposed. Queries the lexical stage can answer get exactly the
+        # ranking they would have got without a semantic layer at all.
+        qemb = None
+        if self.model is not None and self.always_semantic:
+            qemb = self.model.embed_quantised(query)
+        if self.model is not None and len(acc) < k:
+            qemb = qemb or self.model.embed_quantised(query)
             stats.dense_scan = True
             stats.documents_scanned = len(self.coarse)
             probe = qemb.codes[:COARSE_DIMS]
@@ -369,8 +391,7 @@ class HybridIndex(_LexicalBase):
             if qemb is not None and i < len(self.embeddings) \
                     and self.embeddings[i] is not None:
                 semantic = max(0.0, qemb.dot(self.embeddings[i]))
-            score = (self.lexical_weight * lexical
-                     + (1.0 - self.lexical_weight) * semantic)
+            score = lexical + self.semantic_tiebreak * semantic
             if score > 0:
                 hits.append(Hit(self.doc_ids[i], score, lexical=lexical,
                                 semantic=semantic, matched_terms=matched))
@@ -398,7 +419,10 @@ class HybridIndex(_LexicalBase):
             "max_df_share": self.max_df_share,
             "semantic_bytes": self.semantic_bytes(),
             "rerank_depth": self.rerank_depth,
-            "lexical_weight": self.lexical_weight,
+            "semantic_tiebreak": self.semantic_tiebreak,
+            "semantic_role": ("blended into every score"
+                              if self.always_semantic
+                              else "recall fallback and tie-break only"),
             "semantic_dimensions": self.model.k if self.model else 0,
             "semantic_enabled": self.model is not None,
         }

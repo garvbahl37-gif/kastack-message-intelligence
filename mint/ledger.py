@@ -520,3 +520,77 @@ def run(
         ledger.index = HybridIndex(docs, semantic)
 
     return ledger
+
+
+def write_outputs(ledger: Ledger, out_dir: str | Path,
+                  answers: Optional[List[dict]] = None) -> List[Path]:
+    """Write the L2 structured output files. All contain masked text only.
+
+    Masking happened before any of this data existed, so there is no redaction
+    step here that could be forgotten. `tests/test_no_leakage.py` asserts the
+    property against every file this writes.
+    """
+    import json
+
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    written: List[Path] = []
+
+    payloads: Dict[str, object] = {
+        "priority_decisions.json": ledger.priority_records(),
+        "message_groups.json": ledger.group_records(),
+        "privacy_routing.json": {
+            "policy_table": R.policy_table(),
+            "decisions": ledger.routing_records(),
+        },
+        "priority_snapshots.json": [s.to_dict() for s in ledger.snapshots],
+        "l2_summary.json": ledger.summary(),
+    }
+    if answers is not None:
+        payloads["assistant_answers.json"] = answers
+
+    for name, payload in payloads.items():
+        path = out / name
+        with path.open("w", encoding="utf-8") as fh:
+            json.dump(payload, fh, indent=2, ensure_ascii=False)
+        written.append(path)
+
+    # Two flat CSVs as well: easier to eyeball, and easier to show on screen
+    # in a recording than a nested JSON document.
+    groups_csv = out / "message_groups.csv"
+    with groups_csv.open("w", newline="", encoding="utf-8") as fh:
+        writer = csv.writer(fh)
+        writer.writerow(["group_id", "title", "kind", "status", "priority",
+                         "latest_deadline", "latest_schedule", "messages",
+                         "chases", "conflicts", "contested", "confidence",
+                         "related_message_ids", "summary"])
+        for group in ledger.groups:
+            decision = ledger.priorities.get(group.group_id)
+            schedule = " ".join(x for x in (group.latest_date, group.latest_time)
+                                if x)
+            writer.writerow([
+                group.group_id, group.title, group.kind, group.status,
+                decision.priority if decision else "",
+                group.latest_deadline or group.pending_relative_deadline or "",
+                schedule, len(group.members), group.chase_count,
+                len(group.conflicts), group.contested, group.confidence,
+                " ".join(group.message_ids), group.summary,
+            ])
+    written.append(groups_csv)
+
+    priority_csv = out / "priority_decisions.csv"
+    rows = ledger.priority_records()
+    if rows:
+        fields = ["message_id", "item_id", "group_id", "item_title", "priority",
+                  "confidence", "score", "group_status",
+                  "group_latest_deadline", "as_of", "reason"]
+        with priority_csv.open("w", newline="", encoding="utf-8") as fh:
+            writer = csv.DictWriter(fh, fieldnames=fields + ["signals"])
+            writer.writeheader()
+            for row in rows:
+                flat = {k: row.get(k) for k in fields}
+                flat["signals"] = " ".join(row.get("signals", []))
+                writer.writerow(flat)
+        written.append(priority_csv)
+
+    return written

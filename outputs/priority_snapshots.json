@@ -1,0 +1,2069 @@
+[
+  {
+    "batch": "messages.csv",
+    "as_of": "2026-09-24 10:23:00",
+    "counts": {
+      "critical": 0,
+      "high": 20,
+      "medium": 0,
+      "low": 30
+    },
+    "changes": [
+      {
+        "group_id": "GROUP_001",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0001",
+          "MSG_0043",
+          "MSG_0275",
+          "MSG_0435",
+          "MSG_0479",
+          "MSG_0603",
+          "MSG_0646",
+          "MSG_0697",
+          "MSG_0797",
+          "MSG_0845"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_002",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0002",
+          "MSG_0058",
+          "MSG_0215",
+          "MSG_0481",
+          "MSG_0487",
+          "MSG_0569",
+          "MSG_0578",
+          "MSG_0621",
+          "MSG_0653",
+          "MSG_0893"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_003",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0003",
+          "MSG_0122",
+          "MSG_0124",
+          "MSG_0135",
+          "MSG_0249",
+          "MSG_0294",
+          "MSG_0488",
+          "MSG_0719",
+          "MSG_0861",
+          "MSG_0866"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_004",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0007",
+          "MSG_0287",
+          "MSG_0301",
+          "MSG_0365",
+          "MSG_0366",
+          "MSG_0418",
+          "MSG_0451",
+          "MSG_0779",
+          "MSG_0784",
+          "MSG_0853"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_005",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0010",
+          "MSG_0265",
+          "MSG_0339",
+          "MSG_0536",
+          "MSG_0614",
+          "MSG_0620",
+          "MSG_0667",
+          "MSG_0743",
+          "MSG_0754",
+          "MSG_0809"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_006",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0011",
+          "MSG_0034",
+          "MSG_0222",
+          "MSG_0255",
+          "MSG_0378",
+          "MSG_0430",
+          "MSG_0660",
+          "MSG_0683",
+          "MSG_0841",
+          "MSG_0847"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_007",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.4,
+        "delta": 0.4,
+        "trigger_message_ids": [
+          "MSG_0012",
+          "MSG_0057",
+          "MSG_0148",
+          "MSG_0460",
+          "MSG_0533",
+          "MSG_0570",
+          "MSG_0692",
+          "MSG_0738",
+          "MSG_0771",
+          "MSG_0879"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_008",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0017",
+          "MSG_0063",
+          "MSG_0072",
+          "MSG_0083",
+          "MSG_0178",
+          "MSG_0232",
+          "MSG_0515",
+          "MSG_0553",
+          "MSG_0638",
+          "MSG_0740"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_009",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0019",
+          "MSG_0111",
+          "MSG_0173",
+          "MSG_0175",
+          "MSG_0306",
+          "MSG_0425",
+          "MSG_0467",
+          "MSG_0537",
+          "MSG_0783",
+          "MSG_0883"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_010",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0023",
+          "MSG_0129",
+          "MSG_0209",
+          "MSG_0458",
+          "MSG_0484",
+          "MSG_0584",
+          "MSG_0631",
+          "MSG_0744",
+          "MSG_0822",
+          "MSG_0871"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_011",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0027",
+          "MSG_0171",
+          "MSG_0195",
+          "MSG_0220",
+          "MSG_0314",
+          "MSG_0335",
+          "MSG_0480",
+          "MSG_0527",
+          "MSG_0557",
+          "MSG_0617"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_012",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0028",
+          "MSG_0065",
+          "MSG_0101",
+          "MSG_0309",
+          "MSG_0368",
+          "MSG_0394",
+          "MSG_0605",
+          "MSG_0799",
+          "MSG_0829",
+          "MSG_0862"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_013",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0031",
+          "MSG_0038",
+          "MSG_0139",
+          "MSG_0300",
+          "MSG_0412",
+          "MSG_0622",
+          "MSG_0656",
+          "MSG_0708",
+          "MSG_0736",
+          "MSG_0884"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_014",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0032",
+          "MSG_0269",
+          "MSG_0345",
+          "MSG_0498",
+          "MSG_0554",
+          "MSG_0633",
+          "MSG_0640",
+          "MSG_0670",
+          "MSG_0688",
+          "MSG_0761"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_015",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0035",
+          "MSG_0045",
+          "MSG_0060",
+          "MSG_0331",
+          "MSG_0398",
+          "MSG_0420",
+          "MSG_0546",
+          "MSG_0551",
+          "MSG_0585",
+          "MSG_0624"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_016",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0036",
+          "MSG_0162",
+          "MSG_0223",
+          "MSG_0311",
+          "MSG_0508",
+          "MSG_0549",
+          "MSG_0623",
+          "MSG_0706",
+          "MSG_0793",
+          "MSG_0873"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_017",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0037"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_018",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.4,
+        "delta": 0.4,
+        "trigger_message_ids": [
+          "MSG_0039",
+          "MSG_0132",
+          "MSG_0180",
+          "MSG_0277",
+          "MSG_0348",
+          "MSG_0428",
+          "MSG_0439",
+          "MSG_0464",
+          "MSG_0469",
+          "MSG_0728"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_019",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.4,
+        "delta": 0.4,
+        "trigger_message_ids": [
+          "MSG_0041",
+          "MSG_0110",
+          "MSG_0190",
+          "MSG_0198",
+          "MSG_0377",
+          "MSG_0457",
+          "MSG_0524",
+          "MSG_0559",
+          "MSG_0580",
+          "MSG_0816"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_020",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0042",
+          "MSG_0055",
+          "MSG_0258",
+          "MSG_0302",
+          "MSG_0356",
+          "MSG_0456",
+          "MSG_0588",
+          "MSG_0788",
+          "MSG_0868",
+          "MSG_0878"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_021",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0044",
+          "MSG_0114",
+          "MSG_0145",
+          "MSG_0245",
+          "MSG_0396",
+          "MSG_0422",
+          "MSG_0577",
+          "MSG_0694",
+          "MSG_0814",
+          "MSG_0898"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_022",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0046",
+          "MSG_0089",
+          "MSG_0115",
+          "MSG_0144",
+          "MSG_0150",
+          "MSG_0163",
+          "MSG_0251",
+          "MSG_0283",
+          "MSG_0503",
+          "MSG_0757"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_023",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0049",
+          "MSG_0077",
+          "MSG_0138",
+          "MSG_0338",
+          "MSG_0342",
+          "MSG_0423",
+          "MSG_0606",
+          "MSG_0619",
+          "MSG_0707",
+          "MSG_0759"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_024",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0051",
+          "MSG_0127",
+          "MSG_0405",
+          "MSG_0465",
+          "MSG_0511",
+          "MSG_0592",
+          "MSG_0601",
+          "MSG_0637",
+          "MSG_0673",
+          "MSG_0711"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_025",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0054"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_026",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.4,
+        "delta": 0.4,
+        "trigger_message_ids": [
+          "MSG_0056",
+          "MSG_0121",
+          "MSG_0193",
+          "MSG_0410",
+          "MSG_0438",
+          "MSG_0495",
+          "MSG_0634",
+          "MSG_0717",
+          "MSG_0811",
+          "MSG_0827"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_027",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0062",
+          "MSG_0067",
+          "MSG_0168",
+          "MSG_0244",
+          "MSG_0330",
+          "MSG_0449",
+          "MSG_0628",
+          "MSG_0745",
+          "MSG_0747",
+          "MSG_0895"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_028",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0066",
+          "MSG_0131",
+          "MSG_0151",
+          "MSG_0216",
+          "MSG_0357",
+          "MSG_0382",
+          "MSG_0427",
+          "MSG_0674",
+          "MSG_0693",
+          "MSG_0792"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_029",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0088",
+          "MSG_0153",
+          "MSG_0210",
+          "MSG_0221",
+          "MSG_0289",
+          "MSG_0468",
+          "MSG_0574",
+          "MSG_0602",
+          "MSG_0618",
+          "MSG_0826"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_030",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0097",
+          "MSG_0123",
+          "MSG_0154",
+          "MSG_0156",
+          "MSG_0184",
+          "MSG_0201",
+          "MSG_0590",
+          "MSG_0789",
+          "MSG_0821",
+          "MSG_0823"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_031",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0098"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_032",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0100",
+          "MSG_0169",
+          "MSG_0177",
+          "MSG_0218",
+          "MSG_0268",
+          "MSG_0424",
+          "MSG_0643",
+          "MSG_0645",
+          "MSG_0664",
+          "MSG_0668"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_033",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0102",
+          "MSG_0112",
+          "MSG_0231",
+          "MSG_0307",
+          "MSG_0317",
+          "MSG_0407",
+          "MSG_0512",
+          "MSG_0662",
+          "MSG_0725",
+          "MSG_0780"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_034",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0103",
+          "MSG_0282",
+          "MSG_0316",
+          "MSG_0359",
+          "MSG_0413",
+          "MSG_0445",
+          "MSG_0579",
+          "MSG_0630",
+          "MSG_0831",
+          "MSG_0837"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_035",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0113",
+          "MSG_0136",
+          "MSG_0147",
+          "MSG_0203",
+          "MSG_0361",
+          "MSG_0513",
+          "MSG_0561",
+          "MSG_0690",
+          "MSG_0850",
+          "MSG_0851"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_036",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0119",
+          "MSG_0219",
+          "MSG_0358",
+          "MSG_0473",
+          "MSG_0485",
+          "MSG_0531",
+          "MSG_0722",
+          "MSG_0776",
+          "MSG_0815",
+          "MSG_0870"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_037",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0157",
+          "MSG_0226",
+          "MSG_0360",
+          "MSG_0417",
+          "MSG_0455",
+          "MSG_0483",
+          "MSG_0517",
+          "MSG_0607",
+          "MSG_0612",
+          "MSG_0658"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_038",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0160",
+          "MSG_0208",
+          "MSG_0369",
+          "MSG_0379",
+          "MSG_0530",
+          "MSG_0547",
+          "MSG_0552",
+          "MSG_0639",
+          "MSG_0730",
+          "MSG_0824"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_039",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0170",
+          "MSG_0280",
+          "MSG_0556",
+          "MSG_0566",
+          "MSG_0652",
+          "MSG_0716",
+          "MSG_0720",
+          "MSG_0787",
+          "MSG_0795",
+          "MSG_0819"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_040",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0213"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_041",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0217"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_042",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.6,
+        "delta": 3.6,
+        "trigger_message_ids": [
+          "MSG_0252",
+          "MSG_0312",
+          "MSG_0334",
+          "MSG_0340",
+          "MSG_0401",
+          "MSG_0615",
+          "MSG_0657",
+          "MSG_0659",
+          "MSG_0864",
+          "MSG_0865"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_043",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0271",
+          "MSG_0293",
+          "MSG_0363",
+          "MSG_0414",
+          "MSG_0565",
+          "MSG_0616",
+          "MSG_0800",
+          "MSG_0810",
+          "MSG_0849",
+          "MSG_0894"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_044",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.4,
+        "delta": 0.4,
+        "trigger_message_ids": [
+          "MSG_0310",
+          "MSG_0323",
+          "MSG_0386",
+          "MSG_0393",
+          "MSG_0486",
+          "MSG_0492",
+          "MSG_0505",
+          "MSG_0654",
+          "MSG_0775",
+          "MSG_0859"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_045",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.25,
+        "delta": 0.25,
+        "trigger_message_ids": [
+          "MSG_0327",
+          "MSG_0384",
+          "MSG_0450",
+          "MSG_0519",
+          "MSG_0600",
+          "MSG_0798",
+          "MSG_0860",
+          "MSG_0877",
+          "MSG_0882",
+          "MSG_0900"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_046",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0462"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_047",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0493"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_048",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0635"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_049",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0840"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_050",
+        "as_of": "2026-09-24 10:23:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.05,
+        "delta": 0.05,
+        "trigger_message_ids": [
+          "MSG_0886"
+        ],
+        "reason": "first assessment of this subject"
+      }
+    ]
+  },
+  {
+    "batch": "l2_messages.csv",
+    "as_of": "2026-10-02 23:07:00",
+    "counts": {
+      "critical": 8,
+      "high": 7,
+      "medium": 11,
+      "low": 36
+    },
+    "changes": [
+      {
+        "group_id": "GROUP_002",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 5.1,
+        "delta": 1.5,
+        "trigger_message_ids": [
+          "MSG_0901",
+          "MSG_0915",
+          "MSG_0921",
+          "MSG_0980"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_003",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 1.65,
+        "delta": 1.4,
+        "trigger_message_ids": [
+          "MSG_0952",
+          "MSG_0969"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to medium"
+      },
+      {
+        "group_id": "GROUP_004",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 5.5,
+        "delta": 1.9,
+        "trigger_message_ids": [
+          "MSG_0902",
+          "MSG_0922",
+          "MSG_0994",
+          "MSG_0997",
+          "MSG_1009",
+          "MSG_1012"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_006",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 2.25,
+        "delta": 2.0,
+        "trigger_message_ids": [
+          "MSG_0953",
+          "MSG_0955"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to medium"
+      },
+      {
+        "group_id": "GROUP_008",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 8.5,
+        "delta": 4.9,
+        "trigger_message_ids": [
+          "MSG_0904",
+          "MSG_0917",
+          "MSG_0919",
+          "MSG_0920",
+          "MSG_0924",
+          "MSG_0975",
+          "MSG_0986"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_009",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.1,
+        "delta": -8.7,
+        "trigger_message_ids": [
+          "MSG_0905",
+          "MSG_0925",
+          "MSG_0935",
+          "MSG_0973",
+          "MSG_0974",
+          "MSG_0998",
+          "MSG_1013",
+          "MSG_1020",
+          "MSG_1030"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_010",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 2.65,
+        "delta": 2.4,
+        "trigger_message_ids": [
+          "MSG_0954"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to medium"
+      },
+      {
+        "group_id": "GROUP_011",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 4.7,
+        "delta": 1.1,
+        "trigger_message_ids": [
+          "MSG_0906",
+          "MSG_0926",
+          "MSG_0972",
+          "MSG_0976",
+          "MSG_0982",
+          "MSG_1002"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_012",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.1,
+        "delta": -8.7,
+        "trigger_message_ids": [
+          "MSG_0907",
+          "MSG_0918",
+          "MSG_0927",
+          "MSG_0933",
+          "MSG_1000",
+          "MSG_1015"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_013",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.1,
+        "delta": -8.7,
+        "trigger_message_ids": [
+          "MSG_0908",
+          "MSG_0911",
+          "MSG_0928",
+          "MSG_0942",
+          "MSG_0996",
+          "MSG_1011"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_014",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 5.5,
+        "delta": 1.9,
+        "trigger_message_ids": [
+          "MSG_0909",
+          "MSG_0929",
+          "MSG_0991",
+          "MSG_1006"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_015",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 5.5,
+        "delta": 1.9,
+        "trigger_message_ids": [
+          "MSG_0910",
+          "MSG_0913",
+          "MSG_0916",
+          "MSG_0930",
+          "MSG_1004"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_016",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 1.65,
+        "delta": 1.4,
+        "trigger_message_ids": [
+          "MSG_0956"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to medium"
+      },
+      {
+        "group_id": "GROUP_021",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.7,
+        "delta": -9.3,
+        "trigger_message_ids": [
+          "MSG_0912",
+          "MSG_0938",
+          "MSG_0944",
+          "MSG_0987"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_022",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.1,
+        "delta": -8.7,
+        "trigger_message_ids": [
+          "MSG_0914",
+          "MSG_0932",
+          "MSG_0939",
+          "MSG_0943",
+          "MSG_0946",
+          "MSG_0950",
+          "MSG_0988",
+          "MSG_0993",
+          "MSG_1008"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_023",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 3.45,
+        "delta": 3.2,
+        "trigger_message_ids": [
+          "MSG_0959",
+          "MSG_0965"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to high"
+      },
+      {
+        "group_id": "GROUP_027",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 3.45,
+        "delta": 3.2,
+        "trigger_message_ids": [
+          "MSG_0962",
+          "MSG_0964"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to high"
+      },
+      {
+        "group_id": "GROUP_028",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 3.45,
+        "delta": 3.2,
+        "trigger_message_ids": [
+          "MSG_0963"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to high"
+      },
+      {
+        "group_id": "GROUP_029",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.1,
+        "delta": -8.7,
+        "trigger_message_ids": [
+          "MSG_0931",
+          "MSG_0947",
+          "MSG_0979",
+          "MSG_0983",
+          "MSG_0995",
+          "MSG_1010"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_032",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 2.25,
+        "delta": 2.0,
+        "trigger_message_ids": [
+          "MSG_0967"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to medium"
+      },
+      {
+        "group_id": "GROUP_033",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.1,
+        "delta": -8.7,
+        "trigger_message_ids": [
+          "MSG_0934",
+          "MSG_0936",
+          "MSG_0985",
+          "MSG_0999",
+          "MSG_1003",
+          "MSG_1014"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_034",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 0.25,
+        "score": 1.65,
+        "delta": 1.4,
+        "trigger_message_ids": [
+          "MSG_0968"
+        ],
+        "reason": "new messages about this subject moved its assessment from low to medium"
+      },
+      {
+        "group_id": "GROUP_035",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.7,
+        "delta": -9.3,
+        "trigger_message_ids": [
+          "MSG_0937",
+          "MSG_0941",
+          "MSG_0945",
+          "MSG_0977"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_036",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.7,
+        "delta": -9.3,
+        "trigger_message_ids": [
+          "MSG_0940",
+          "MSG_0981"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_037",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.7,
+        "delta": -9.3,
+        "trigger_message_ids": [
+          "MSG_0948",
+          "MSG_0984"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_038",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": -5.7,
+        "delta": -9.3,
+        "trigger_message_ids": [
+          "MSG_0949",
+          "MSG_0978",
+          "MSG_1056",
+          "MSG_1061",
+          "MSG_1066"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to low"
+      },
+      {
+        "group_id": "GROUP_039",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 5.9,
+        "delta": 2.3,
+        "trigger_message_ids": [
+          "MSG_0971",
+          "MSG_0992",
+          "MSG_1007"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_042",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "high",
+        "to": "critical",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 3.6,
+        "score": 5.9,
+        "delta": 2.3,
+        "trigger_message_ids": [
+          "MSG_0989",
+          "MSG_1001",
+          "MSG_1005"
+        ],
+        "reason": "new messages about this subject moved its assessment from high to critical"
+      },
+      {
+        "group_id": "GROUP_051",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.95,
+        "delta": 3.95,
+        "trigger_message_ids": [
+          "MSG_1016",
+          "MSG_1026"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_052",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 4.1,
+        "delta": 4.1,
+        "trigger_message_ids": [
+          "MSG_1017",
+          "MSG_1027"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_053",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "high",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 3.3,
+        "delta": 3.3,
+        "trigger_message_ids": [
+          "MSG_1018",
+          "MSG_1028"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_054",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 2.9,
+        "delta": 2.9,
+        "trigger_message_ids": [
+          "MSG_1019",
+          "MSG_1029"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_055",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 2.3,
+        "delta": 2.3,
+        "trigger_message_ids": [
+          "MSG_1021",
+          "MSG_1031"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_056",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 1.6,
+        "delta": 1.6,
+        "trigger_message_ids": [
+          "MSG_1022",
+          "MSG_1032"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_057",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 1.6,
+        "delta": 1.6,
+        "trigger_message_ids": [
+          "MSG_1023",
+          "MSG_1033"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_058",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 1.45,
+        "delta": 1.45,
+        "trigger_message_ids": [
+          "MSG_1024",
+          "MSG_1034"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_059",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 1.6,
+        "delta": 1.6,
+        "trigger_message_ids": [
+          "MSG_1025",
+          "MSG_1035"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_060",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.2,
+        "delta": 0.2,
+        "trigger_message_ids": [
+          "MSG_1057",
+          "MSG_1062",
+          "MSG_1067"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_061",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.2,
+        "delta": 0.2,
+        "trigger_message_ids": [
+          "MSG_1058",
+          "MSG_1063",
+          "MSG_1068"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_062",
+        "as_of": "2026-10-02 23:07:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.2,
+        "delta": 0.2,
+        "trigger_message_ids": [
+          "MSG_1059",
+          "MSG_1064",
+          "MSG_1069"
+        ],
+        "reason": "first assessment of this subject"
+      }
+    ]
+  },
+  {
+    "batch": "l2_demo_messages.csv",
+    "as_of": "2026-10-05 01:24:00",
+    "counts": {
+      "critical": 7,
+      "high": 12,
+      "medium": 11,
+      "low": 36
+    },
+    "changes": [
+      {
+        "group_id": "GROUP_001",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 0.95,
+        "score": 2.25,
+        "delta": 1.3,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_010",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "medium",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 2.65,
+        "score": -6.0,
+        "delta": -8.65,
+        "trigger_message_ids": [
+          "DEMO_008"
+        ],
+        "reason": "new messages about this subject moved its assessment from medium to low"
+      },
+      {
+        "group_id": "GROUP_011",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "critical",
+        "to": "critical",
+        "kind": "escalation",
+        "trigger": "message",
+        "previous_score": 4.7,
+        "score": 9.3,
+        "delta": 4.6,
+        "trigger_message_ids": [
+          "DEMO_001",
+          "DEMO_016"
+        ],
+        "reason": "new messages about this subject moved its assessment within critical, score 4.7 -> 9.3"
+      },
+      {
+        "group_id": "GROUP_014",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "critical",
+        "to": "low",
+        "kind": "band_change",
+        "trigger": "message",
+        "previous_score": 5.5,
+        "score": 1.4,
+        "delta": -4.1,
+        "trigger_message_ids": [
+          "DEMO_004",
+          "DEMO_020"
+        ],
+        "reason": "new messages about this subject moved its assessment from critical to low"
+      },
+      {
+        "group_id": "GROUP_016",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "medium",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 1.65,
+        "score": 3.45,
+        "delta": 1.8,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_024",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 0.95,
+        "score": 1.65,
+        "delta": 0.7,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_030",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 0.95,
+        "score": 2.25,
+        "delta": 1.3,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_032",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "medium",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 2.25,
+        "score": 3.45,
+        "delta": 1.2,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_034",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "medium",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 1.65,
+        "score": 3.45,
+        "delta": 1.8,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_054",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "medium",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 2.9,
+        "score": 4.1,
+        "delta": 1.2,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_055",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "medium",
+        "to": "high",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 2.3,
+        "score": 3.3,
+        "delta": 1.0,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from medium to high because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_058",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "low",
+        "to": "medium",
+        "kind": "band_change",
+        "trigger": "elapsed_time",
+        "previous_score": 1.45,
+        "score": 2.15,
+        "delta": 0.7,
+        "trigger_message_ids": [],
+        "reason": "no new message mentioned this subject; the assessment moved from low to medium because the reference time advanced"
+      },
+      {
+        "group_id": "GROUP_063",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 1.6,
+        "delta": 1.6,
+        "trigger_message_ids": [
+          "DEMO_010"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_064",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "-",
+        "to": "medium",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 2.15,
+        "delta": 2.15,
+        "trigger_message_ids": [
+          "DEMO_011"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_065",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.4,
+        "delta": 0.4,
+        "trigger_message_ids": [
+          "DEMO_022"
+        ],
+        "reason": "first assessment of this subject"
+      },
+      {
+        "group_id": "GROUP_066",
+        "as_of": "2026-10-05 01:24:00",
+        "from": "-",
+        "to": "low",
+        "kind": "initial",
+        "trigger": "initial",
+        "previous_score": 0.0,
+        "score": 0.7,
+        "delta": 0.7,
+        "trigger_message_ids": [
+          "DEMO_023"
+        ],
+        "reason": "first assessment of this subject"
+      }
+    ]
+  }
+]

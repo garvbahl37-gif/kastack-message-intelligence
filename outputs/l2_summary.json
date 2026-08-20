@@ -1,0 +1,69 @@
+{
+  "as_of": "2026-10-05 01:24:00",
+  "total_messages": 1104,
+  "batches": [
+    {
+      "name": "messages.csv",
+      "kind": "l1",
+      "messages": 900,
+      "from": "2026-09-01 08:00:00",
+      "to": "2026-09-24 10:23:00"
+    },
+    {
+      "name": "l2_messages.csv",
+      "kind": "l2",
+      "messages": 180,
+      "from": "2026-09-26 09:00:00",
+      "to": "2026-10-02 23:07:00"
+    },
+    {
+      "name": "l2_demo_messages.csv",
+      "kind": "demo",
+      "messages": 24,
+      "from": "2026-10-04 09:41:00",
+      "to": "2026-10-05 01:24:00"
+    }
+  ],
+  "groups": 66,
+  "grouped_messages": 574,
+  "ungrouped_messages": 530,
+  "group_status_counts": {
+    "pending": 42,
+    "in_progress": 0,
+    "completed": 6,
+    "rescheduled": 12,
+    "cancelled": 6,
+    "unclear": 0
+  },
+  "group_priority_counts": {
+    "critical": 7,
+    "high": 12,
+    "medium": 11,
+    "low": 36
+  },
+  "items": 543,
+  "route_counts": {
+    "local_only": 1004,
+    "confirm_required": 25,
+    "blocked": 75
+  },
+  "excluded_from_index": 75,
+  "index": {
+    "index": "v2-hybrid-pruned",
+    "documents": 1029,
+    "excluded_by_routing": 75,
+    "vocabulary": 1833,
+    "posting_lists": 1828,
+    "terms_pruned_below_idf_floor": 5,
+    "idf_floor": 2.5107,
+    "max_df_share": 0.22,
+    "semantic_bytes": 131712,
+    "rerank_depth": 60,
+    "lexical_weight": 0.65,
+    "semantic_dimensions": 128,
+    "semantic_enabled": true
+  },
+  "contested_groups": 11,
+  "groups_with_conflicts": 21,
+  "mean_group_confidence": 0.9343
+}
