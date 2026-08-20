@@ -193,12 +193,18 @@ DETECTORS: List[Detector] = [
         precedence=65,
     ),
     # --- health information -------------------------------------------------
+    # L2 note: the anchor list gained "medical/health note", "medical/health
+    # condition" and "medical record", and the verb list gained "mentions",
+    # after the L2 corpus disclosed a condition through a phrasing none of the
+    # L1 anchors covered ("My private medical note mentions ...").
     Detector(
         "health_information",
         _c(
             r"\b(?:test\s+result|lab\s+report|medical\s+report|diagnosis|"
-            r"prescription|blood\s+group|blood\s+pressure|medical\s+history)\b"
-            r"\s*(?:says|shows|is|:|=)?\s*(.+?)(?=[.!?]|$)"
+            r"prescription|blood\s+group|blood\s+pressure|medical\s+history|"
+            r"medical\s+note|health\s+note|medical\s+record|"
+            r"medical\s+condition|health\s+condition)\b"
+            r"\s*(?:mentions|says|shows|is|:|=)?\s*(.+?)(?=[.!?]|$)"
         ),
         "a personal medical detail is disclosed (special-category personal data)",
         precedence=60,
@@ -214,6 +220,28 @@ DETECTORS: List[Detector] = [
         "a private residential address is disclosed",
         precedence=55,
     ),
+    # --- delivery addresses -------------------------------------------------
+    # L2 note: L1 anchored postal addresses on self-disclosure ("my address
+    # is", "I live at"). The L2 corpus instead asks for something to be
+    # delivered somewhere, which is the same personal datum arriving through a
+    # different sentence. Anchoring on the delivery verb alone would swallow
+    # "send it to Maya", so the captured span must also look like an address:
+    # a street-type word, optionally preceded by a house number.
+    Detector(
+        "postal_address",
+        _c(
+            r"\b(?:deliver|ship|courier|post|drop\s+(?:it|them)\s+off)\b"
+            r"(?:\s+(?:it|them|this|the\s+[\w-]+(?:\s+[\w-]+)?))?\s+"
+            r"(?:to|at)\s+"
+            r"((?:\d{1,5}[/-]?[A-Za-z]?\s+)?[^.;!?]*?\b(?:road|rd\.?|street|"
+            r"st\.?|lane|ln\.?|avenue|ave\.?|nagar|colony|block|sector|marg|"
+            r"cross|layout|apartments?|towers?|society|house\s+no\.?)\b"
+            r"[^.;!?]*)"
+        ),
+        "a delivery address is disclosed",
+        precedence=56,
+    ),
+
     # --- phone numbers ------------------------------------------------------
     Detector(
         "phone_number",
