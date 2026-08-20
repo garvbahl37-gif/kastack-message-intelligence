@@ -32,6 +32,13 @@
 }
 
 *{box-sizing:border-box}
+/* The `hidden` attribute is enforced by a user-agent rule of the same
+   specificity as a class, and author styles win ties -- so any class that sets
+   `display` silently defeats it. `.btn{display:inline-block}` did exactly that
+   and made a hidden button render. Stated once here so no future display rule
+   can reintroduce it. */
+[hidden]{display:none !important}
+
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--carbon); color:var(--paper);
