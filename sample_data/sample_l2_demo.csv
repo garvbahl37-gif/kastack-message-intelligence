@@ -1,0 +1,9 @@
+message_id,timestamp,sender,message
+S2D_01,2026-11-06 09:00:00,Nadia,The deadline to renew the domain certificate is now tomorrow at 09:00. This is urgent.
+S2D_02,2026-11-06 09:40:00,Devansh,Confirmed: submit the quarterly budget sheet has been completed.
+S2D_03,2026-11-06 10:20:00,Ops Desk,The design critique has been cancelled.
+S2D_04,2026-11-06 11:00:00,Ops Desk,"The date for fire drill stays the same, but the time is now 15:45."
+S2D_05,2026-11-06 11:40:00,Private Message,Integration token: tok_sample_9KQ22. Use it only in the local test.
+S2D_06,2026-11-06 12:20:00,Operations,"Deliver the spare laptop to 4 Hillside Road, Pune."
+S2D_07,2026-11-06 13:00:00,Project Lead,"The deadline may be Tuesday, or it may be Thursday. Wait for the official update."
+S2D_08,2026-11-06 13:40:00,Unknown Sender,Was the vendor contract countersigned by the legal team?
