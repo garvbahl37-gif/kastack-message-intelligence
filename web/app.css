@@ -60,7 +60,15 @@ p{margin:0}
 .btn{
   border:1px solid var(--rule); background:var(--slate); border-radius:6px;
   padding:7px 13px; font-size:12px; letter-spacing:0.03em; transition:.15s border-color,.15s background;
+  /* Colour and decoration stated explicitly rather than inherited. A <button>
+     inherits the page's text colour; an <a class="btn"> does not -- the user
+     agent gives it link blue and an underline, which on the dark theme is
+     #0000EE on #0F1216 and effectively invisible. The cross-links between the
+     L1 and L2 views are anchors, so without this they disappear. */
+  color:var(--paper); text-decoration:none; display:inline-block;
+  font-family:inherit; cursor:pointer;
 }
+.btn:visited{color:var(--paper)}
 .btn:hover{border-color:var(--graphite); background:var(--raise)}
 .btn[aria-pressed="true"]{border-color:var(--c-personal); color:var(--c-personal)}
 .btn-primary{background:var(--paper); color:var(--carbon); border-color:var(--paper); font-weight:600}
